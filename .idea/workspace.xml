@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3bb4d198-db03-4005-8c3a-5d190a5b4b46" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1assEjEFXY286ZdQOYU5ZJuhZNR" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.1532721" />
+    <property name="project.structure.side.proportion" value="0.34025374" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/oeco-frontend/node_modules/typescript/lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/oeco-frontend/src/app" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration name="E2E Tests (oeco-frontend)" type="JavaScriptTestRunnerProtractor">
+      <config-file value="$PROJECT_DIR$/oeco-frontend/e2e/protractor.conf.js" />
+      <node-interpreter value="project" />
+      <protractor-options value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="oeco-backend" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.oeco.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/oeco-frontend/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3bb4d198-db03-4005-8c3a-5d190a5b4b46" name="Default Changelist" comment="" />
+      <created>1587535525979</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587535525979</updated>
+      <workItem from="1587535529512" duration="785000" />
+      <workItem from="1587536530358" duration="352000" />
+      <workItem from="1587539677519" duration="5000" />
+      <workItem from="1587551321072" duration="182000" />
+      <workItem from="1587551709839" duration="10419000" />
+      <workItem from="1587628671369" duration="9317000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2510" y="261" width="867" height="684" key="#Project_Structure" timestamp="1587535700239">
+      <screen x="1920" y="0" width="1920" height="1200" />
+    </state>
+    <state x="2510" y="261" width="867" height="684" key="#Project_Structure/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587535700239" />
+    <state x="2723" y="319" width="374" height="569" key="#com.intellij.ide.util.MemberChooser" timestamp="1587647651899">
+      <screen x="1920" y="0" width="1920" height="1200" />
+    </state>
+    <state x="2723" y="319" width="374" height="569" key="#com.intellij.ide.util.MemberChooser/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587647651899" />
+    <state x="2756" y="492" width="308" height="223" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1587535761842">
+      <screen x="1920" y="0" width="1920" height="1200" />
+    </state>
+    <state x="2756" y="492" width="308" height="223" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587535761842" />
+    <state x="2698" y="358" width="924" height="781" key="FileChooserDialogImpl" timestamp="1587536741743">
+      <screen x="1920" y="0" width="1920" height="1200" />
+    </state>
+    <state x="2698" y="358" width="924" height="781" key="FileChooserDialogImpl/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587536741743" />
+    <state width="1804" height="324" key="GridCell.Tab.0.bottom" timestamp="1587560712327">
+      <screen x="1920" y="0" width="1920" height="1200" />
+    </state>
+    <state width="1804" height="324" key="GridCell.Tab.0.bottom/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587560712327" />
+    <state width="1804" height="324" key="GridCell.Tab.0.center" timestamp="1587560712326">
+      <screen x="1920" y="0" width="1920" height="1200" />
+    </state>
+    <state width="1804" height="324" key="GridCell.Tab.0.center/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587560712326" />
+    <state width="1804" height="324" key="GridCell.Tab.0.left" timestamp="1587560712326">
+      <screen x="1920" y="0" width="1920" height="1200" />
+    </state>
+    <state width="1804" height="324" key="GridCell.Tab.0.left/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587560712326" />
+    <state width="1804" height="324" key="GridCell.Tab.0.right" timestamp="1587560712326">
+      <screen x="1920" y="0" width="1920" height="1200" />
+    </state>
+    <state width="1804" height="324" key="GridCell.Tab.0.right/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587560712326" />
+    <state x="2495" y="302" width="819" height="609" key="NewModule_or_Project.wizard" timestamp="1587536683113">
+      <screen x="1920" y="0" width="1920" height="1200" />
+    </state>
+    <state x="2495" y="302" width="819" height="609" key="NewModule_or_Project.wizard/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587536683113" />
+    <state x="2398" y="177" width="1024" height="852" key="SettingsEditor" timestamp="1587641912632">
+      <screen x="1920" y="0" width="1920" height="1200" />
+    </state>
+    <state x="2398" y="177" width="1024" height="852" key="SettingsEditor/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587641912632" />
+    <state x="2097" y="340" width="710" height="520" key="find.popup" timestamp="1587552367554">
+      <screen x="1920" y="0" width="1920" height="1200" />
+    </state>
+    <state x="2097" y="340" width="710" height="520" key="find.popup/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587552367554" />
+    <state width="600" height="424" key="javadoc.popup" timestamp="1587650057479">
+      <screen x="1920" y="0" width="1920" height="1200" />
+    </state>
+    <state width="600" height="424" key="javadoc.popup/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587650057479" />
+    <state x="2224" y="290" width="1372" height="627" key="new project wizard" timestamp="1587536546338">
+      <screen x="1920" y="0" width="1920" height="1200" />
+    </state>
+    <state x="2224" y="290" width="1372" height="627" key="new project wizard/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587536546338" />
+    <state x="2323" y="515" width="350" height="298" key="org.angular.cli.generate" timestamp="1587556463911">
+      <screen x="1920" y="0" width="1920" height="1200" />
+    </state>
+    <state x="2323" y="515" width="350" height="298" key="org.angular.cli.generate/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587556463911" />
+  </component>
+</project>

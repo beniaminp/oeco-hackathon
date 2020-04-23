@@ -1,0 +1,191 @@
+<div class="row">
+  <div class="col-sm-12">
+    <h1 class="h3 mb-3 font-weight-normal">Submit Case</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <form [formGroup]="formGroup">
+
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-form-field class="w-100">
+            <mat-label>Patient code</mat-label>
+            <input matInput placeholder="Patient code">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-form-field class="w-100">
+            <mat-label>Year of Birth</mat-label>
+            <input matInput placeholder="Year of Birth" type="number">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="M">Male</mat-radio-button>
+            <mat-radio-button value="F">Female</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-form-field class="w-100">
+            <input matInput
+                   placeholder="Country"
+                   aria-label="country"
+                   [matAutocomplete]="auto"
+                   [formControl]="countryCtrl">
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let country of filteredCountries | async" [value]="country.name">
+                <!--<img aria-hidden [src]="country.flag"  class="h-25 p-5 w-25">-->
+                <span>{{country.name}}</span>
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 w-100">
+          <mat-form-field class="w-50 pr-5">
+            <mat-label>First positive COVID test</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="firstPositiveDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field class="w-50">
+            <mat-label>Test Type</mat-label>
+            <input matInput placeholder="Test type" formControlName="firstTestType">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 w-100">
+          <mat-label>Previous COVID infections</mat-label>
+          <mat-list role="list" class="w-100">
+            <mat-list-item class="w-100" role="listitem"
+                           *ngFor="let prevInfection of previousInfections;let idx = index">{{prevInfection | date}}
+              <button mat-icon-button class="ml-5" color="primary" (click)="deletePrevDate(idx)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </mat-list-item>
+            <mat-list-item role="listitem">
+              <mat-label>Previous COVID infection date</mat-label>
+              <input matInput [matDatepicker]="prevInfectionPicker" formControlName="prevInfection" #prevInfection>
+              <mat-datepicker-toggle matSuffix [for]="prevInfectionPicker"></mat-datepicker-toggle>
+              <mat-datepicker #prevInfectionPicker></mat-datepicker>
+            </mat-list-item>
+            <mat-list-item role="listitem">
+              <button type="button" class="btn btn-outline-primary btn-sm" (click)="addPrevInfection()">Add Prev Infection
+              </button>
+            </mat-list-item>
+          </mat-list>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-form-field class="w-50 pr-5">
+            <mat-label>Last positive COVID test</mat-label>
+            <input matInput [matDatepicker]="lastCovidPositiveTestPicker" formControlName="lastCovidPositiveTest">
+            <mat-datepicker-toggle matSuffix [for]="lastCovidPositiveTestPicker"></mat-datepicker-toggle>
+            <mat-datepicker #lastCovidPositiveTestPicker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field class="w-50">
+            <mat-label>Test Type</mat-label>
+            <input matInput placeholder="Test type" formControlName="lastTestType">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-label>Existing conditions</mat-label>
+          <mat-list role="list" class="w-100">
+            <mat-form-field class="w-100">
+              <input matInput
+                     placeholder="Existing conditions"
+                     aria-label="existingConditions"
+                     [matAutocomplete]="existingConditionsAuto"
+                     [formControl]="icd10ConditionsCtrl">
+              <mat-autocomplete #existingConditionsAuto="matAutocomplete">
+                <mat-option *ngFor="let conditions of filteredicd10Conditions" [value]="conditions"
+                            (click)="existingConditionsClicked(conditions)">
+                  <span>{{conditions[0] + ' - ' + conditions[1]}}</span>
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+
+            <table class="table table-sm">
+              <thead>
+              <tr>
+                <th scope="col">IC Code</th>
+                <th scope="col">Name</th>
+                <th scope="col">Still Active</th>
+                <th scope="col">Actions</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let element of existingConditionsList;let idx = index">
+                <td>{{element.icCode}}</td>
+                <td>{{element.name}}</td>
+                <td>
+                  <mat-checkbox (click)="stillActiveClicked(element)"></mat-checkbox>
+                </td>
+                <td>
+                  <button mat-icon-button class="ml-5" color="primary" (click)="deleteConditionsClicked(idx)">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </mat-list>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-form-field class="w-100">
+            <mat-label>Date of hospital admission</mat-label>
+            <input matInput [matDatepicker]="hospitalAdmissionPicker" formControlName="hospitalAdmission">
+            <mat-datepicker-toggle matSuffix [for]="hospitalAdmissionPicker"></mat-datepicker-toggle>
+            <mat-datepicker #hospitalAdmissionPicker></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-form-field class="w-100">
+            <mat-label>Date of hospital release</mat-label>
+            <input matInput [matDatepicker]="hospitalReleasePicker" formControlName="hospitalRelease">
+            <mat-datepicker-toggle matSuffix [for]="hospitalReleasePicker"></mat-datepicker-toggle>
+            <mat-datepicker #hospitalReleasePicker></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
