@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3bb4d198-db03-4005-8c3a-5d190a5b4b46" name="Default Changelist" comment="" />
+    <list default="true" id="3bb4d198-db03-4005-8c3a-5d190a5b4b46" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/ovh/vps-ovh.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ovh/vps-ovh.sh" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,6 +38,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -47,6 +52,7 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1assEjEFXY286ZdQOYU5ZJuhZNR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -54,9 +60,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -64,7 +71,7 @@
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.1532721" />
     <property name="project.structure.side.proportion" value="0.34025374" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="http.proxy" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/oeco-frontend/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
@@ -117,7 +124,7 @@
       <workItem from="1587539677519" duration="5000" />
       <workItem from="1587551321072" duration="182000" />
       <workItem from="1587551709839" duration="10419000" />
-      <workItem from="1587628671369" duration="9317000" />
+      <workItem from="1587628671369" duration="11516000" />
     </task>
     <servers />
   </component>
@@ -137,10 +144,10 @@
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
     <state x="2756" y="492" width="308" height="223" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587535761842" />
-    <state x="2698" y="358" width="924" height="781" key="FileChooserDialogImpl" timestamp="1587536741743">
+    <state x="2698" y="358" width="924" height="781" key="FileChooserDialogImpl" timestamp="1587658292105">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
-    <state x="2698" y="358" width="924" height="781" key="FileChooserDialogImpl/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587536741743" />
+    <state x="2698" y="358" width="924" height="781" key="FileChooserDialogImpl/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587658292105" />
     <state width="1804" height="324" key="GridCell.Tab.0.bottom" timestamp="1587560712327">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
@@ -161,10 +168,10 @@
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
     <state x="2495" y="302" width="819" height="609" key="NewModule_or_Project.wizard/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587536683113" />
-    <state x="2398" y="177" width="1024" height="852" key="SettingsEditor" timestamp="1587641912632">
+    <state x="2340" y="222" width="1024" height="852" key="SettingsEditor" timestamp="1587658353827">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
-    <state x="2398" y="177" width="1024" height="852" key="SettingsEditor/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587641912632" />
+    <state x="2340" y="222" width="1024" height="852" key="SettingsEditor/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587658353827" />
     <state x="2097" y="340" width="710" height="520" key="find.popup" timestamp="1587552367554">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
