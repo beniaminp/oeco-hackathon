@@ -10,22 +10,31 @@ import {MatInputModule} from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {HttpClientModule} from '@angular/common/http';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatListModule} from "@angular/material/list";
 import {MatIconModule} from "@angular/material/icon";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatTableModule} from "@angular/material/table";
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {ProgressionDetailsComponent} from './submit-case/progression-details/progression-details.component';
+import {NgMultiSelectDropDownModule} from "ng-multiselect-dropdown";
+import {CommonModule} from "@angular/common";
+import { SearchCaseComponent } from './search-case/search-case.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SubmitCaseComponent,
-    HomeComponent
+    HomeComponent,
+    ProgressionDetailsComponent,
+    SearchCaseComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
+    FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
@@ -38,7 +47,9 @@ import {MatTableModule} from "@angular/material/table";
     MatListModule,
     MatIconModule,
     MatCheckboxModule,
-    MatTableModule
+    MatTableModule,
+    NgbModule,
+    NgMultiSelectDropDownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

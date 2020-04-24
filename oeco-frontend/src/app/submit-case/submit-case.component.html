@@ -9,120 +9,140 @@
 
       <div class="row">
         <div class="col-sm-12">
-          <mat-form-field class="w-100">
-            <mat-label>Patient code</mat-label>
-            <input matInput placeholder="Patient code">
-          </mat-form-field>
+          <div class="form-group">
+            <label for="patientCode">Patient code</label>
+            <input type="text" class="form-control" id="patientCode" formControlName="patientCode">
+          </div>
         </div>
       </div>
 
       <div class="row">
         <div class="col-sm-12">
-          <mat-form-field class="w-100">
-            <mat-label>Year of Birth</mat-label>
-            <input matInput placeholder="Year of Birth" type="number">
-          </mat-form-field>
+          <div class="form-group">
+            <label for="yearOfBirth">Year of Birth</label>
+            <input type="number" min="1900" class="form-control" id="yearOfBirth" formControlName="yearOfBirth">
+          </div>
         </div>
       </div>
 
       <div class="row">
         <div class="col-sm-12">
-          <mat-radio-group aria-label="Select an option">
-            <mat-radio-button value="M">Male</mat-radio-button>
-            <mat-radio-button value="F">Female</mat-radio-button>
-          </mat-radio-group>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" value="0" id="customRadioInline1" name="sex" class="custom-control-input"
+                   formControlName="sex">
+            <label class="custom-control-label" for="customRadioInline1">Male</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" value="1" id="customRadioInline2" name="sex" class="custom-control-input"
+                   formControlName="sex">
+            <label class="custom-control-label" for="customRadioInline2">Female</label>
+          </div>
         </div>
       </div>
 
       <div class="row">
         <div class="col-sm-12">
-          <mat-form-field class="w-100">
-            <input matInput
-                   placeholder="Country"
-                   aria-label="country"
-                   [matAutocomplete]="auto"
-                   [formControl]="countryCtrl">
-            <mat-autocomplete #auto="matAutocomplete">
-              <mat-option *ngFor="let country of filteredCountries | async" [value]="country.name">
-                <!--<img aria-hidden [src]="country.flag"  class="h-25 p-5 w-25">-->
-                <span>{{country.name}}</span>
-              </mat-option>
-            </mat-autocomplete>
-          </mat-form-field>
+          <div class="form-group">
+            <label for="typeahead-basic">Search for a state:</label>
+            <input id="typeahead-basic" type="text" class="form-control" formControlName="countryCtrl"
+                   [ngbTypeahead]="filterCountries" [resultTemplate]="countriesTemplate" [inputFormatter]="formatter"/>
+          </div>
+        </div>
+      </div>
+      <ng-template #countriesTemplate let-r="result" let-t="term">
+        <p>{{r.name}}</p>
+      </ng-template>
+
+      <div class="row">
+        <div class="col-sm-12 w-100">
+          <label>First positive COVID test</label>
+          <div class="form-group">
+            <div class="input-group">
+              <input class="form-control" placeholder="dd-mm-yyyy"
+                     name="dp" ngbDatepicker #d="ngbDatepicker" formControlName="firstPositiveDate">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
+                  <i class="fas fa-calendar-alt"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="firstTestType">First Test Type</label>
+            <input type="text" class="form-control" id="firstTestType" formControlName="firstTestType">
+          </div>
         </div>
       </div>
 
       <div class="row">
         <div class="col-sm-12 w-100">
-          <mat-form-field class="w-50 pr-5">
-            <mat-label>First positive COVID test</mat-label>
-            <input matInput [matDatepicker]="picker" formControlName="firstPositiveDate">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
-          <mat-form-field class="w-50">
-            <mat-label>Test Type</mat-label>
-            <input matInput placeholder="Test type" formControlName="firstTestType">
-          </mat-form-field>
+          <label>Previous COVID infections</label>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let prevInfection of previousInfections;let idx = index">
+              <span class="w-80">{{prevInfection | date}}</span>
+              <button class="w-20" (click)="deletePrevDate(idx)">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </li>
+            <li class="list-group-item">
+              <div class="input-group">
+                <input class="form-control" placeholder="dd-mm-yyyy"
+                       name="dp" ngbDatepicker #prevDate="ngbDatepicker" formControlName="prevInfection">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary calendar" (click)="prevDate.toggle()" type="button">
+                    <i class="fas fa-calendar-alt"></i>
+                  </button>
+                </div>
+                <button type="button" class="btn btn-outline-primary btn-sm" (click)="addPrevInfection()">Add Prev
+                  Infection
+                </button>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
 
       <div class="row">
         <div class="col-sm-12 w-100">
-          <mat-label>Previous COVID infections</mat-label>
-          <mat-list role="list" class="w-100">
-            <mat-list-item class="w-100" role="listitem"
-                           *ngFor="let prevInfection of previousInfections;let idx = index">{{prevInfection | date}}
-              <button mat-icon-button class="ml-5" color="primary" (click)="deletePrevDate(idx)">
-                <mat-icon>delete</mat-icon>
-              </button>
-            </mat-list-item>
-            <mat-list-item role="listitem">
-              <mat-label>Previous COVID infection date</mat-label>
-              <input matInput [matDatepicker]="prevInfectionPicker" formControlName="prevInfection" #prevInfection>
-              <mat-datepicker-toggle matSuffix [for]="prevInfectionPicker"></mat-datepicker-toggle>
-              <mat-datepicker #prevInfectionPicker></mat-datepicker>
-            </mat-list-item>
-            <mat-list-item role="listitem">
-              <button type="button" class="btn btn-outline-primary btn-sm" (click)="addPrevInfection()">Add Prev Infection
-              </button>
-            </mat-list-item>
-          </mat-list>
+          <label>Last positive COVID test</label>
+          <div class="form-group">
+            <div class="input-group">
+              <input class="form-control" placeholder="dd-mm-yyyy"
+                     name="dp" ngbDatepicker #lastPositiveTest="ngbDatepicker" formControlName="lastCovidPositiveTest">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary calendar" (click)="lastPositiveTest.toggle()" type="button">
+                  <i class="fas fa-calendar-alt"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="lastTestType">Last Test Type</label>
+            <input type="text" class="form-control" id="lastTestType" formControlName="lastTestType">
+          </div>
         </div>
       </div>
 
       <div class="row">
         <div class="col-sm-12">
-          <mat-form-field class="w-50 pr-5">
-            <mat-label>Last positive COVID test</mat-label>
-            <input matInput [matDatepicker]="lastCovidPositiveTestPicker" formControlName="lastCovidPositiveTest">
-            <mat-datepicker-toggle matSuffix [for]="lastCovidPositiveTestPicker"></mat-datepicker-toggle>
-            <mat-datepicker #lastCovidPositiveTestPicker></mat-datepicker>
-          </mat-form-field>
-          <mat-form-field class="w-50">
-            <mat-label>Test Type</mat-label>
-            <input matInput placeholder="Test type" formControlName="lastTestType">
-          </mat-form-field>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-12">
-          <mat-label>Existing conditions</mat-label>
           <mat-list role="list" class="w-100">
-            <mat-form-field class="w-100">
-              <input matInput
-                     placeholder="Existing conditions"
-                     aria-label="existingConditions"
-                     [matAutocomplete]="existingConditionsAuto"
-                     [formControl]="icd10ConditionsCtrl">
-              <mat-autocomplete #existingConditionsAuto="matAutocomplete">
-                <mat-option *ngFor="let conditions of filteredicd10Conditions" [value]="conditions"
-                            (click)="existingConditionsClicked(conditions)">
-                  <span>{{conditions[0] + ' - ' + conditions[1]}}</span>
-                </mat-option>
-              </mat-autocomplete>
-            </mat-form-field>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label for="existingConditions">Existing conditions</label>
+                  <input id="existingConditions" type="text" class="form-control" formControlName="icd10ConditionsCtrl"
+                         [ngbTypeahead]="filteredicd10Conditions" [resultTemplate]="ic10Template"
+                         [inputFormatter]="formatter" [(ngModel)]="existingConditionsModel"/>
+
+                  <button type="button" class="btn btn-outline-primary btn-sm" (click)="existingConditionsClicked()">
+                    Add
+                  </button>
+                </div>
+              </div>
+            </div>
+            <ng-template #ic10Template let-r="result" let-t="term">
+              <p>{{r.icCode}} - {{r.name}}</p>
+            </ng-template>
 
             <table class="table table-sm">
               <thead>
@@ -138,11 +158,12 @@
                 <td>{{element.icCode}}</td>
                 <td>{{element.name}}</td>
                 <td>
-                  <mat-checkbox (click)="stillActiveClicked(element)"></mat-checkbox>
+                  <input class="form-check-input" type="checkbox" value=""
+                         (click)="stillActiveClicked(element)"/>
                 </td>
                 <td>
-                  <button mat-icon-button class="ml-5" color="primary" (click)="deleteConditionsClicked(idx)">
-                    <mat-icon>delete</mat-icon>
+                  <button class="w-20" (click)="deleteConditionsClicked(idx)">
+                    <i class="fas fa-trash-alt"></i>
                   </button>
                 </td>
               </tr>
@@ -154,38 +175,92 @@
 
       <div class="row">
         <div class="col-sm-12">
-          <mat-form-field class="w-100">
-            <mat-label>Date of hospital admission</mat-label>
-            <input matInput [matDatepicker]="hospitalAdmissionPicker" formControlName="hospitalAdmission">
-            <mat-datepicker-toggle matSuffix [for]="hospitalAdmissionPicker"></mat-datepicker-toggle>
-            <mat-datepicker #hospitalAdmissionPicker></mat-datepicker>
-          </mat-form-field>
+          <label>Date of hospital admission</label>
+          <div class="form-group">
+            <div class="input-group">
+              <input class="form-control" placeholder="dd-mm-yyyy"
+                     name="dp" ngbDatepicker #hospitalAddmission="ngbDatepicker" formControlName="hospitalAdmission">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary calendar" (click)="hospitalAddmission.toggle()" type="button">
+                  <i class="fas fa-calendar-alt"></i>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="row">
         <div class="col-sm-12">
-          <mat-form-field class="w-100">
-            <mat-label>Date of hospital release</mat-label>
-            <input matInput [matDatepicker]="hospitalReleasePicker" formControlName="hospitalRelease">
-            <mat-datepicker-toggle matSuffix [for]="hospitalReleasePicker"></mat-datepicker-toggle>
-            <mat-datepicker #hospitalReleasePicker></mat-datepicker>
-          </mat-form-field>
+          <label>Date of hospital release</label>
+          <div class="form-group">
+            <div class="input-group">
+              <input class="form-control" placeholder="dd-mm-yyyy"
+                     name="dp" ngbDatepicker #hospitalReleasePicker="ngbDatepicker" formControlName="hospitalRelease">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary calendar" (click)="hospitalReleasePicker.toggle()"
+                        type="button">
+                  <i class="fas fa-calendar-alt"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-2">
+          <label>Outcome</label>
+        </div>
+        <div class="col-sm-10">
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" value="0" id="outcomeDischared" name="outcomeType" class="custom-control-input"
+                   formControlName="outcomeType">
+            <label class="custom-control-label" for="outcomeDischared">Dischared</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" value="0" id="outcomeDied" name="outcomeType" class="custom-control-input"
+                   formControlName="outcomeType">
+            <label class="custom-control-label" for="outcomeDied">Died</label>
+          </div>
+          <div class="input-group">
+            <input class="form-control" placeholder="dd-mm-yyyy"
+                   name="dp" ngbDatepicker #outcomeDate="ngbDatepicker" formControlName="outcomeDate">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary calendar" (click)="outcomeDate.toggle()"
+                      type="button">
+                <i class="fas fa-calendar-alt"></i>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="row">
         <div class="col-sm-12">
-
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="input-group">
+                <button type="button" class="btn btn-outline-primary btn-sm"
+                        (click)="openProgressionDetailsComponent()">
+                  Add Details on Progression
+                </button>
+              </div>
+            </li>
+            <li class="list-group-item" *ngFor="let detailOnProgression of detailsOnProgressionList;let idx = index">
+              <span class="w-80">{{detailOnProgression.date | date}}</span>
+              <button class="w-20" (click)="deleteDetailOnProgression(idx)">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </li>
+          </ul>
         </div>
       </div>
-
       <div class="row">
         <div class="col-sm-12">
-
+          <button type="submit" class="btn btn-primary" (click)="submitCase()">Submit Case</button>
         </div>
       </div>
-
     </form>
   </div>
 </div>

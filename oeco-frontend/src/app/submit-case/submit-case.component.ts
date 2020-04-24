@@ -1,9 +1,15 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable, of} from 'rxjs';
 import {FormControl, FormGroup} from '@angular/forms';
-import {map, startWith} from 'rxjs/operators';
+import {catchError, debounceTime, distinctUntilChanged, map, switchMap, tap} from 'rxjs/operators';
 import {ExistingConditions} from "./models/existing-conditions";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {ProgressionDetailsComponent} from "./progression-details/progression-details.component";
+import {DetailOnProgression} from "./models/detail-on-progression";
+import {CaseModel} from "./models/case-model";
+import {SubmitCaseService} from "./services/submit-case.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-submit-case',
@@ -13,73 +19,91 @@ import {ExistingConditions} from "./models/existing-conditions";
 export class SubmitCaseComponent implements OnInit {
   public countryListUrl = 'https://restcountries.eu/rest/v2/all';
   public countryList: any[] = [];
-  public filteredCountries: Observable<any[]>;
-  public countryCtrl = new FormControl('');
 
   public icd10ConditionsUrl = 'https://clinicaltables.nlm.nih.gov/api/conditions/v3/search';
-  public filteredicd10Conditions: any[];
-  public icd10ConditionsCtrl = new FormControl('');
   public existingConditionsList: ExistingConditions[] = [];
+  existingConditionsModel: ExistingConditions;
+
+  public detailsOnProgressionList: DetailOnProgression[] = [];
 
   @ViewChild('prevInfection')
   public prevInfection: ElementRef;
   public previousInfections: Date[] = [];
 
   public formGroup: FormGroup = new FormGroup({
-    country: this.countryCtrl,
-    icd10ConditionsCtrl: this.icd10ConditionsCtrl,
+    patientCode: new FormControl(''),
+    yearOfBirth: new FormControl(''),
+    countryCtrl: new FormControl(''),
+    icd10ConditionsCtrl: new FormControl(''),
     firstPositiveDate: new FormControl(''),
     firstTestType: new FormControl(''),
     lastCovidPositiveTest: new FormControl(''),
     prevInfection: new FormControl(''),
     lastTestType: new FormControl(''),
     hospitalAdmission: new FormControl(''),
-    hospitalRelease: new FormControl('')
+    hospitalRelease: new FormControl(''),
+    outcomeDate: new FormControl(''),
+    sex: new FormControl(''),
+    outcomeType: new FormControl('')
   });
 
-  constructor(public httpClient: HttpClient) {
-  }
+  public formatter = (x: { name: string }) => x.name;
 
-  ngOnInit(): void {
-    this.retrieveCountryList();
-    this.retriveICD10Conditions();
-  }
+  public filterCountries = (text$: Observable<string>) =>
+    text$.pipe(
+      debounceTime(200),
+      map(term => term === '' ? [] : this.countryList.filter(v => v.name.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10)));
 
-
-  public retrieveCountryList() {
-    this.httpClient.get(this.countryListUrl).subscribe(
-      (res: any[]) => {
-        this.countryList = res;
-        this.filteredCountries = this.countryCtrl.valueChanges
-          .pipe(
-            startWith(''),
-            map(country => country ? this._filterCountry(country) : this.countryList.slice())
-          );
-      }
+  public filteredicd10Conditions = (text$: Observable<string>) =>
+    text$.pipe(
+      debounceTime(300),
+      distinctUntilChanged(),
+      tap(),
+      switchMap(term =>
+        this.conditionsObs(term).pipe(
+          tap(),
+          catchError(() => {
+            return of([]);
+          }))
+      ),
+      tap()
     );
-  }
 
-  private _filterCountry(value: string): any[] {
-    const filterValue = value.toLowerCase();
-
-    return this.countryList.filter(country => country.name.toLowerCase().indexOf(filterValue) === 0);
-  }
-
-  public async retriveICD10Conditions() {
-    this.icd10ConditionsCtrl.valueChanges.subscribe(
-      async (value) => {
-        this.filteredicd10Conditions = await this._filterConditions(value);
-      }
+  public conditionsObs = (term) => {
+    return this.httpClient.get(this.icd10ConditionsUrl + '?terms=' + (term != null ? term.toLowerCase() : '') + '&df=term_icd9_code,primary_name').pipe(
+      map(
+        tmpResult => {
+          const retResult: ExistingConditions[] = [];
+          for (const tmpResultElementKey of tmpResult[3]) {
+            retResult.push(new ExistingConditions(tmpResultElementKey[0], tmpResultElementKey[1], false));
+          }
+          return retResult;
+        }
+      )
     );
+  };
+
+  async ngOnInit() {
+    await this.retrieveCountryList();
   }
 
-  private async _filterConditions(value: string) {
-    const tmpResult = await this.httpClient.get(this.icd10ConditionsUrl + '?terms=' + (value != null ? value.toLowerCase() : '') + '&df=term_icd9_code,primary_name').toPromise();
-    return tmpResult[3];
+  constructor(public httpClient: HttpClient,
+              private modalService: NgbModal,
+              private submitCaseService: SubmitCaseService,
+              private router: Router) {
+  }
+
+
+  public async retrieveCountryList() {
+    this.countryList = await this.httpClient.get(this.countryListUrl).toPromise() as any[];
   }
 
   public addPrevInfection() {
-    this.previousInfections.push(this.formGroup.controls.prevInfection.value);
+    const date = new Date();
+    date.setFullYear(this.formGroup.controls.prevInfection.value.year,
+      this.formGroup.controls.prevInfection.value.month - 1,
+      this.formGroup.controls.prevInfection.value.day);
+    this.previousInfections.push(date);
     this.formGroup.controls.prevInfection.setValue('');
   }
 
@@ -87,16 +111,64 @@ export class SubmitCaseComponent implements OnInit {
     this.previousInfections.splice(idx, 1);
   }
 
-  public existingConditionsClicked(conditions: any) {
-    this.existingConditionsList.push(new ExistingConditions(conditions[0], conditions[1], false));
-    this.icd10ConditionsCtrl.setValue('');
+  public existingConditionsClicked() {
+    this.existingConditionsList.push(this.existingConditionsModel);
+    this.existingConditionsModel = null;
   }
 
   public deleteConditionsClicked(index) {
-     this.existingConditionsList.splice(index, 1);
+    this.existingConditionsList.splice(index, 1);
   }
 
   public stillActiveClicked(element: ExistingConditions) {
     this.existingConditionsList[this.existingConditionsList.indexOf(element)].stillActive = !element.stillActive;
+  }
+
+  public openProgressionDetailsComponent() {
+    const modalRef = this.modalService.open(ProgressionDetailsComponent, {
+      scrollable: true,
+      centered: true,
+      size: 'xl'
+    });
+    modalRef.componentInstance.name = 'Add Progression Details';
+    modalRef.result.then(
+      (res) => {
+        if (res.type === 'save') {
+          this.detailsOnProgressionList.push(res.detailOnProgression);
+        }
+      }
+    );
+  }
+
+  public deleteDetailOnProgression(idx: number) {
+    this.detailsOnProgressionList.splice(idx, 1);
+  }
+
+  public submitCase() {
+    const prevInfectionsNumeric: number[] = this.previousInfections.map(value => value.getTime());
+    const caseModel: CaseModel = new CaseModel(
+      this.formGroup.controls.patientCode.value,
+      this.formGroup.controls.yearOfBirth.value,
+      this.formGroup.controls.sex.value,
+      this.formGroup.controls.countryCtrl.value.alpha2Code,
+      new Date(this.formGroup.controls.firstPositiveDate.value.year, this.formGroup.controls.firstPositiveDate.value.month, this.formGroup.controls.firstPositiveDate.value.day).getTime(),
+      this.formGroup.controls.firstTestType.value,
+      prevInfectionsNumeric,
+      new Date(this.formGroup.controls.lastCovidPositiveTest.value.year, this.formGroup.controls.lastCovidPositiveTest.value.month, this.formGroup.controls.lastCovidPositiveTest.value.day).getTime(),
+      this.formGroup.controls.lastTestType.value,
+      this.existingConditionsList,
+      new Date(this.formGroup.controls.hospitalAdmission.value.year, this.formGroup.controls.hospitalAdmission.value.month, this.formGroup.controls.hospitalAdmission.value.day).getTime(),
+      new Date(this.formGroup.controls.hospitalRelease.value.year, this.formGroup.controls.hospitalRelease.value.month, this.formGroup.controls.hospitalRelease.value.day).getTime(),
+      new Date(this.formGroup.controls.outcomeDate.value.year, this.formGroup.controls.outcomeDate.value.month, this.formGroup.controls.outcomeDate.value.day).getTime(),
+      this.formGroup.controls.outcomeType.value,
+      this.detailsOnProgressionList
+    );
+    this.submitCaseService.submitCase(caseModel).subscribe(
+      (res) => {
+        console.error(res);
+        this.router.navigateByUrl('/');
+      }
+    );
+
   }
 }
