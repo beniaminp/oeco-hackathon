@@ -3,170 +3,170 @@ package com.oeco.controllers.dto;
 import java.io.Serializable;
 
 public class CtRadiologyModelDTO implements Serializable {
-    public Integer hazyIncreasedOpacities;
-    public Integer consolidation;
-    public Integer crazyPavingPattern;
-    public Integer thickenedInterlobularSepta;
-    public Integer airBronchogramSign;
-    public Integer bronchiectasis;
-    public Integer pleuralThickening;
-    public Integer pneumothorax;
-    public Integer fibrousStripes;
+    public Boolean hazyIncreasedOpacities;
+    public Boolean consolidation;
+    public Boolean crazyPavingPattern;
+    public Boolean thickenedInterlobularSepta;
+    public Boolean airBronchogramSign;
+    public Boolean bronchiectasis;
+    public Boolean pleuralThickening;
+    public Boolean pneumothorax;
+    public Boolean fibrousStripes;
 
     //Other Localization: Affected lung lobes
-    public Integer bilateral;
-    public Integer multilobar;
-    public Integer emphasisOnLowerLobe;
-    public Integer emphasisPeriphery;
-    public Integer emphasisPosterior;
+    public Boolean bilateral;
+    public Boolean multilobar;
+    public Boolean emphasisOnLowerLobe;
+    public Boolean emphasisPeriphery;
+    public Boolean emphasisPosterior;
 
     // Further findings
-    public Integer pleuralEffusion;
-    public Integer pericardialEffusion;
-    public Integer lymphadenopathy;
-    public Integer vascularThickening;
+    public Boolean pleuralEffusion;
+    public Boolean pericardialEffusion;
+    public Boolean lymphadenopathy;
+    public Boolean vascularThickening;
 
-    public Integer getHazyIncreasedOpacities() {
+    public Boolean getHazyIncreasedOpacities() {
         return hazyIncreasedOpacities;
     }
 
-    public void setHazyIncreasedOpacities(Integer hazyIncreasedOpacities) {
+    public void setHazyIncreasedOpacities(Boolean hazyIncreasedOpacities) {
         this.hazyIncreasedOpacities = hazyIncreasedOpacities;
     }
 
-    public Integer getConsolidation() {
+    public Boolean getConsolidation() {
         return consolidation;
     }
 
-    public void setConsolidation(Integer consolidation) {
+    public void setConsolidation(Boolean consolidation) {
         this.consolidation = consolidation;
     }
 
-    public Integer getCrazyPavingPattern() {
+    public Boolean getCrazyPavingPattern() {
         return crazyPavingPattern;
     }
 
-    public void setCrazyPavingPattern(Integer crazyPavingPattern) {
+    public void setCrazyPavingPattern(Boolean crazyPavingPattern) {
         this.crazyPavingPattern = crazyPavingPattern;
     }
 
-    public Integer getThickenedInterlobularSepta() {
+    public Boolean getThickenedInterlobularSepta() {
         return thickenedInterlobularSepta;
     }
 
-    public void setThickenedInterlobularSepta(Integer thickenedInterlobularSepta) {
+    public void setThickenedInterlobularSepta(Boolean thickenedInterlobularSepta) {
         this.thickenedInterlobularSepta = thickenedInterlobularSepta;
     }
 
-    public Integer getAirBronchogramSign() {
+    public Boolean getAirBronchogramSign() {
         return airBronchogramSign;
     }
 
-    public void setAirBronchogramSign(Integer airBronchogramSign) {
+    public void setAirBronchogramSign(Boolean airBronchogramSign) {
         this.airBronchogramSign = airBronchogramSign;
     }
 
-    public Integer getBronchiectasis() {
+    public Boolean getBronchiectasis() {
         return bronchiectasis;
     }
 
-    public void setBronchiectasis(Integer bronchiectasis) {
+    public void setBronchiectasis(Boolean bronchiectasis) {
         this.bronchiectasis = bronchiectasis;
     }
 
-    public Integer getPleuralThickening() {
+    public Boolean getPleuralThickening() {
         return pleuralThickening;
     }
 
-    public void setPleuralThickening(Integer pleuralThickening) {
+    public void setPleuralThickening(Boolean pleuralThickening) {
         this.pleuralThickening = pleuralThickening;
     }
 
-    public Integer getPneumothorax() {
+    public Boolean getPneumothorax() {
         return pneumothorax;
     }
 
-    public void setPneumothorax(Integer pneumothorax) {
+    public void setPneumothorax(Boolean pneumothorax) {
         this.pneumothorax = pneumothorax;
     }
 
-    public Integer getFibrousStripes() {
+    public Boolean getFibrousStripes() {
         return fibrousStripes;
     }
 
-    public void setFibrousStripes(Integer fibrousStripes) {
+    public void setFibrousStripes(Boolean fibrousStripes) {
         this.fibrousStripes = fibrousStripes;
     }
 
-    public Integer getBilateral() {
+    public Boolean getBilateral() {
         return bilateral;
     }
 
-    public void setBilateral(Integer bilateral) {
+    public void setBilateral(Boolean bilateral) {
         this.bilateral = bilateral;
     }
 
-    public Integer getMultilobar() {
+    public Boolean getMultilobar() {
         return multilobar;
     }
 
-    public void setMultilobar(Integer multilobar) {
+    public void setMultilobar(Boolean multilobar) {
         this.multilobar = multilobar;
     }
 
-    public Integer getEmphasisOnLowerLobe() {
+    public Boolean getEmphasisOnLowerLobe() {
         return emphasisOnLowerLobe;
     }
 
-    public void setEmphasisOnLowerLobe(Integer emphasisOnLowerLobe) {
+    public void setEmphasisOnLowerLobe(Boolean emphasisOnLowerLobe) {
         this.emphasisOnLowerLobe = emphasisOnLowerLobe;
     }
 
-    public Integer getEmphasisPeriphery() {
+    public Boolean getEmphasisPeriphery() {
         return emphasisPeriphery;
     }
 
-    public void setEmphasisPeriphery(Integer emphasisPeriphery) {
+    public void setEmphasisPeriphery(Boolean emphasisPeriphery) {
         this.emphasisPeriphery = emphasisPeriphery;
     }
 
-    public Integer getEmphasisPosterior() {
+    public Boolean getEmphasisPosterior() {
         return emphasisPosterior;
     }
 
-    public void setEmphasisPosterior(Integer emphasisPosterior) {
+    public void setEmphasisPosterior(Boolean emphasisPosterior) {
         this.emphasisPosterior = emphasisPosterior;
     }
 
-    public Integer getPleuralEffusion() {
+    public Boolean getPleuralEffusion() {
         return pleuralEffusion;
     }
 
-    public void setPleuralEffusion(Integer pleuralEffusion) {
+    public void setPleuralEffusion(Boolean pleuralEffusion) {
         this.pleuralEffusion = pleuralEffusion;
     }
 
-    public Integer getPericardialEffusion() {
+    public Boolean getPericardialEffusion() {
         return pericardialEffusion;
     }
 
-    public void setPericardialEffusion(Integer pericardialEffusion) {
+    public void setPericardialEffusion(Boolean pericardialEffusion) {
         this.pericardialEffusion = pericardialEffusion;
     }
 
-    public Integer getLymphadenopathy() {
+    public Boolean getLymphadenopathy() {
         return lymphadenopathy;
     }
 
-    public void setLymphadenopathy(Integer lymphadenopathy) {
+    public void setLymphadenopathy(Boolean lymphadenopathy) {
         this.lymphadenopathy = lymphadenopathy;
     }
 
-    public Integer getVascularThickening() {
+    public Boolean getVascularThickening() {
         return vascularThickening;
     }
 
-    public void setVascularThickening(Integer vascularThickening) {
+    public void setVascularThickening(Boolean vascularThickening) {
         this.vascularThickening = vascularThickening;
     }
 

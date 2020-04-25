@@ -61,6 +61,9 @@
                         <input type="number" class="form-control" id="durationOfTherapy"
                                formControlName="durationOfTherapy">
                       </div>
+                      <button type="button" class="btn btn-outline-primary btn-sm" (click)="addDrug()">
+                        Add Drug
+                      </button>
                       <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="oxygenAdded"
                                formControlName="oxygenAdded">
@@ -116,9 +119,6 @@
                           Dialysis - pre-existing requirement
                         </label>
                       </div>
-                      <button type="button" class="btn btn-outline-primary btn-sm" (click)="addDrug()">
-                        Add Drug
-                      </button>
                     </div>
                   </li>
                 </ul>

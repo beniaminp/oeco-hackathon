@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
 @RestController()
 @RequestMapping("/v1/api/case-controller/")
 public class CaseController {
@@ -22,8 +26,20 @@ public class CaseController {
     }
 
     @PostMapping("search-case")
-    public void searchCase(@RequestBody SearchConditionsDTO searchConditionsDTO) {
-        System.err.println(searchConditionsDTO);
+    public List<CaseModelDTO> searchCase(@RequestBody SearchConditionsDTO searchConditionsDTO) {
+        Double currentYear = Double.valueOf(Calendar.getInstance().get(Calendar.YEAR));
+        Double age = currentYear - searchConditionsDTO.age;
+        List<CaseModelDTO> caseModelDTOList = caseRepository.findAllByYearOfBirth(age);
+        List<CaseModelDTO> retCaseModels = new ArrayList<>();
+
+        caseModelDTOList.forEach(caseModelDTO -> searchConditionsDTO.existingConditions.forEach(existingConditionsDTO -> {
+            caseModelDTO.existingConditions.forEach(existingConditionsDTOCaseModel -> {
+                if (existingConditionsDTOCaseModel.icCode.equalsIgnoreCase(existingConditionsDTO.icCode)) {
+                    retCaseModels.add(caseModelDTO);
+                }
+            });
+        }));
+        return retCaseModels;
     }
 
 }

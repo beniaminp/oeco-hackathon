@@ -8,7 +8,7 @@ import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {ProgressionDetailsComponent} from "./progression-details/progression-details.component";
 import {DetailOnProgression} from "./models/detail-on-progression";
 import {CaseModel} from "./models/case-model";
-import {SubmitCaseService} from "./services/submit-case.service";
+import {SubmitCaseService} from "../services/submit-case.service";
 import {Router} from "@angular/router";
 
 @Component({

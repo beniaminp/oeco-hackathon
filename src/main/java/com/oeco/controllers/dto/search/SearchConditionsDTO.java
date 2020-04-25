@@ -2,10 +2,12 @@ package com.oeco.controllers.dto.search;
 
 import com.oeco.controllers.dto.ExistingConditionsDTO;
 
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.List;
 
 public class SearchConditionsDTO implements Serializable {
+    @NotNull
     public Double age;
     public List<ExistingConditionsDTO> existingConditions;
 

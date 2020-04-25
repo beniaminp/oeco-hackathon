@@ -2,57 +2,58 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3bb4d198-db03-4005-8c3a-5d190a5b4b46" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/aws-keys/send_target_to_aws.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deploy-to-aws.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oeco-frontend/src/app/search-case/models/search-conditions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/models/ct-radiology-model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/models/drugs.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oeco-frontend/src/assets/data/drugs_uk.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/oeco/MyConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/CtRadiologyModelDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/DrugsDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/search/SearchConditionsDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/oeco/controllers/repository/CaseRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/public/assets/images/api.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/public/assets/images/logo_OECO.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/public/assets/images/search.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/public/assets/images/upload.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/oeco-backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/oeco-backend.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oeco-frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oeco-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oeco-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/app.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/home/home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/home/home.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/home/home.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/search-case/search-case.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/search-case/search-case.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/search-case/search-case.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/search-case/search-case.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/models/blood-data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/models/blood-data.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/models/case-model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/models/case-model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/models/ct-radiology-model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/models/ct-radiology-model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/models/detail-on-progression.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/models/detail-on-progression.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/models/existing-conditions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/models/existing-conditions.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/progression-details/progression-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/progression-details/progression-details.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/progression-details/progression-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/progression-details/progression-details.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/services/submit-case.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/services/submit-case.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/submit-case.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/submit-case.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/services/submit-case.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/services/submit-case.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/submit-case.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/submit-case.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oeco-frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oeco-frontend/src/polyfills.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/polyfills.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oeco-frontend/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oeco-frontend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oeco/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oeco/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/oeco/controllers/CaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oeco/controllers/CaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/BloodDataDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/BloodDataDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/CaseModelDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/CaseModelDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/CtRadiologyModelDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/CtRadiologyModelDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/DetailOnProgressionDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/DetailOnProgressionDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/ExistingConditionsDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/ExistingConditionsDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/DrugsDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/DrugsDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/search/SearchConditionsDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/search/SearchConditionsDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oeco/controllers/repository/CaseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oeco/controllers/repository/CaseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/3rdpartylicenses.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/api.90031c6bf436a5c0ca07.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/images/api.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/images/logo_OECO.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/images/search.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/assets/images/upload.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/oeco/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/oeco/MyConfiguration$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/oeco/MyConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/oeco/controllers/CaseController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/oeco/controllers/dto/BloodDataDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/oeco/controllers/dto/CaseModelDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/oeco/controllers/dto/DetailOnProgressionDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/oeco/controllers/dto/DrugsDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/oeco/controllers/dto/ExistingConditionsDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/oeco/controllers/repository/CaseRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logo_OECO.b627e446fbd59ce0c5cf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main-es2015.3db8fdd7c2bccdf0775e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main-es5.3db8fdd7c2bccdf0775e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/polyfills-es2015.e4277e903aed07751db3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/polyfills-es5.84963675a8c97dd2bc1e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/runtime-es2015.1eba213af0b233498d9d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/runtime-es5.1eba213af0b233498d9d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/scripts.39a64e0fef8d354a049b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/search.336f064ee293f0903ffb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/styles.4cdc054217e5b750d392.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/upload.019a762919a6a0c18ef7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/oeco-backend-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/oeco-backend-1.0-SNAPSHOT.jar.original" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,6 +110,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -155,6 +157,8 @@
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="oeco-backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.oeco.Application" />
+      <option name="VM_PARAMETERS" value="-Dspring.data.mongodb.uri=&quot;mongodb+srv://beniaminp:carol1234@cluster0-9ath8.mongodb.net/test?retryWrites=true&amp;w=majority&quot;" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -169,6 +173,12 @@
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.Angular Application" />
+      <item itemvalue="npm.Angular CLI Server" />
+      <item itemvalue="Protractor.E2E Tests (oeco-frontend)" />
+      <item itemvalue="Spring Boot.Application" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -186,7 +196,7 @@
       <workItem from="1587551321072" duration="182000" />
       <workItem from="1587551709839" duration="10419000" />
       <workItem from="1587628671369" duration="13536000" />
-      <workItem from="1587749345004" duration="23511000" />
+      <workItem from="1587749345004" duration="26546000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1587658369760</created>
@@ -195,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587658369760</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="done submit cases">
+      <created>1587775112599</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1587775112599</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,81 +220,86 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="done submit cases" />
+    <option name="LAST_COMMIT_MESSAGE" value="done submit cases" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2510" y="261" width="867" height="684" key="#Project_Structure" timestamp="1587535700239">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
     <state x="2510" y="261" width="867" height="684" key="#Project_Structure/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587535700239" />
-    <state x="2723" y="319" width="548" height="639" key="#com.intellij.ide.util.MemberChooser" timestamp="1587773855082">
+    <state x="2373" y="258" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587775664676">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
-    <state x="2723" y="319" width="548" height="639" key="#com.intellij.ide.util.MemberChooser/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587773855082" />
+    <state x="2373" y="258" key="#com.intellij.execution.impl.EditConfigurationsDialog/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587775664676" />
+    <state x="2723" y="319" width="548" height="639" key="#com.intellij.ide.util.MemberChooser" timestamp="1587776592692">
+      <screen x="1920" y="0" width="1920" height="1200" />
+    </state>
+    <state x="2723" y="319" width="548" height="639" key="#com.intellij.ide.util.MemberChooser/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587776592692" />
     <state x="2756" y="492" width="308" height="223" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1587535761842">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
     <state x="2756" y="492" width="308" height="223" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587535761842" />
-    <state x="2673" y="344" key="#xdebugger.evaluate" timestamp="1587765055506">
+    <state x="2673" y="344" key="#xdebugger.evaluate" timestamp="1587776057619">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
-    <state x="2673" y="344" key="#xdebugger.evaluate/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587765055506" />
-    <state x="2458" y="176" width="904" height="854" key="CommitChangelistDialog2" timestamp="1587658369668">
+    <state x="2673" y="344" key="#xdebugger.evaluate/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587776057619" />
+    <state x="2458" y="176" width="904" height="854" key="CommitChangelistDialog2" timestamp="1587775112470">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
-    <state x="2458" y="176" width="904" height="854" key="CommitChangelistDialog2/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587658369668" />
+    <state x="2458" y="176" width="904" height="854" key="CommitChangelistDialog2/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587775112470" />
     <state x="2698" y="358" width="924" height="781" key="FileChooserDialogImpl" timestamp="1587762680436">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
     <state x="2698" y="358" width="924" height="781" key="FileChooserDialogImpl/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587762680436" />
-    <state width="1804" height="473" key="GridCell.Tab.0.bottom" timestamp="1587767143023">
+    <state width="1804" height="325" key="GridCell.Tab.0.bottom" timestamp="1587776807922">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
-    <state width="1804" height="473" key="GridCell.Tab.0.bottom/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587767143023" />
-    <state width="1804" height="473" key="GridCell.Tab.0.center" timestamp="1587767143023">
+    <state width="1804" height="325" key="GridCell.Tab.0.bottom/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587776807922" />
+    <state width="1804" height="325" key="GridCell.Tab.0.center" timestamp="1587776807922">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
-    <state width="1804" height="473" key="GridCell.Tab.0.center/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587767143023" />
-    <state width="1804" height="473" key="GridCell.Tab.0.left" timestamp="1587767143022">
+    <state width="1804" height="325" key="GridCell.Tab.0.center/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587776807922" />
+    <state width="1804" height="325" key="GridCell.Tab.0.left" timestamp="1587776807921">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
-    <state width="1804" height="473" key="GridCell.Tab.0.left/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587767143022" />
-    <state width="1804" height="473" key="GridCell.Tab.0.right" timestamp="1587767143023">
+    <state width="1804" height="325" key="GridCell.Tab.0.left/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587776807921" />
+    <state width="1804" height="325" key="GridCell.Tab.0.right" timestamp="1587776807922">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
-    <state width="1804" height="473" key="GridCell.Tab.0.right/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587767143023" />
-    <state width="1804" height="527" key="GridCell.Tab.1.bottom" timestamp="1587766734927">
+    <state width="1804" height="325" key="GridCell.Tab.0.right/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587776807922" />
+    <state width="1804" height="325" key="GridCell.Tab.1.bottom" timestamp="1587776807922">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
-    <state width="1804" height="527" key="GridCell.Tab.1.bottom/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587766734927" />
-    <state width="1804" height="527" key="GridCell.Tab.1.center" timestamp="1587766734926">
+    <state width="1804" height="325" key="GridCell.Tab.1.bottom/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587776807922" />
+    <state width="1804" height="325" key="GridCell.Tab.1.center" timestamp="1587776807922">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
-    <state width="1804" height="527" key="GridCell.Tab.1.center/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587766734926" />
-    <state width="1804" height="527" key="GridCell.Tab.1.left" timestamp="1587766734926">
+    <state width="1804" height="325" key="GridCell.Tab.1.center/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587776807922" />
+    <state width="1804" height="325" key="GridCell.Tab.1.left" timestamp="1587776807922">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
-    <state width="1804" height="527" key="GridCell.Tab.1.left/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587766734926" />
-    <state width="1804" height="527" key="GridCell.Tab.1.right" timestamp="1587766734926">
+    <state width="1804" height="325" key="GridCell.Tab.1.left/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587776807922" />
+    <state width="1804" height="325" key="GridCell.Tab.1.right" timestamp="1587776807922">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
-    <state width="1804" height="527" key="GridCell.Tab.1.right/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587766734926" />
-    <state width="1804" height="527" key="GridCell.Tab.2.bottom" timestamp="1587766734928">
+    <state width="1804" height="325" key="GridCell.Tab.1.right/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587776807922" />
+    <state width="1804" height="325" key="GridCell.Tab.2.bottom" timestamp="1587776807922">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
-    <state width="1804" height="527" key="GridCell.Tab.2.bottom/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587766734928" />
-    <state width="1804" height="527" key="GridCell.Tab.2.center" timestamp="1587766734927">
+    <state width="1804" height="325" key="GridCell.Tab.2.bottom/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587776807922" />
+    <state width="1804" height="325" key="GridCell.Tab.2.center" timestamp="1587776807922">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
-    <state width="1804" height="527" key="GridCell.Tab.2.center/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587766734927" />
-    <state width="1804" height="527" key="GridCell.Tab.2.left" timestamp="1587766734927">
+    <state width="1804" height="325" key="GridCell.Tab.2.center/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587776807922" />
+    <state width="1804" height="325" key="GridCell.Tab.2.left" timestamp="1587776807922">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
-    <state width="1804" height="527" key="GridCell.Tab.2.left/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587766734927" />
-    <state width="1804" height="527" key="GridCell.Tab.2.right" timestamp="1587766734927">
+    <state width="1804" height="325" key="GridCell.Tab.2.left/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587776807922" />
+    <state width="1804" height="325" key="GridCell.Tab.2.right" timestamp="1587776807922">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
-    <state width="1804" height="527" key="GridCell.Tab.2.right/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587766734927" />
+    <state width="1804" height="325" key="GridCell.Tab.2.right/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587776807922" />
     <state x="2495" y="302" width="819" height="609" key="NewModule_or_Project.wizard" timestamp="1587536683113">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
@@ -286,14 +308,14 @@
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
     <state x="2340" y="222" width="1024" height="852" key="SettingsEditor/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587762683316" />
-    <state x="2510" y="336" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1587767491858">
+    <state x="2510" y="336" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1587775119918">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
-    <state x="2510" y="336" width="800" height="535" key="Vcs.Push.Dialog.v2/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587767491858" />
-    <state x="2097" y="340" width="710" height="520" key="find.popup" timestamp="1587774620214">
+    <state x="2510" y="336" width="800" height="535" key="Vcs.Push.Dialog.v2/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587775119918" />
+    <state x="2097" y="340" width="710" height="520" key="find.popup" timestamp="1587777949552">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
-    <state x="2097" y="340" width="710" height="520" key="find.popup/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587774620214" />
+    <state x="2097" y="340" width="710" height="520" key="find.popup/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587777949552" />
     <state width="600" height="424" key="javadoc.popup" timestamp="1587650057479">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
@@ -302,13 +324,13 @@
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
     <state x="2224" y="290" width="1372" height="627" key="new project wizard/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587536546338" />
-    <state x="2323" y="515" width="350" height="298" key="org.angular.cli.generate" timestamp="1587767139352">
+    <state x="2323" y="515" width="350" height="298" key="org.angular.cli.generate" timestamp="1587776793716">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
-    <state x="2323" y="515" width="350" height="298" key="org.angular.cli.generate/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587767139352" />
-    <state x="2578" y="269" width="672" height="678" key="search.everywhere.popup" timestamp="1587658861327">
+    <state x="2323" y="515" width="350" height="298" key="org.angular.cli.generate/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587776793716" />
+    <state x="2578" y="269" width="672" height="678" key="search.everywhere.popup" timestamp="1587776215525">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
-    <state x="2578" y="269" width="672" height="678" key="search.everywhere.popup/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587658861327" />
+    <state x="2578" y="269" width="672" height="678" key="search.everywhere.popup/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587776215525" />
   </component>
 </project>

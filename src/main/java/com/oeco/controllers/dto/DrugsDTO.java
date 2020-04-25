@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class DrugsDTO implements Serializable {
     public String name;
     public Double times;
-    public Double doses;
+    public String doses;
 
     public String getName() {
         return name;
@@ -23,11 +23,11 @@ public class DrugsDTO implements Serializable {
         this.times = times;
     }
 
-    public Double getDoses() {
+    public String getDoses() {
         return doses;
     }
 
-    public void setDoses(Double doses) {
+    public void setDoses(String doses) {
         this.doses = doses;
     }
 

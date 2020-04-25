@@ -5,8 +5,9 @@ import {ExistingConditions} from "../submit-case/models/existing-conditions";
 import {HttpClient} from "@angular/common/http";
 import {FormControl, FormGroup} from "@angular/forms";
 import {SearchConditions} from "./models/search-conditions";
-import {SubmitCaseService} from "../submit-case/services/submit-case.service";
+import {SubmitCaseService} from "../services/submit-case.service";
 import {Router} from "@angular/router";
+import {CaseModel} from "../submit-case/models/case-model";
 
 @Component({
   selector: 'app-search-case',
@@ -78,6 +79,11 @@ export class SearchCaseComponent implements OnInit {
 
   public search() {
     const searchConditions = new SearchConditions(this.formGroup.controls.age.value, this.existingConditionsList);
-    console.error('searchConditions', searchConditions);
+    this.submitCaseService.searchCase(searchConditions).subscribe(
+      (res: CaseModel[]) => {
+        this.submitCaseService.foundSearchResults = res;
+        this.router.navigateByUrl('/preliminar-model');
+      }
+    );
   }
 }

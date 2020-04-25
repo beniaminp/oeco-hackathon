@@ -1,30 +1,30 @@
 export class CtRadiologyModel {
   // Changes in the lung parenchyma and pleura
-  public hazyIncreasedOpacities: number;
-  public consolidation: number;
-  public crazyPavingPattern: number;
-  public thickenedInterlobularSepta: number;
-  public airBronchogramSign: number;
-  public bronchiectasis: number;
-  public pleuralThickening: number;
-  public pneumothorax: number;
-  public fibrousStripes: number;
+  public hazyIncreasedOpacities: boolean;
+  public consolidation: boolean;
+  public crazyPavingPattern: boolean;
+  public thickenedInterlobularSepta: boolean;
+  public airBronchogramSign: boolean;
+  public bronchiectasis: boolean;
+  public pleuralThickening: boolean;
+  public pneumothorax: boolean;
+  public fibrousStripes: boolean;
 
   //Other Localization: Affected lung lobes
-  public bilateral: number;
-  public multilobar: number;
-  public emphasisOnLowerLobe: number;
-  public emphasisPeriphery: number;
-  public emphasisPosterior: number;
+  public bilateral: boolean;
+  public multilobar: boolean;
+  public emphasisOnLowerLobe: boolean;
+  public emphasisPeriphery: boolean;
+  public emphasisPosterior: boolean;
 
   // Further findings
-  public pleuralEffusion: number;
-  public pericardialEffusion: number;
-  public lymphadenopathy: number;
-  public vascularThickening: number;
+  public pleuralEffusion: boolean;
+  public pericardialEffusion: boolean;
+  public lymphadenopathy: boolean;
+  public vascularThickening: boolean;
 
 
-  constructor(hazyIncreasedOpacities: number, consolidation: number, crazyPavingPattern: number, thickenedInterlobularSepta: number, airBronchogramSign: number, bronchiectasis: number, pleuralThickening: number, pneumothorax: number, fibrousStripes: number, bilateral: number, multilobar: number, emphasisOnLowerLobe: number, emphasisPeriphery: number, emphasisPosterior: number, pleuralEffusion: number, pericardialEffusion: number, lymphadenopathy: number, vascularThickening: number) {
+  constructor(hazyIncreasedOpacities: boolean, consolidation: boolean, crazyPavingPattern: boolean, thickenedInterlobularSepta: boolean, airBronchogramSign: boolean, bronchiectasis: boolean, pleuralThickening: boolean, pneumothorax: boolean, fibrousStripes: boolean, bilateral: boolean, multilobar: boolean, emphasisOnLowerLobe: boolean, emphasisPeriphery: boolean, emphasisPosterior: boolean, pleuralEffusion: boolean, pericardialEffusion: boolean, lymphadenopathy: boolean, vascularThickening: boolean) {
     this.hazyIncreasedOpacities = hazyIncreasedOpacities;
     this.consolidation = consolidation;
     this.crazyPavingPattern = crazyPavingPattern;

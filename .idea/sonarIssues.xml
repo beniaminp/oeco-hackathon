@@ -88,12 +88,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/oeco-frontend/src/app/search-case/preliminari-view/preliminari-view.component.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/oeco-frontend/src/app/search-case/preliminari-view/preliminari-view.component.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/oeco-frontend/src/app/search-case/search-case.component.html">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/oeco-frontend/src/app/search-case/search-case.component.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/oeco-frontend/src/app/services/submit-case.service.ts">
           <value>
             <set />
           </value>

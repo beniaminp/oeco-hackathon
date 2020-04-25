@@ -1,13 +1,15 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {CaseModel} from "../models/case-model";
-import {SearchConditions} from "../../search-case/models/search-conditions";
+import {CaseModel} from "../submit-case/models/case-model";
+import {SearchConditions} from "../search-case/models/search-conditions";
 
 @Injectable({
   providedIn: 'root'
 })
 export class SubmitCaseService {
   private rootUrl = 'http://localhost:9090/v1/api/case-controller/';
+
+  public foundSearchResults;
 
   constructor(public httpClient: HttpClient) {
   }

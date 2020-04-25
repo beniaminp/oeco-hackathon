@@ -22,6 +22,7 @@ import {ProgressionDetailsComponent} from './submit-case/progression-details/pro
 import {NgMultiSelectDropDownModule} from "ng-multiselect-dropdown";
 import {CommonModule} from "@angular/common";
 import { SearchCaseComponent } from './search-case/search-case.component';
+import { PreliminariViewComponent } from './search-case/preliminari-view/preliminari-view.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SearchCaseComponent } from './search-case/search-case.component';
     SubmitCaseComponent,
     HomeComponent,
     ProgressionDetailsComponent,
-    SearchCaseComponent
+    SearchCaseComponent,
+    PreliminariViewComponent
   ],
   imports: [
     BrowserModule,
