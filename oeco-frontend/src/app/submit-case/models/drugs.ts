@@ -1,11 +1,11 @@
 export class Drugs {
   public name: string;
+  public doses: string;
   public times: number;
-  public doses: number;
 
-  constructor(name: string, times: number, doses: number) {
+  constructor(name: string, doses: string, times: number) {
     this.name = name;
-    this.times = times;
     this.doses = doses;
+    this.times = times;
   }
 }

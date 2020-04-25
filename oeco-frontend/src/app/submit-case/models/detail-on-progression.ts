@@ -1,48 +1,23 @@
 import {Drugs} from "./drugs";
 import {BloodData} from "./blood-data";
-import {FormControl} from "@angular/forms";
 import {CtRadiologyModel} from "./ct-radiology-model";
+import {TherapySupport} from "./therapy-support";
+import {SymptomsModel} from "./symptoms-model";
 
 export class DetailOnProgression {
   date: number;
   drugs: Drugs[];
-  conditions: string;
+  conditions: string[];
   symptoms: string;
   bloodData: BloodData;
   radCT: CtRadiologyModel;
   radMRI: string;
   radCXR: string;
   durationOfTherapy: number;
-  oxygenAdded: boolean;
-  oxygenRemoved: boolean;
-  mechanicalVentilationIntubation: boolean;
-  mechanicalVentilationExtubation: boolean;
-  ecmo: boolean;
-  dialysisYes: boolean;
-  dialysisNo: boolean;
-  dialysisPreexisting: boolean;
-  noSymptoms: boolean;
-  temperature: boolean;
-  soreThroat: boolean;
-  dryCough: boolean;
-  fatigue: boolean;
-  nasalCongestion: boolean;
-  lossOfSmell: boolean;
-  lossOfTaste: boolean;
-  fever: boolean;
-  sputumProduction: boolean;
-  shortnessOfBreath: boolean;
-  myalgia: boolean;
-  headaches: boolean;
-  chills: boolean;
-  pleauriticPain: boolean;
-  diarrhea: boolean;
-  dyspnoea: boolean;
-  severeRespiratoryInsufficiency: boolean;
-  dermatologicLesion: boolean;
+  therapySupport: TherapySupport;
+  synptoms: SymptomsModel;
 
-
-  constructor(date: number, drugs: Drugs[], conditions: string, symptoms: string, bloodData: BloodData, radCT: CtRadiologyModel, radMRI: string, radCXR: string, durationOfTherapy: number, oxygenAdded: boolean, oxygenRemoved: boolean, mechanicalVentilationIntubation: boolean, mechanicalVentilationExtubation: boolean, ecmo: boolean, dialysisYes: boolean, dialysisNo: boolean, dialysisPreexisting: boolean, noSymptoms: boolean, temperature: boolean, soreThroat: boolean, dryCough: boolean, fatigue: boolean, nasalCongestion: boolean, lossOfSmell: boolean, lossOfTaste: boolean, fever: boolean, sputumProduction: boolean, shortnessOfBreath: boolean, myalgia: boolean, headaches: boolean, chills: boolean, pleauriticPain: boolean, diarrhea: boolean, dyspnoea: boolean, severeRespiratoryInsufficiency: boolean, dermatologicLesion: boolean) {
+  constructor(date: number, drugs: Drugs[], conditions: string[], symptoms: string, bloodData: BloodData, radCT: CtRadiologyModel, radMRI: string, radCXR: string, durationOfTherapy: number, therapySupport: TherapySupport, synptoms: SymptomsModel) {
     this.date = date;
     this.drugs = drugs;
     this.conditions = conditions;
@@ -52,32 +27,7 @@ export class DetailOnProgression {
     this.radMRI = radMRI;
     this.radCXR = radCXR;
     this.durationOfTherapy = durationOfTherapy;
-    this.oxygenAdded = oxygenAdded;
-    this.oxygenRemoved = oxygenRemoved;
-    this.mechanicalVentilationIntubation = mechanicalVentilationIntubation;
-    this.mechanicalVentilationExtubation = mechanicalVentilationExtubation;
-    this.ecmo = ecmo;
-    this.dialysisYes = dialysisYes;
-    this.dialysisNo = dialysisNo;
-    this.dialysisPreexisting = dialysisPreexisting;
-    this.noSymptoms = noSymptoms;
-    this.temperature = temperature;
-    this.soreThroat = soreThroat;
-    this.dryCough = dryCough;
-    this.fatigue = fatigue;
-    this.nasalCongestion = nasalCongestion;
-    this.lossOfSmell = lossOfSmell;
-    this.lossOfTaste = lossOfTaste;
-    this.fever = fever;
-    this.sputumProduction = sputumProduction;
-    this.shortnessOfBreath = shortnessOfBreath;
-    this.myalgia = myalgia;
-    this.headaches = headaches;
-    this.chills = chills;
-    this.pleauriticPain = pleauriticPain;
-    this.diarrhea = diarrhea;
-    this.dyspnoea = dyspnoea;
-    this.severeRespiratoryInsufficiency = severeRespiratoryInsufficiency;
-    this.dermatologicLesion = dermatologicLesion;
+    this.therapySupport = therapySupport;
+    this.synptoms = synptoms;
   }
 }

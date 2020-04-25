@@ -18,6 +18,23 @@
 
       <div class="row">
         <div class="col-sm-12">
+          <div class="form-group row">
+            <div class="col-sm-2">Consent</div>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="hasPatientConsent"
+                       formControlName="hasPatientConsent">
+                <label class="form-check-label" for="hasPatientConsent">
+                  I have obtained the patient's consent
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
           <div class="form-group">
             <label for="yearOfBirth">Year of Birth</label>
             <input type="number" min="1900" class="form-control" id="yearOfBirth" formControlName="yearOfBirth">
@@ -186,6 +203,19 @@
 
       <div class="row">
         <div class="col-sm-12">
+          <label>Existing therapy</label>
+          <app-therapy-drugs formControlName="existingTherapyDrugs"></app-therapy-drugs>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <app-symptoms formControlName="existingSymptoms"></app-symptoms>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
           <label>Date of hospital admission</label>
           <div class="form-group">
             <div class="input-group">
@@ -230,7 +260,7 @@
             <label class="custom-control-label" for="outcomeDischared">Dischared</label>
           </div>
           <div class="custom-control custom-radio custom-control-inline">
-            <input type="radio" value="0" id="outcomeDied" name="outcomeType" class="custom-control-input"
+            <input type="radio" value="1" id="outcomeDied" name="outcomeType" class="custom-control-input"
                    formControlName="outcomeType">
             <label class="custom-control-label" for="outcomeDied">Died</label>
           </div>

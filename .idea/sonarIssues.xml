@@ -148,6 +148,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/models/symptoms-model.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/models/therapy-support.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/progression-details/progression-details.component.html">
           <value>
             <set />
@@ -169,6 +179,36 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/submit-case.component.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/symptoms/symptoms.component.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/symptoms/symptoms.component.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/therapy-drugs/therapy-drugs.component.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/therapy-drugs/therapy-drugs.component.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/therapy-support/therapy-support.component.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/therapy-support/therapy-support.component.ts">
           <value>
             <set />
           </value>
@@ -254,6 +294,21 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/ExistingConditionsDTO.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/SymptomsDTO.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/SymptomsSTO.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/TherapySupportDTO.java">
           <value>
             <set />
           </value>

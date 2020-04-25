@@ -24,6 +24,9 @@ public class CaseModelDTO implements Serializable {
     public List<DetailOnProgressionDTO> detailsOnProgression;
     public String additionalComments;
     public String unusualCase;
+    public Boolean hasPatientConsent;
+    public List<DrugsDTO> existingTherapyDrugs;
+    public SymptomsDTO existingSymptoms;
 
     public String getPatientCode() {
         return patientCode;
@@ -161,6 +164,30 @@ public class CaseModelDTO implements Serializable {
         this.unusualCase = unusualCase;
     }
 
+    public Boolean getHasPatientConsent() {
+        return hasPatientConsent;
+    }
+
+    public void setHasPatientConsent(Boolean hasPatientConsent) {
+        this.hasPatientConsent = hasPatientConsent;
+    }
+
+    public List<DrugsDTO> getExistingTherapyDrugs() {
+        return existingTherapyDrugs;
+    }
+
+    public void setExistingTherapyDrugs(List<DrugsDTO> existingTherapyDrugs) {
+        this.existingTherapyDrugs = existingTherapyDrugs;
+    }
+
+    public SymptomsDTO getExistingSymptoms() {
+        return existingSymptoms;
+    }
+
+    public void setExistingSymptoms(SymptomsDTO existingSymptoms) {
+        this.existingSymptoms = existingSymptoms;
+    }
+
     @Override
     public String toString() {
         return "CaseModelDTO{" +
@@ -181,6 +208,9 @@ public class CaseModelDTO implements Serializable {
                 ", detailsOnProgression=" + detailsOnProgression +
                 ", additionalComments='" + additionalComments + '\'' +
                 ", unusualCase='" + unusualCase + '\'' +
+                ", hasPatientConsent=" + hasPatientConsent +
+                ", existingTherapyDrugs=" + existingTherapyDrugs +
+                ", existingSymptoms=" + existingSymptoms +
                 '}';
     }
 }

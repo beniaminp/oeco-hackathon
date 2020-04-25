@@ -29,98 +29,9 @@
             <h5 class="card-title">Therapy</h5>
             <div class="row">
               <div class="col-sm-12 w-100">
-                <label>Drugs</label>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item" *ngFor="let drug of drugs;let idx = index">
-                    <span class="w-80">{{drug.name}} - {{drug.times}} - {{drug.doses}}</span>
-                    <button class="w-20" (click)="deleteDrug(idx)">
-                      <i class="fas fa-trash-alt"></i>
-                    </button>
-                  </li>
-                  <li class="list-group-item">
-                    <div class="form">
-                      <div class="form-group mx-sm-3 mb-2">
-                        <label>Name</label>
-                        <select class="form-control" formControlName="nameDrugs" (change)="drugNameChanged($event)">
-                          <option *ngFor="let drugName of ukDrugs;let idx = index" [value]="idx">{{drugName}}</option>
-                        </select>
-
-                      </div>
-                      <div class="form-group mx-sm-3 mb-2">
-                        <label>Doses</label>
-                        <select class="form-control" formControlName="dosesDrugs">
-                          <option *ngFor="let dosesName of drugDoses" [value]="dosesName">{{dosesName}}</option>
-                        </select>
-                      </div>
-                      <div class="form-group mx-sm-3 mb-2">
-                        <label for="timeDrugs">Times</label>
-                        <input type="number" class="form-control" id="timeDrugs" formControlName="timeDrugs">
-                      </div>
-                      <div class="form-group mx-sm-3 mb-2">
-                        <label for="durationOfTherapy">Duration of therapy (days)</label>
-                        <input type="number" class="form-control" id="durationOfTherapy"
-                               formControlName="durationOfTherapy">
-                      </div>
-                      <button type="button" class="btn btn-outline-primary btn-sm" (click)="addDrug()">
-                        Add Drug
-                      </button>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="oxygenAdded"
-                               formControlName="oxygenAdded">
-                        <label class="form-check-label" for="oxygenAdded">
-                          Oxigen support - added
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="oxygenRemoved"
-                               formControlName="oxygenRemoved">
-                        <label class="form-check-label" for="oxygenRemoved">
-                          Oxigen support - removed
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="mechanicalVentilationIntubation"
-                               formControlName="mechanicalVentilationIntubation">
-                        <label class="form-check-label" for="mechanicalVentilationIntubation">
-                          Mechanical ventilation intubation
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="mechanicalVentilationExtubation"
-                               formControlName="mechanicalVentilationExtubation">
-                        <label class="form-check-label" for="mechanicalVentilationExtubation">
-                          Mechanical ventilation extubation
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="ecmo" formControlName="ecmo">
-                        <label class="form-check-label" for="ecmo">
-                          ECMO
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="dialysisYes"
-                               formControlName="dialysisYes">
-                        <label class="form-check-label" for="dialysisYes">
-                          Dialysis - Yes
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="dialysisNo"
-                               formControlName="dialysisNo">
-                        <label class="form-check-label" for="dialysisNo">
-                          Dialysis - No
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="dialysisPreexisting"
-                               formControlName="dialysisPreexisting">
-                        <label class="form-check-label" for="dialysisPreexisting">
-                          Dialysis - pre-existing requirement
-                        </label>
-                      </div>
-                    </div>
-                  </li>
+                  <app-therapy-drugs formControlName="drugsList"></app-therapy-drugs>
+                  <app-therapy-support formControlName="therapySupport"></app-therapy-support>
                 </ul>
               </div>
             </div>
@@ -131,166 +42,44 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="form-group">
-          <label for="conditions">Conditions (separated by comma)</label>
-          <input type="text" class="form-control" id="conditions" formControlName="conditions">
+          <label for="existingConditions">Conditions</label>
+          <input id="existingConditions" type="text" class="form-control" formControlName="conditions"
+                 [ngbTypeahead]="filteredicd10Conditions" [resultTemplate]="ic10Template"
+                 [inputFormatter]="formatterConditions" [(ngModel)]="existingConditionsModel"/>
+
+          <button type="button" class="btn btn-outline-primary btn-sm" (click)="existingConditionsClicked()">
+            Add
+          </button>
+          <ng-template #ic10Template let-r="result" let-t="term">
+            <p>{{r.icCode}} - {{r.name}}</p>
+          </ng-template>
+
+          <table class="table table-sm">
+            <thead>
+            <tr>
+              <th scope="col">IC Code</th>
+              <th scope="col">Name</th>
+              <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let element of existingConditionsList;let idx = index">
+              <td>{{element.icCode}}</td>
+              <td>{{element.name}}</td>
+              <td>
+                <button class="w-20" (click)="deleteConditionsClicked(idx)">
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-12">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Symptoms</h5>
-            <div class="row">
-              <div class="col-sm-12 w-100">
-                <label>Symptoms</label>
-              </div>
-            </div>
-            <div class="row pl-5 pr-5">
-              <div class="col-3">
-                <input class="form-check-input" type="checkbox" value="" id="noSymptoms"
-                       formControlName="noSymptoms">
-                <label class="form-check-label" for="noSymptoms">
-                  No symptoms
-                </label>
-              </div>
-              <div class="col-3">
-                <input class="form-check-input" type="checkbox" value="" id="temperature"
-                       formControlName="temperature">
-                <label class="form-check-label" for="temperature">
-                  Temperature
-                </label>
-              </div>
-              <div class="col-3">
-                <input class="form-check-input" type="checkbox" value="" id="soreThroat"
-                       formControlName="soreThroat">
-                <label class="form-check-label" for="soreThroat">
-                  Sore throat
-                </label>
-              </div>
-              <div class="col-3">
-                <input class="form-check-input" type="checkbox" value="" id="dryCough"
-                       formControlName="dryCough">
-                <label class="form-check-label" for="dryCough">
-                  Dry cough
-                </label>
-              </div>
-            </div>
-            <div class="row pl-5 pr-5">
-              <div class="col-3">
-                <input class="form-check-input" type="checkbox" value="" id="fatigue"
-                       formControlName="fatigue">
-                <label class="form-check-label" for="fatigue">
-                  Fatigue
-                </label>
-              </div>
-              <div class="col-3">
-                <input class="form-check-input" type="checkbox" value="" id="nasalCongestion"
-                       formControlName="fatigue">
-                <label class="form-check-label" for="nasalCongestion">
-                  Nasal congestion
-                </label>
-              </div>
-              <div class="col-3">
-                <input class="form-check-input" type="checkbox" value="" id="lossOfSmell"
-                       formControlName="lossOfSmell">
-                <label class="form-check-label" for="lossOfSmell">
-                  Loss of smell
-                </label>
-              </div>
-              <div class="col-3">
-                <input class="form-check-input" type="checkbox" value="" id="lossOfTaste"
-                       formControlName="lossOfTaste">
-                <label class="form-check-label" for="lossOfTaste">
-                  Loss of taste
-                </label>
-              </div>
-            </div>
-            <div class="row pl-5 pr-5">
-              <div class="col-3">
-                <input class="form-check-input" type="checkbox" value="" id="fever"
-                       formControlName="fever">
-                <label class="form-check-label" for="fever">
-                  Fever
-                </label>
-              </div>
-              <div class="col-3">
-                <input class="form-check-input" type="checkbox" value="" id="sputumProduction"
-                       formControlName="sputumProduction">
-                <label class="form-check-label" for="sputumProduction">
-                  Sputum production
-                </label>
-              </div>
-              <div class="col-3">
-                <input class="form-check-input" type="checkbox" value="" id="shortnessOfBreath"
-                       formControlName="shortnessOfBreath">
-                <label class="form-check-label" for="shortnessOfBreath">
-                  Shortness of breath
-                </label>
-              </div>
-              <div class="col-3">
-                <input class="form-check-input" type="checkbox" value="" id="myalgia"
-                       formControlName="myalgia">
-                <label class="form-check-label" for="myalgia">
-                  Myalgia / arthralgia
-                </label>
-              </div>
-            </div>
-            <div class="row pl-5 pr-5">
-              <div class="col-3">
-                <input class="form-check-input" type="checkbox" value="" id="headaches"
-                       formControlName="headaches">
-                <label class="form-check-label" for="headaches">
-                  Headaches
-                </label>
-              </div>
-              <div class="col-3">
-                <input class="form-check-input" type="checkbox" value="" id="chills"
-                       formControlName="chills">
-                <label class="form-check-label" for="chills">
-                  Chills
-                </label>
-              </div>
-              <div class="col-3">
-                <input class="form-check-input" type="checkbox" value="" id="pleauriticPain"
-                       formControlName="pleauriticPain">
-                <label class="form-check-label" for="pleauriticPain">
-                  Pleauritic pain
-                </label>
-              </div>
-              <div class="col-3">
-                <input class="form-check-input" type="checkbox" value="" id="diarrhea"
-                       formControlName="diarrhea">
-                <label class="form-check-label" for="diarrhea">
-                  Diarrhea
-                </label>
-              </div>
-            </div>
-            <div class="row pl-5 pr-5">
-              <div class="col-3">
-                <input class="form-check-input" type="checkbox" value="" id="dyspnoea"
-                       formControlName="dyspnoea">
-                <label class="form-check-label" for="dyspnoea">
-                  Dyspnoea
-                </label>
-              </div>
-              <div class="col-3">
-                <input class="form-check-input" type="checkbox" value="" id="severeRespiratoryInsufficiency"
-                       formControlName="severeRespiratoryInsufficiency">
-                <label class="form-check-label" for="severeRespiratoryInsufficiency">
-                  Severe respiratory insufficiency
-                </label>
-              </div>
-              <div class="col-3">
-                <input class="form-check-input" type="checkbox" value="" id="dermatologicLesion"
-                       formControlName="dermatologicLesion">
-                <label class="form-check-label" for="dermatologicLesion">
-                  Dermatologic lesion/rash
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
+        <app-symptoms formControlName="symptoms"></app-symptoms>
       </div>
     </div>
     <div class="row">

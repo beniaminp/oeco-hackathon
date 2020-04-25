@@ -3,13 +3,14 @@ import {HttpClient} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
 import {FormControl, FormGroup} from '@angular/forms';
 import {catchError, debounceTime, distinctUntilChanged, map, switchMap, tap} from 'rxjs/operators';
-import {ExistingConditions} from "./models/existing-conditions";
-import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {ProgressionDetailsComponent} from "./progression-details/progression-details.component";
-import {DetailOnProgression} from "./models/detail-on-progression";
-import {CaseModel} from "./models/case-model";
-import {SubmitCaseService} from "../services/submit-case.service";
-import {Router} from "@angular/router";
+import {ExistingConditions} from './models/existing-conditions';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {ProgressionDetailsComponent} from './progression-details/progression-details.component';
+import {DetailOnProgression} from './models/detail-on-progression';
+import {CaseModel} from './models/case-model';
+import {SubmitCaseService} from '../services/submit-case.service';
+import {Router} from '@angular/router';
+import {SymptomsModel} from "./models/symptoms-model";
 
 @Component({
   selector: 'app-submit-case',
@@ -21,6 +22,7 @@ export class SubmitCaseComponent implements OnInit {
   public countryList: any[] = [];
 
   public icd10ConditionsUrl = 'https://clinicaltables.nlm.nih.gov/api/conditions/v3/search';
+  public icd10ConditionsUrl1 = 'https://clinicaltables.nlm.nih.gov/api/icd10cm/v3/search';
   public existingConditionsList: ExistingConditions[] = [];
   existingConditionsModel: ExistingConditions;
 
@@ -46,7 +48,10 @@ export class SubmitCaseComponent implements OnInit {
     sex: new FormControl(''),
     outcomeType: new FormControl(''),
     additionalComments: new FormControl(''),
-    unusualCase: new FormControl('')
+    unusualCase: new FormControl(''),
+    hasPatientConsent: new FormControl(''),
+    existingTherapyDrugs: new FormControl([]),
+    existingSymptoms: new FormControl(new SymptomsModel())
   });
 
   public formatter = (x: { name: string }) => x.name;
@@ -54,7 +59,7 @@ export class SubmitCaseComponent implements OnInit {
   public filterCountries = (text$: Observable<string>) =>
     text$.pipe(
       debounceTime(200),
-      map(term => term === '' ? [] : this.countryList.filter(v => v.name.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10)));
+      map(term => term === '' ? [] : this.countryList.filter(v => v.name.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10)))
 
   public filteredicd10Conditions = (text$: Observable<string>) =>
     text$.pipe(
@@ -72,7 +77,8 @@ export class SubmitCaseComponent implements OnInit {
     );
 
   public conditionsObs = (term) => {
-    return this.httpClient.get(this.icd10ConditionsUrl + '?terms=' + (term != null ? term.toLowerCase() : '') + '&df=term_icd9_code,primary_name').pipe(
+    return this.httpClient.get(/*this.icd10ConditionsUrl + '?terms=' + (term != null ? term.toLowerCase() : '') + '&df=term_icd9_code,primary_name'*/
+      this.icd10ConditionsUrl1 + '?sf=code,name&terms=' + (term != null ? term.toLowerCase() : '')).pipe(
       map(
         tmpResult => {
           const retResult: ExistingConditions[] = [];
@@ -166,7 +172,11 @@ export class SubmitCaseComponent implements OnInit {
       this.detailsOnProgressionList,
       this.formGroup.controls.additionalComments.value,
       this.formGroup.controls.unusualCase.value,
+      this.formGroup.controls.hasPatientConsent.value,
+      this.formGroup.controls.existingTherapyDrugs.value,
+      this.formGroup.controls.existingSymptoms.value,
     );
+    console.error('caseModel', caseModel);
     this.submitCaseService.submitCase(caseModel).subscribe(
       (res) => {
         console.error(res);

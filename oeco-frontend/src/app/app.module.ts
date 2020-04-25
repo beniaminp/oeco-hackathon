@@ -23,6 +23,9 @@ import {NgMultiSelectDropDownModule} from "ng-multiselect-dropdown";
 import {CommonModule} from "@angular/common";
 import { SearchCaseComponent } from './search-case/search-case.component';
 import { PreliminariViewComponent } from './search-case/preliminari-view/preliminari-view.component';
+import { TherapyDrugsComponent } from './submit-case/therapy-drugs/therapy-drugs.component';
+import { TherapySupportComponent } from './submit-case/therapy-support/therapy-support.component';
+import { SymptomsComponent } from './submit-case/symptoms/symptoms.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { PreliminariViewComponent } from './search-case/preliminari-view/prelimi
     HomeComponent,
     ProgressionDetailsComponent,
     SearchCaseComponent,
-    PreliminariViewComponent
+    PreliminariViewComponent,
+    TherapyDrugsComponent,
+    TherapySupportComponent,
+    SymptomsComponent
   ],
   imports: [
     BrowserModule,
