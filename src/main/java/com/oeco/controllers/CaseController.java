@@ -1,6 +1,7 @@
 package com.oeco.controllers;
 
 import com.oeco.controllers.dto.CaseModelDTO;
+import com.oeco.controllers.dto.search.SearchConditionsDTO;
 import com.oeco.controllers.repository.CaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,11 +17,13 @@ public class CaseController {
 
     @PostMapping("submitCase")
     public boolean submitCase(@RequestBody CaseModelDTO caseModelDTO) {
-        System.err.println(caseModelDTO);
         caseRepository.save(caseModelDTO);
-
-        caseRepository.findAll();
         return true;
+    }
+
+    @PostMapping("search-case")
+    public void searchCase(@RequestBody SearchConditionsDTO searchConditionsDTO) {
+        System.err.println(searchConditionsDTO);
     }
 
 }

@@ -6,6 +6,7 @@ public class BloodDataDTO implements Serializable {
     public String glucose;
     public String pressureSystolic;
     public String pressureDiastolic;
+    public Long glucoseUnit;
 
     public String getGlucose() {
         return glucose;
@@ -31,12 +32,21 @@ public class BloodDataDTO implements Serializable {
         this.pressureDiastolic = pressureDiastolic;
     }
 
+    public Long getGlucoseUnit() {
+        return glucoseUnit;
+    }
+
+    public void setGlucoseUnit(Long glucoseUnit) {
+        this.glucoseUnit = glucoseUnit;
+    }
+
     @Override
     public String toString() {
         return "BloodDataDTO{" +
                 "glucose='" + glucose + '\'' +
                 ", pressureSystolic='" + pressureSystolic + '\'' +
                 ", pressureDiastolic='" + pressureDiastolic + '\'' +
+                ", glucoseUnit=" + glucoseUnit +
                 '}';
     }
 }

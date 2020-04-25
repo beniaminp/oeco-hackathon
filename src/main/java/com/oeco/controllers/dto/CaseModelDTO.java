@@ -22,6 +22,8 @@ public class CaseModelDTO implements Serializable {
     public Double outcomeDate;
     public Double outcomeType;
     public List<DetailOnProgressionDTO> detailsOnProgression;
+    public String additionalComments;
+    public String unusualCase;
 
     public String getPatientCode() {
         return patientCode;
@@ -143,6 +145,22 @@ public class CaseModelDTO implements Serializable {
         this.detailsOnProgression = detailsOnProgression;
     }
 
+    public String getAdditionalComments() {
+        return additionalComments;
+    }
+
+    public void setAdditionalComments(String additionalComments) {
+        this.additionalComments = additionalComments;
+    }
+
+    public String getUnusualCase() {
+        return unusualCase;
+    }
+
+    public void setUnusualCase(String unusualCase) {
+        this.unusualCase = unusualCase;
+    }
+
     @Override
     public String toString() {
         return "CaseModelDTO{" +
@@ -161,6 +179,8 @@ public class CaseModelDTO implements Serializable {
                 ", outcomeDate=" + outcomeDate +
                 ", outcomeType=" + outcomeType +
                 ", detailsOnProgression=" + detailsOnProgression +
+                ", additionalComments='" + additionalComments + '\'' +
+                ", unusualCase='" + unusualCase + '\'' +
                 '}';
     }
 }

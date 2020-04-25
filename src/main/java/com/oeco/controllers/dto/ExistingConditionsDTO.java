@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class ExistingConditionsDTO implements Serializable {
     public String icCode;
     public String name;
-    public Boolean stillActive;
+    public Long stillActive;
 
     public String getIcCode() {
         return icCode;
@@ -23,11 +23,11 @@ public class ExistingConditionsDTO implements Serializable {
         this.name = name;
     }
 
-    public Boolean getStillActive() {
+    public Long getStillActive() {
         return stillActive;
     }
 
-    public void setStillActive(Boolean stillActive) {
+    public void setStillActive(Long stillActive) {
         this.stillActive = stillActive;
     }
 

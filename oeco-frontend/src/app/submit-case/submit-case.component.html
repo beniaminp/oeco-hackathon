@@ -69,14 +69,18 @@
           </div>
           <div class="form-group">
             <label for="firstTestType">First Test Type</label>
-            <input type="text" class="form-control" id="firstTestType" formControlName="firstTestType">
+            <select class="form-control" id="firstTestType" formControlName="firstTestType">
+              <option value="0">PCR</option>
+              <option value="1">Serology</option>
+              <option value="2">Clinical picture</option>
+            </select>
           </div>
         </div>
       </div>
 
       <div class="row">
         <div class="col-sm-12 w-100">
-          <label>Previous COVID infections</label>
+          <label>Previous COVID infections (first negative test date)</label>
           <ul class="list-group list-group-flush">
             <li class="list-group-item" *ngFor="let prevInfection of previousInfections;let idx = index">
               <span class="w-80">{{prevInfection | date}}</span>
@@ -118,7 +122,11 @@
           </div>
           <div class="form-group">
             <label for="lastTestType">Last Test Type</label>
-            <input type="text" class="form-control" id="lastTestType" formControlName="lastTestType">
+            <select class="form-control" id="lastTestType" formControlName="lastTestType">
+              <option value="0">PCR</option>
+              <option value="1">Serology</option>
+              <option value="2">Clinical picture</option>
+            </select>
           </div>
         </div>
       </div>
@@ -158,8 +166,11 @@
                 <td>{{element.icCode}}</td>
                 <td>{{element.name}}</td>
                 <td>
-                  <input class="form-check-input" type="checkbox" value=""
-                         (click)="stillActiveClicked(element)"/>
+                  <select class="form-control" (change)="stillActiveClicked(element,$event)">
+                    <option value="0">yes</option>
+                    <option value="1">No</option>
+                    <option value="2">Unknown</option>
+                  </select>
                 </td>
                 <td>
                   <button class="w-20" (click)="deleteConditionsClicked(idx)">
@@ -256,7 +267,26 @@
           </ul>
         </div>
       </div>
+
       <div class="row">
+        <div class="col-sm-12">
+          <label>Additional comments</label>
+        </div>
+        <div class="col-sm-12">
+          <textarea formControlName="additionalComments" cols="50" rows="5"></textarea>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <label>Was this case unusual? Why?</label>
+        </div>
+        <div class="col-sm-12">
+          <textarea formControlName="unusualCase" cols="50" rows="5"></textarea>
+        </div>
+      </div>
+
+      <div class="row pt-5 pb-5">
         <div class="col-sm-12">
           <button type="submit" class="btn btn-primary" (click)="submitCase()">Submit Case</button>
         </div>

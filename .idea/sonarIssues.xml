@@ -83,12 +83,32 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/oeco-frontend/src/app/search-case/models/search-conditions.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/oeco-frontend/src/app/search-case/search-case.component.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/oeco-frontend/src/app/search-case/search-case.component.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/models/blood-data.ts">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/models/case-model.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/models/ct-radiology-model.ts">
           <value>
             <set />
           </value>
@@ -138,12 +158,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/oeco-frontend/src/assets/data/drugs_uk.json">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/oeco-frontend/src/index.html">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/oeco-frontend/src/styles.css">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/oeco-frontend/tsconfig.app.json">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/oeco-frontend/tsconfig.json">
           <value>
             <set />
           </value>
@@ -188,6 +223,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/CtRadiologyModelDTO.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/DetailOnProgressionDTO.java">
           <value>
             <set />
@@ -199,6 +239,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/ExistingConditionsDTO.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/search/SearchConditionsDTO.java">
           <value>
             <set />
           </value>

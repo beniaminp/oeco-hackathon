@@ -17,8 +17,11 @@ export class CaseModel {
   outcomeDate: number;
   outcomeType: number;
   detailsOnProgression: DetailOnProgression[];
+  additionalComments: string;
+  unusualCase: string;
 
-  constructor(patientCode: string, yearOfBirth: number, sex: number, state: string, firstPositiveDate: number, firstTestType: string, previousInfections: number[], lastCovidPositiveTest: number, lastTestType: string, existingConditions: ExistingConditions[], hospitalAdmission: number, hospitalRelease: number, outcomeDate: number, outcomeType: number, detailsOnProgression: DetailOnProgression[]) {
+
+  constructor(patientCode: string, yearOfBirth: number, sex: number, state: string, firstPositiveDate: number, firstTestType: string, previousInfections: number[], lastCovidPositiveTest: number, lastTestType: string, existingConditions: ExistingConditions[], hospitalAdmission: number, hospitalRelease: number, outcomeDate: number, outcomeType: number, detailsOnProgression: DetailOnProgression[], additionalComments: string, unusualCase: string) {
     this.patientCode = patientCode;
     this.yearOfBirth = yearOfBirth;
     this.sex = sex;
@@ -34,5 +37,7 @@ export class CaseModel {
     this.outcomeDate = outcomeDate;
     this.outcomeType = outcomeType;
     this.detailsOnProgression = detailsOnProgression;
+    this.additionalComments = additionalComments;
+    this.unusualCase = unusualCase;
   }
 }

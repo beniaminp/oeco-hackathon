@@ -44,7 +44,9 @@ export class SubmitCaseComponent implements OnInit {
     hospitalRelease: new FormControl(''),
     outcomeDate: new FormControl(''),
     sex: new FormControl(''),
-    outcomeType: new FormControl('')
+    outcomeType: new FormControl(''),
+    additionalComments: new FormControl(''),
+    unusualCase: new FormControl('')
   });
 
   public formatter = (x: { name: string }) => x.name;
@@ -75,7 +77,7 @@ export class SubmitCaseComponent implements OnInit {
         tmpResult => {
           const retResult: ExistingConditions[] = [];
           for (const tmpResultElementKey of tmpResult[3]) {
-            retResult.push(new ExistingConditions(tmpResultElementKey[0], tmpResultElementKey[1], false));
+            retResult.push(new ExistingConditions(tmpResultElementKey[0], tmpResultElementKey[1], 0));
           }
           return retResult;
         }
@@ -120,8 +122,8 @@ export class SubmitCaseComponent implements OnInit {
     this.existingConditionsList.splice(index, 1);
   }
 
-  public stillActiveClicked(element: ExistingConditions) {
-    this.existingConditionsList[this.existingConditionsList.indexOf(element)].stillActive = !element.stillActive;
+  public stillActiveClicked(element: ExistingConditions, event) {
+    this.existingConditionsList[this.existingConditionsList.indexOf(element)].stillActive = event.target.value;
   }
 
   public openProgressionDetailsComponent() {
@@ -161,7 +163,9 @@ export class SubmitCaseComponent implements OnInit {
       new Date(this.formGroup.controls.hospitalRelease.value.year, this.formGroup.controls.hospitalRelease.value.month, this.formGroup.controls.hospitalRelease.value.day).getTime(),
       new Date(this.formGroup.controls.outcomeDate.value.year, this.formGroup.controls.outcomeDate.value.month, this.formGroup.controls.outcomeDate.value.day).getTime(),
       this.formGroup.controls.outcomeType.value,
-      this.detailsOnProgressionList
+      this.detailsOnProgressionList,
+      this.formGroup.controls.additionalComments.value,
+      this.formGroup.controls.unusualCase.value,
     );
     this.submitCaseService.submitCase(caseModel).subscribe(
       (res) => {
