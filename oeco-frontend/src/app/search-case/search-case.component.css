@@ -1,0 +1,52 @@
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+label{
+  font-size: 13pt;
+}
+label.existingconditions{
+  display:inline-block;
+  width:300px;
+}
+button.addbutt{
+  display: inline-block;
+}
+#existingConditions{
+  min-width:300px;
+  max-width:70%;
+  display: inline-block;
+}
+.mainbtt{
+  margin-left: auto;
+  margin-right: auto;
+  width:300px;
+}
+
+button.btn-primary{
+  width:200px;
+}
+button.casesearch{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: normal;
+  display: block;
+  padding: 15px;
+  padding-left: 75px;
+  font-size: 20pt;
+  border-radius: 10px;
+  margin: 30px;
+  margin-bottom: 40px;
+  text-decoration: none;
+  color:black;
+  height: 55px;
+  min-width: 300px;
+  background-image: url(src/assets/images/search.png);
+  background-repeat: no-repeat;
+  background-size: 40px;
+  background-position: left 25px bottom 12px;
+  background-origin: border-box;
+  background-color: #007bff;
+  color:white; /* #FF9354;*/
+  display: block;
+  border:0px;
+  padding-bottom: 15px;
+}

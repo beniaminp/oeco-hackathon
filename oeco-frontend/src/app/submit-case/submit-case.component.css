@@ -1,0 +1,27 @@
+button.sumbitbutton{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: normal;
+  display: block;
+  padding: 15px;
+  padding-left: 75px;
+  font-size: 20pt;
+  border-radius: 10px;
+  margin: 10px;
+  margin-bottom: 40px;
+  text-decoration: none;
+  color:black;
+  height: 55px;
+  min-width: 300px;
+  background-image: url(src/assets/images/upload.png);
+  background-repeat: no-repeat;
+  background-size: 40px;
+  background-position: left 25px bottom 12px;
+  background-origin: border-box;
+  background-color: #007bff;
+  color:white; /* #FF9354;*/
+  display: block;
+  border:0px;
+  padding-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}

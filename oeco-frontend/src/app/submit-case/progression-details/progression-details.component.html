@@ -1,5 +1,5 @@
 <div class="modal-header">
-  <h4 class="modal-title">Add Details On Progression</h4>
+  <h3 class="progressiontitle modal-title">Progression day report</h3>
   <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss({type:'closeX'})">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -8,9 +8,10 @@
   <form [formGroup]="formGroup">
     <div class="row">
       <div class="col-sm-12">
-        <label>Date</label>
+
         <div class="form-group">
           <div class="input-group">
+            <label class="sidelabeldate">Date</label>
             <input class="form-control" placeholder="dd-mm-yyyy"
                    name="dp" ngbDatepicker #progressionDate="ngbDatepicker" formControlName="progressionDate">
             <div class="input-group-append">
@@ -23,313 +24,293 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-12">
-        <ul ngbNav #nav="ngbNav" class="nav-tabs">
-          <li [ngbNavItem]="1">
-            <a ngbNavLink>Therapy</a>
-            <ng-template ngbNavContent>
-              <div class="row">
-                <div class="col-sm-12">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Therapy</h5>
+            <div class="row">
+              <div class="col-sm-12 w-100">
+                <ul class="list-group list-group-flush">
                   <app-therapy-drugs formControlName="drugsList"></app-therapy-drugs>
                   <app-therapy-support formControlName="therapySupport"></app-therapy-support>
-                </div>
+                </ul>
               </div>
-            </ng-template>
-          </li>
-          <li [ngbNavItem]="2">
-            <a ngbNavLink>Conditions</a>
-            <ng-template ngbNavContent>
-              <div class="row">
-                <div class="col-sm-12">
-                  <div class="form-group">
-                    <label for="existingConditions">Conditions</label>
-                    <input id="existingConditions" type="text" class="form-control" formControlName="conditions"
-                           [ngbTypeahead]="filteredicd10Conditions" [resultTemplate]="ic10Template"
-                           [inputFormatter]="formatterConditions" [(ngModel)]="existingConditionsModel"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="form-group">
+          <label for="existingConditions">Conditions</label>
 
-                    <button type="button" class="btn btn-outline-primary btn-sm" (click)="existingConditionsClicked()">
-                      Add
-                    </button>
-                    <ng-template #ic10Template let-r="result" let-t="term">
-                      <p>{{r.icCode}} - {{r.name}}</p>
-                    </ng-template>
+          <ng-template #ic10Template let-r="result" let-t="term">
+            <p>{{r.icCode}} - {{r.name}}</p>
+          </ng-template>
 
-                    <table class="table table-sm">
-                      <thead>
-                      <tr>
-                        <th scope="col">IC Code</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Actions</th>
-                      </tr>
-                      </thead>
-                      <tbody>
-                      <tr *ngFor="let element of existingConditionsList;let idx = index">
-                        <td>{{element.icCode}}</td>
-                        <td>{{element.name}}</td>
-                        <td>
-                          <button class="w-20" (click)="deleteConditionsClicked(idx)">
-                            <i class="fas fa-trash-alt"></i>
-                          </button>
-                        </td>
-                      </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </ng-template>
-          </li>
-          <li [ngbNavItem]="3">
-            <a ngbNavLink>Symptoms</a>
-            <ng-template ngbNavContent>
-              <div class="row">
-                <div class="col-sm-12">
-                  <app-symptoms formControlName="symptoms"></app-symptoms>
-                </div>
-              </div>
-            </ng-template>
-          </li>
-          <li [ngbNavItem]="4">
-            <a ngbNavLink>Blood</a>
-            <ng-template ngbNavContent>
-              <div class="row">
-                <div class="col-sm-12">
-                  <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title">Blood</h5>
-                      <div class="row">
-                        <div class="col-sm-12 w-100">
-                          <label>Blood</label>
-                          <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                              <div class="form">
-                                <div class="form-group mx-sm-3 mb-2">
-                                  <label for="glucose">Glucose</label>
-                                  <div class="row">
-                                    <div class="col-8">
-                                      <input type="text" class="form-control" id="glucose" formControlName="glucose">
-                                    </div>
-                                    <div class="col-4 pl-1">
-                                      <select class="form-control" formControlName="glucoseUnits">
-                                        <option value="0">mmol/L</option>
-                                        <option value="1">mg/dL</option>
-                                      </select>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="form-group mx-sm-3 mb-2">
-                                  <label for="pressureSystolic">Pessure Systolic</label>
-                                  <div class="row">
-                                    <div class="col-10">
-                                      <input type="text" class="form-control" id="pressureSystolic"
-                                             formControlName="pressureSystolic">
-                                    </div>
-                                    <div class="col-2 pl-0">
-                                      mmHg
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="form-group mx-sm-3 mb-2">
-                                  <label for="pressureDiastolic">Pessure Diastolic</label>
-                                  <input type="text" class="form-control" id="pressureDiastolic"
-                                         formControlName="pressureDiastolic">
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
+          <table class="table table-sm">
+            <thead>
+            <tr>
+              <th scope="col">IC Code</th>
+              <th scope="col">Name</th>
+              <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let element of existingConditionsList;let idx = index">
+              <td>{{element.icCode}}</td>
+              <td>{{element.name}}</td>
+              <td>
+                <button class="w-20" (click)="deleteConditionsClicked(idx)">
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+
+          <input id="existingConditions" type="text" class="form-control" formControlName="conditions"
+                 [ngbTypeahead]="filteredicd10Conditions" [resultTemplate]="ic10Template"
+                 [inputFormatter]="formatterConditions" [(ngModel)]="existingConditionsModel"/>
+
+          <button type="button" class="btn btn-primary btn-sm" (click)="existingConditionsClicked()">
+            Add
+          </button>
+
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <app-symptoms formControlName="symptoms"></app-symptoms>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Blood</h5>
+            <div class="row">
+              <div class="col-sm-12 w-100">
+                <label>Blood</label>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <div class="form">
+                      <div class="form-group mx-sm-3 mb-2">
+                        <label for="glucose">Glucose</label>
+                        <div class="row">
+                          <div class="col-8">
+                            <input type="text" class="form-control" id="glucose" formControlName="glucose">
+                          </div>
+                          <div class="col-4 pl-1">
+                            <select class="form-control" formControlName="glucoseUnits">
+                              <option value="0">mmol/L</option>
+                              <option value="1">mg/dL</option>
+                            </select>
+                          </div>
                         </div>
                       </div>
+                      <div class="form-group mx-sm-3 mb-2">
+                        <label for="pressureSystolic">Pessure Systolic</label>
+                        <div class="row">
+                          <div class="col-10">
+                            <input type="text" class="form-control" id="pressureSystolic"
+                                   formControlName="pressureSystolic">
+                          </div>
+                          <div class="col-2 pl-0">
+                            mmHg
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group mx-sm-3 mb-2">
+                        <label for="pressureDiastolic">Pessure Diastolic</label>
+                        <input type="text" class="form-control" id="pressureDiastolic"
+                               formControlName="pressureDiastolic">
+                      </div>
                     </div>
-                  </div>
-                </div>
+                  </li>
+                </ul>
               </div>
-            </ng-template>
-          </li>
-          <li [ngbNavItem]="5">
-            <a ngbNavLink>Radiology</a>
-            <ng-template ngbNavContent>
-              <div class="row">
-                <div class="col-sm-12">
-                  <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title">Radiology</h5>
-                      <div class="row">
-                        <div class="col-sm-12 w-100">
-                          <label>Radiology</label>
-                          <div class="row">
-                            <div class="col-sm-12">
-                              <div class="card">
-                                <div class="card-body">
-                                  <h2 class="card-title">CT</h2>
-                                  <div class="row">
-                                    <div class="col-12">
-                                      <h3>Changes in the lung parenchyma and pleura</h3>
-                                    </div>
-                                    <div class="col-sm-3">
-                                      <input class="form-check-input" type="checkbox" value=""
-                                             id="hazyIncreasedOpacities"
-                                             formControlName="hazyIncreasedOpacities">
-                                      <label class="form-check-label" for="hazyIncreasedOpacities">
-                                        Hazy increased opacities
-                                      </label>
-                                    </div>
-                                    <div class="col-sm-3">
-                                      <input class="form-check-input" type="checkbox" value="" id="consolidation"
-                                             formControlName="consolidation">
-                                      <label class="form-check-label" for="consolidation">
-                                        Consolidation
-                                      </label>
-                                    </div>
-                                    <div class="col-sm-3">
-                                      <input class="form-check-input" type="checkbox" value="" id="crazyPavingPattern"
-                                             formControlName="crazyPavingPattern">
-                                      <label class="form-check-label" for="crazyPavingPattern">
-                                        "Crazy paving" pattern
-                                      </label>
-                                    </div>
-                                    <div class="col-sm-3">
-                                      <input class="form-check-input" type="checkbox" value=""
-                                             id="thickenedInterlobularSepta"
-                                             formControlName="thickenedInterlobularSepta">
-                                      <label class="form-check-label" for="thickenedInterlobularSepta">
-                                        Thickened interlobular septa
-                                      </label>
-                                    </div>
-                                    <div class="col-sm-3">
-                                      <input class="form-check-input" type="checkbox" value="" id="airBronchogramSign"
-                                             formControlName="airBronchogramSign">
-                                      <label class="form-check-label" for="airBronchogramSign">
-                                        Air bronchogram sign
-                                      </label>
-                                    </div>
-                                    <div class="col-sm-3">
-                                      <input class="form-check-input" type="checkbox" value="" id="bronchiectasis"
-                                             formControlName="bronchiectasis">
-                                      <label class="form-check-label" for="bronchiectasis">
-                                        Bronchiectasis
-                                      </label>
-                                    </div>
-                                    <div class="col-sm-3">
-                                      <input class="form-check-input" type="checkbox" value="" id="pleuralThickening"
-                                             formControlName="pleuralThickening">
-                                      <label class="form-check-label" for="pleuralThickening">
-                                        Pleural thickening
-                                      </label>
-                                    </div>
-                                    <div class="col-sm-3">
-                                      <input class="form-check-input" type="checkbox" value="" id="pneumothorax"
-                                             formControlName="pneumothorax">
-                                      <label class="form-check-label" for="pneumothorax">
-                                        Pneumothorax
-                                      </label>
-                                    </div>
-                                    <div class="col-sm-3">
-                                      <input class="form-check-input" type="checkbox" value="" id="fibrousStripes"
-                                             formControlName="fibrousStripes">
-                                      <label class="form-check-label" for="fibrousStripes">
-                                        Fibrous stripes
-                                      </label>
-                                    </div>
-                                  </div>
-                                  <div class="row pt-3">
-                                    <div class="col-12">
-                                      <h3>Other Localization: Affected lung lobes</h3>
-                                    </div>
-                                    <div class="col-sm-3">
-                                      <input class="form-check-input" type="checkbox" value="" id="bilateral"
-                                             formControlName="bilateral">
-                                      <label class="form-check-label" for="bilateral">
-                                        Bilateral
-                                      </label>
-                                    </div>
-                                    <div class="col-sm-3">
-                                      <input class="form-check-input" type="checkbox" value="" id="multilobar"
-                                             formControlName="multilobar">
-                                      <label class="form-check-label" for="multilobar">
-                                        Multilobar
-                                      </label>
-                                    </div>
-                                    <div class="col-sm-3">
-                                      <input class="form-check-input" type="checkbox" value="" id="emphasisOnLowerLobe"
-                                             formControlName="emphasisOnLowerLobe">
-                                      <label class="form-check-label" for="emphasisOnLowerLobe">
-                                        Emphasis on lower lobe
-                                      </label>
-                                    </div>
-                                    <div class="col-sm-3">
-                                      <input class="form-check-input" type="checkbox" value="" id="emphasisPeriphery"
-                                             formControlName="emphasisPeriphery">
-                                      <label class="form-check-label" for="emphasisPeriphery">
-                                        Emphasis periphery
-                                      </label>
-                                    </div>
-                                    <div class="col-sm-3">
-                                      <input class="form-check-input" type="checkbox" value="" id="emphasisPosterior"
-                                             formControlName="emphasisPosterior">
-                                      <label class="form-check-label" for="emphasisPosterior">
-                                        Emphasis posterior
-                                      </label>
-                                    </div>
-                                  </div>
-                                  <div class="row pt-3">
-                                    <div class="col-12">
-                                      <h3>Further findings</h3>
-                                    </div>
-                                    <div class="col-sm-3">
-                                      <input class="form-check-input" type="checkbox" value="" id="pleuralEffusion"
-                                             formControlName="pleuralEffusion">
-                                      <label class="form-check-label" for="pleuralEffusion">
-                                        Bilateral
-                                      </label>
-                                    </div>
-                                    <div class="col-sm-3">
-                                      <input class="form-check-input" type="checkbox" value="" id="pericardialEffusion"
-                                             formControlName="pericardialEffusion">
-                                      <label class="form-check-label" for="pericardialEffusion">
-                                        Pleural effusion
-                                      </label>
-                                    </div>
-                                    <div class="col-sm-3">
-                                      <input class="form-check-input" type="checkbox" value="" id="lymphadenopathy"
-                                             formControlName="lymphadenopathy">
-                                      <label class="form-check-label" for="lymphadenopathy">
-                                        Lymphadenopathy
-                                      </label>
-                                    </div>
-                                    <div class="col-sm-3">
-                                      <input class="form-check-input" type="checkbox" value="" id="vascularThickening"
-                                             formControlName="vascularThickening">
-                                      <label class="form-check-label" for="vascularThickening">
-                                        Vascular thickening
-                                      </label>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-sm-12">
-                              <div class="form-group">
-                                <label for="radMRI">MRI (separated by comma)</label>
-                                <input type="text" class="form-control" id="radMRI" formControlName="radMRI">
-                              </div>
-                            </div>
-                            <div class="col-sm-12">
-                              <div class="form-group">
-                                <label for="radCXR">CXR (separated by comma)</label>
-                                <input type="text" class="form-control" id="radCXR" formControlName="radCXR">
-                              </div>
-                            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Radiology</h5>
+            <div class="row">
+              <div class="col-sm-12 w-100">
+                <label>Radiology</label>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="card">
+                      <div class="card-body">
+                        <h2 class="card-title">CT</h2>
+                        <div class="row">
+                          <div class="col-12">
+                            <h3><b>Changes in the lung parenchyma and pleura</b></h3>
+                          </div>
+                          <div class="col-sm-3">
+                            <input class="form-check-input" type="checkbox" value="" id="hazyIncreasedOpacities"
+                                   formControlName="hazyIncreasedOpacities">
+                            <label class="form-check-label" for="hazyIncreasedOpacities">
+                              Hazy increased opacities
+                            </label>
+                          </div>
+                          <div class="col-sm-3">
+                            <input class="form-check-input" type="checkbox" value="" id="consolidation"
+                                   formControlName="consolidation">
+                            <label class="form-check-label" for="consolidation">
+                              Consolidation
+                            </label>
+                          </div>
+                          <div class="col-sm-3">
+                            <input class="form-check-input" type="checkbox" value="" id="crazyPavingPattern"
+                                   formControlName="crazyPavingPattern">
+                            <label class="form-check-label" for="crazyPavingPattern">
+                              "Crazy paving" pattern
+                            </label>
+                          </div>
+                          <div class="col-sm-3">
+                            <input class="form-check-input" type="checkbox" value="" id="thickenedInterlobularSepta"
+                                   formControlName="thickenedInterlobularSepta">
+                            <label class="form-check-label" for="thickenedInterlobularSepta">
+                              Thickened interlobular septa
+                            </label>
+                          </div>
+                          <div class="col-sm-3">
+                            <input class="form-check-input" type="checkbox" value="" id="airBronchogramSign"
+                                   formControlName="airBronchogramSign">
+                            <label class="form-check-label" for="airBronchogramSign">
+                              Air bronchogram sign
+                            </label>
+                          </div>
+                          <div class="col-sm-3">
+                            <input class="form-check-input" type="checkbox" value="" id="bronchiectasis"
+                                   formControlName="bronchiectasis">
+                            <label class="form-check-label" for="bronchiectasis">
+                              Bronchiectasis
+                            </label>
+                          </div>
+                          <div class="col-sm-3">
+                            <input class="form-check-input" type="checkbox" value="" id="pleuralThickening"
+                                   formControlName="pleuralThickening">
+                            <label class="form-check-label" for="pleuralThickening">
+                              Pleural thickening
+                            </label>
+                          </div>
+                          <div class="col-sm-3">
+                            <input class="form-check-input" type="checkbox" value="" id="pneumothorax"
+                                   formControlName="pneumothorax">
+                            <label class="form-check-label" for="pneumothorax">
+                              Pneumothorax
+                            </label>
+                          </div>
+                          <div class="col-sm-3">
+                            <input class="form-check-input" type="checkbox" value="" id="fibrousStripes"
+                                   formControlName="fibrousStripes">
+                            <label class="form-check-label" for="fibrousStripes">
+                              Fibrous stripes
+                            </label>
+                          </div>
+                        </div>
+                        <div class="row pt-3">
+                          <div class="col-12">
+                            <h3><b>Other Localization: Affected lung lobes</b></h3>
+                          </div>
+                          <div class="col-sm-3">
+                            <input class="form-check-input" type="checkbox" value="" id="bilateral"
+                                   formControlName="bilateral">
+                            <label class="form-check-label" for="bilateral">
+                              Bilateral
+                            </label>
+                          </div>
+                          <div class="col-sm-3">
+                            <input class="form-check-input" type="checkbox" value="" id="multilobar"
+                                   formControlName="multilobar">
+                            <label class="form-check-label" for="multilobar">
+                              Multilobar
+                            </label>
+                          </div>
+                          <div class="col-sm-3">
+                            <input class="form-check-input" type="checkbox" value="" id="emphasisOnLowerLobe"
+                                   formControlName="emphasisOnLowerLobe">
+                            <label class="form-check-label" for="emphasisOnLowerLobe">
+                              Emphasis on lower lobe
+                            </label>
+                          </div>
+                          <div class="col-sm-3">
+                            <input class="form-check-input" type="checkbox" value="" id="emphasisPeriphery"
+                                   formControlName="emphasisPeriphery">
+                            <label class="form-check-label" for="emphasisPeriphery">
+                              Emphasis periphery
+                            </label>
+                          </div>
+                          <div class="col-sm-3">
+                            <input class="form-check-input" type="checkbox" value="" id="emphasisPosterior"
+                                   formControlName="emphasisPosterior">
+                            <label class="form-check-label" for="emphasisPosterior">
+                              Emphasis posterior
+                            </label>
+                          </div>
+                        </div>
+                        <div class="row pt-3">
+                          <div class="col-12">
+                            <h3><b>Further findings</b></h3>
+                          </div>
+                          <div class="col-sm-3">
+                            <input class="form-check-input" type="checkbox" value="" id="pleuralEffusion"
+                                   formControlName="pleuralEffusion">
+                            <label class="form-check-label" for="pleuralEffusion">
+                              Bilateral
+                            </label>
+                          </div>
+                          <div class="col-sm-3">
+                            <input class="form-check-input" type="checkbox" value="" id="pericardialEffusion"
+                                   formControlName="pericardialEffusion">
+                            <label class="form-check-label" for="pericardialEffusion">
+                              Pleural effusion
+                            </label>
+                          </div>
+                          <div class="col-sm-3">
+                            <input class="form-check-input" type="checkbox" value="" id="lymphadenopathy"
+                                   formControlName="lymphadenopathy">
+                            <label class="form-check-label" for="lymphadenopathy">
+                              Lymphadenopathy
+                            </label>
+                          </div>
+                          <div class="col-sm-3">
+                            <input class="form-check-input" type="checkbox" value="" id="vascularThickening"
+                                   formControlName="vascularThickening">
+                            <label class="form-check-label" for="vascularThickening">
+                              Vascular thickening
+                            </label>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <label for="radMRI">MRI (separated by comma)</label>
+                      <input type="text" class="form-control" id="radMRI" formControlName="radMRI">
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <label for="radCXR">CXR (separated by comma)</label>
+                      <input type="text" class="form-control" id="radCXR" formControlName="radCXR">
+                    </div>
+                  </div>
                 </div>
               </div>
-            </ng-template>
-          </li>
-        </ul>
-        <div [ngbNavOutlet]="nav" class="mt-2"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </form>

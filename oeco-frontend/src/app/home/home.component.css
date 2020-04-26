@@ -8,6 +8,7 @@ div.header {
   background-size: contain;
   width: 700px;
   height: 300px;
+  max-width: 100%;
 }
 
 div.options {
@@ -21,6 +22,7 @@ div.note {
 }
 
 div.options a {
+  font-family: 'Source Sans Pro', sans-serif;
   display: block;
   padding: 15px;
   padding-left: 100px;
@@ -28,6 +30,10 @@ div.options a {
   border-radius: 10px;
   margin: 30px;
   margin-bottom: 40px;
+  text-decoration: none;
+  color:black;
+  height: 55px;
+  min-width: 300px;
 }
 
 div.options a:nth-child(1) {
