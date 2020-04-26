@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-sm-12">
-    <h1 class="h3 mb-3 font-weight-normal">Submit Case</h1>
+    <h1 class="h3 mb-3 font-weight-normal">COVID Case study submission form</h1>
   </div>
 </div>
 <div class="row">
@@ -10,10 +10,11 @@
       <div class="row">
         <div class="col-sm-12">
           <div class="form-group">
-            <label for="patientCode">Patient code</label>
+            <label for="patientCode" class="sidelabel">Patient code</label>
             <input type="text" class="form-control" id="patientCode" formControlName="patientCode">
           </div>
         </div>
+
       </div>
 
       <div class="row">
@@ -36,33 +37,33 @@
       <div class="row">
         <div class="col-sm-12">
           <div class="form-group">
-            <label for="yearOfBirth">Year of Birth</label>
+            <label for="yearOfBirth" class="sidelabel">Year of Birth</label>
             <input type="number" min="1900" class="form-control" id="yearOfBirth" formControlName="yearOfBirth">
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" value="0" id="customRadioInline1" name="sex" class="custom-control-input"
+                     formControlName="sex">
+              <label class="custom-control-label" for="customRadioInline1">Male</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" value="1" id="customRadioInline2" name="sex" class="custom-control-input"
+                     formControlName="sex">
+              <label class="custom-control-label" for="customRadioInline2">Female</label>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-sm-12">
-          <div class="custom-control custom-radio custom-control-inline">
-            <input type="radio" value="0" id="customRadioInline1" name="sex" class="custom-control-input"
-                   formControlName="sex">
-            <label class="custom-control-label" for="customRadioInline1">Male</label>
-          </div>
-          <div class="custom-control custom-radio custom-control-inline">
-            <input type="radio" value="1" id="customRadioInline2" name="sex" class="custom-control-input"
-                   formControlName="sex">
-            <label class="custom-control-label" for="customRadioInline2">Female</label>
-          </div>
-        </div>
+
       </div>
 
       <div class="row">
         <div class="col-sm-12">
           <div class="form-group">
-            <label for="typeahead-basic">Search for a state:</label>
+            <label for="typeahead-basic" class="sidelabel">Country:</label>
             <input id="typeahead-basic" type="text" class="form-control" formControlName="countryCtrl"
                    [ngbTypeahead]="filterCountries" [resultTemplate]="countriesTemplate" [inputFormatter]="formatter"/>
+            (in which patient is treated)
           </div>
         </div>
       </div>
@@ -70,9 +71,19 @@
         <p>{{r.name}}</p>
       </ng-template>
 
+      <div class="col-sm-12">
+        <h2>Patient case summary</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <app-symptoms formControlName="existingSymptoms"></app-symptoms>
+        </div>
+      </div>
+
       <div class="row">
         <div class="col-sm-12 w-100">
-          <label>First positive COVID test</label>
+          <label>Date of the <b>first positive</b> COVID test</label>
           <div class="form-group">
             <div class="input-group">
               <input class="form-control" placeholder="dd-mm-yyyy"
@@ -82,22 +93,46 @@
                   <i class="fas fa-calendar-alt"></i>
                 </button>
               </div>
+              <label for="firstTestType" class="testlabel">Select test type</label>
+              <select class="form-control" id="firstTestType" formControlName="firstTestType">
+                <option value="0">PCR</option>
+                <option value="1">Serology</option>
+                <option value="2">Clinical picture</option>
+              </select>
             </div>
           </div>
           <div class="form-group">
-            <label for="firstTestType">First Test Type</label>
-            <select class="form-control" id="firstTestType" formControlName="firstTestType">
-              <option value="0">PCR</option>
-              <option value="1">Serology</option>
-              <option value="2">Clinical picture</option>
-            </select>
+
           </div>
         </div>
       </div>
 
       <div class="row">
         <div class="col-sm-12 w-100">
-          <label>Previous COVID infections (first negative test date)</label>
+          <label>Date of <b>last positive</b> COVID test</label>
+          <div class="form-group">
+            <div class="input-group">
+              <input class="form-control" placeholder="dd-mm-yyyy"
+                     name="dp" ngbDatepicker #lastPositiveTest="ngbDatepicker" formControlName="lastCovidPositiveTest">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary calendar" (click)="lastPositiveTest.toggle()" type="button">
+                  <i class="fas fa-calendar-alt"></i>
+                </button>
+              </div>
+              <label for="lastTestType" class="testlabel">Select test type</label>
+              <select class="form-control" id="lastTestType" formControlName="lastTestType">
+                <option value="0">PCR</option>
+                <option value="1">Serology</option>
+                <option value="2">Clinical picture</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 w-100">
+          <label>Did patient had <b>previous</b> COVID infections? If yes, please add dates earlier first negative test dates</label>
           <ul class="list-group list-group-flush">
             <li class="list-group-item" *ngFor="let prevInfection of previousInfections;let idx = index">
               <span class="w-80">{{prevInfection | date}}</span>
@@ -114,8 +149,8 @@
                     <i class="fas fa-calendar-alt"></i>
                   </button>
                 </div>
-                <button type="button" class="btn btn-outline-primary btn-sm" (click)="addPrevInfection()">Add Prev
-                  Infection
+                <button type="button" class="btn btn-primary btn-sm" (click)="addPrevInfection()">Add previous
+                  infection date
                 </button>
               </div>
             </li>
@@ -123,64 +158,8 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-sm-12 w-100">
-          <label>Last positive COVID test</label>
-          <div class="form-group">
-            <div class="input-group">
-              <input class="form-control" placeholder="dd-mm-yyyy"
-                     name="dp" ngbDatepicker #lastPositiveTest="ngbDatepicker" formControlName="lastCovidPositiveTest">
-              <div class="input-group-append">
-                <button class="btn btn-outline-secondary calendar" (click)="lastPositiveTest.toggle()" type="button">
-                  <i class="fas fa-calendar-alt"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="lastTestType">Last Test Type</label>
-            <select class="form-control" id="lastTestType" formControlName="lastTestType">
-              <option value="0">PCR</option>
-              <option value="1">Serology</option>
-              <option value="2">Clinical picture</option>
-            </select>
-          </div>
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="col-sm-12 w-100">
-          <label>ICU admission</label>
-          <div class="form-group">
-            <div class="input-group">
-              <input class="form-control" placeholder="dd-mm-yyyy"
-                     name="icuAdmission" ngbDatepicker #icuAdmission="ngbDatepicker" formControlName="icuAdmission">
-              <div class="input-group-append">
-                <button class="btn btn-outline-secondary calendar" (click)="icuAdmission.toggle()" type="button">
-                  <i class="fas fa-calendar-alt"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="col-sm-12 w-100">
-          <label>ICU release</label>
-          <div class="form-group">
-            <div class="input-group">
-              <input class="form-control" placeholder="dd-mm-yyyy"
-                     name="icuRelease" ngbDatepicker #icuRelease="ngbDatepicker" formControlName="icuRelease">
-              <div class="input-group-append">
-                <button class="btn btn-outline-secondary calendar" (click)="icuRelease.toggle()" type="button">
-                  <i class="fas fa-calendar-alt"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
 
 
@@ -190,135 +169,78 @@
             <div class="row">
               <div class="col-sm-12">
                 <div class="form-group">
-                  <label for="existingConditions">Existing conditions</label>
+                  <label for="existingConditions" class="labelconditions">Pre-existing conditions</label>
+
+
+                  <ng-template #ic10Template let-r="result" let-t="term">
+                    <p>{{r.icCode}} - {{r.name}}</p>
+                  </ng-template>
+
+                  <table class="table table-sm">
+                    <thead>
+                    <tr>
+                      <th scope="col">ICD10 Code</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Still Active</th>
+                      <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let element of existingConditionsList;let idx = index">
+                      <td>{{element.icCode}}</td>
+                      <td>{{element.name}}</td>
+                      <td>
+                        <select class="form-control" (change)="stillActiveClicked(element,$event)">
+                          <option value="0">yes</option>
+                          <option value="1">No</option>
+                          <option value="2">Unknown</option>
+                        </select>
+                      </td>
+                      <td>
+                        <button class="w-20" (click)="deleteConditionsClicked(idx)">
+                          <i class="fas fa-trash-alt"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+
+
                   <input id="existingConditions" type="text" class="form-control" formControlName="icd10ConditionsCtrl"
                          [ngbTypeahead]="filteredicd10Conditions" [resultTemplate]="ic10Template"
-                         [inputFormatter]="formatter" [(ngModel)]="existingConditionsModel"/>
+                         [inputFormatter]="formatter" [(ngModel)]="existingConditionsModel"
+                         placeholder="ICD10 code or name" />
 
-                  <button type="button" class="btn btn-outline-primary btn-sm" (click)="existingConditionsClicked()">
-                    Add
+                  <button type="button" class="btn btn-primary btn-sm" (click)="existingConditionsClicked()">
+                    Add condition
                   </button>
                 </div>
               </div>
             </div>
-            <ng-template #ic10Template let-r="result" let-t="term">
-              <p>{{r.icCode}} - {{r.name}}</p>
-            </ng-template>
-
-            <table class="table table-sm">
-              <thead>
-              <tr>
-                <th scope="col">IC Code</th>
-                <th scope="col">Name</th>
-                <th scope="col">Still Active</th>
-                <th scope="col">Actions</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr *ngFor="let element of existingConditionsList;let idx = index">
-                <td>{{element.icCode}}</td>
-                <td>{{element.name}}</td>
-                <td>
-                  <select class="form-control" (change)="stillActiveClicked(element,$event)">
-                    <option value="0">yes</option>
-                    <option value="1">No</option>
-                    <option value="2">Unknown</option>
-                  </select>
-                </td>
-                <td>
-                  <button class="w-20" (click)="deleteConditionsClicked(idx)">
-                    <i class="fas fa-trash-alt"></i>
-                  </button>
-                </td>
-              </tr>
-              </tbody>
-            </table>
           </mat-list>
         </div>
       </div>
 
       <div class="row">
         <div class="col-sm-12">
-          <label>Existing therapy</label>
+          <label class="labelconditions">Pre-existing therapy</label>
           <app-therapy-drugs formControlName="existingTherapyDrugs"></app-therapy-drugs>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-sm-12">
-          <app-symptoms formControlName="existingSymptoms"></app-symptoms>
-        </div>
+
+      <div class="col-sm-12">
+        <h2>Treatmant and progression</h2>
+        <p>Daily changes, test, treatmant ... <p>
       </div>
 
-      <div class="row">
-        <div class="col-sm-12">
-          <label>Date of hospital admission</label>
-          <div class="form-group">
-            <div class="input-group">
-              <input class="form-control" placeholder="dd-mm-yyyy"
-                     name="dp" ngbDatepicker #hospitalAddmission="ngbDatepicker" formControlName="hospitalAdmission">
-              <div class="input-group-append">
-                <button class="btn btn-outline-secondary calendar" (click)="hospitalAddmission.toggle()" type="button">
-                  <i class="fas fa-calendar-alt"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-12">
-          <label>Date of hospital release</label>
-          <div class="form-group">
-            <div class="input-group">
-              <input class="form-control" placeholder="dd-mm-yyyy"
-                     name="dp" ngbDatepicker #hospitalReleasePicker="ngbDatepicker" formControlName="hospitalRelease">
-              <div class="input-group-append">
-                <button class="btn btn-outline-secondary calendar" (click)="hospitalReleasePicker.toggle()"
-                        type="button">
-                  <i class="fas fa-calendar-alt"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-2">
-          <label>Outcome</label>
-        </div>
-        <div class="col-sm-10">
-          <div class="custom-control custom-radio custom-control-inline">
-            <input type="radio" value="0" id="outcomeDischared" name="outcomeType" class="custom-control-input"
-                   formControlName="outcomeType">
-            <label class="custom-control-label" for="outcomeDischared">Dischared</label>
-          </div>
-          <div class="custom-control custom-radio custom-control-inline">
-            <input type="radio" value="1" id="outcomeDied" name="outcomeType" class="custom-control-input"
-                   formControlName="outcomeType">
-            <label class="custom-control-label" for="outcomeDied">Died</label>
-          </div>
-          <div class="input-group">
-            <input class="form-control" placeholder="dd-mm-yyyy"
-                   name="dp" ngbDatepicker #outcomeDate="ngbDatepicker" formControlName="outcomeDate">
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary calendar" (click)="outcomeDate.toggle()"
-                      type="button">
-                <i class="fas fa-calendar-alt"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <div class="row">
         <div class="col-sm-12">
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <div class="input-group">
-                <button type="button" class="btn btn-outline-primary btn-sm"
+                <button type="button" class="btn btn-primary btn-sm"
                         (click)="openProgressionDetailsComponent()">
                   Add Details on Progression
                 </button>
@@ -334,12 +256,122 @@
         </div>
       </div>
 
+      <div class="col-sm-12">
+        <h2>Final outcome</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group">
+            <div class="input-group">
+              <label class='sidelabeldate'>Date of hospital admission</label>
+              <input class="form-control" placeholder="dd-mm-yyyy"
+                     name="dp" ngbDatepicker #hospitalAddmission="ngbDatepicker" formControlName="hospitalAdmission">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary calendar" (click)="hospitalAddmission.toggle()" type="button">
+                  <i class="fas fa-calendar-alt"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group">
+            <div class="input-group">
+              <label class='sidelabeldate'>Date of hospital release</label>
+              <input class="form-control" placeholder="dd-mm-yyyy"
+                     name="dp" ngbDatepicker #hospitalReleasePicker="ngbDatepicker" formControlName="hospitalRelease">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary calendar" (click)="hospitalReleasePicker.toggle()"
+                        type="button">
+                  <i class="fas fa-calendar-alt"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+            <div class="row">
+              <div class="col-sm-12 w-100">
+                <div class="form-group">
+                  <div class="input-group">
+                    <label class="sidelabeldate">ICU admission (empty if none)</label>
+                    <input class="form-control" placeholder="dd-mm-yyyy"
+                           name="icuAdmission" ngbDatepicker #icuAdmission="ngbDatepicker" formControlName="icuAdmission">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary calendar" (click)="icuAdmission.toggle()" type="button">
+                        <i class="fas fa-calendar-alt"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-12 w-100">
+
+                <div class="form-group">
+                  <div class="input-group">
+                      <label  class="sidelabeldate">ICU release</label>
+                    <input class="form-control" placeholder="dd-mm-yyyy"
+                           name="icuRelease" ngbDatepicker #icuRelease="ngbDatepicker" formControlName="icuRelease">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary calendar" (click)="icuRelease.toggle()" type="button">
+                        <i class="fas fa-calendar-alt"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+      <div class="row">
+        <div class="col-sm-2">
+          <label >Outcome</label>
+          <div class="custom-control custom-radio custom-control-inline">
+
+            <input type="radio" value="0" id="outcomeDischared" name="outcomeType" class="custom-control-input"
+                   formControlName="outcomeType">
+            <label class="custom-control-label" for="outcomeDischared">Dischared</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" value="1" id="outcomeDied" name="outcomeType" class="custom-control-input"
+                   formControlName="outcomeType">
+            <label class="custom-control-label" for="outcomeDied">Died</label>
+          </div>
+        </div>
+        <div class="col-sm-10">
+
+          <div class="input-group">
+
+            <input class="form-control" placeholder="dd-mm-yyyy"
+                   name="dp" ngbDatepicker #outcomeDate="ngbDatepicker" formControlName="outcomeDate">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary calendar" (click)="outcomeDate.toggle()"
+                      type="button">
+                <i class="fas fa-calendar-alt"></i>
+              </button>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+
+
       <div class="row">
         <div class="col-sm-12">
           <label>Additional comments</label>
         </div>
         <div class="col-sm-12">
-          <textarea formControlName="additionalComments" cols="50" rows="5"></textarea>
+          <textarea  class="freetext" formControlName="additionalComments" cols="50" rows="5"></textarea>
         </div>
       </div>
 
@@ -348,13 +380,13 @@
           <label>Was this case unusual? Why?</label>
         </div>
         <div class="col-sm-12">
-          <textarea formControlName="unusualCase" cols="50" rows="5"></textarea>
+          <textarea class="freetext" formControlName="unusualCase" cols="50" rows="5"></textarea>
         </div>
       </div>
 
       <div class="row pt-5 pb-5">
-        <div class="col-sm-12">
-          <button type="submit" class="btn btn-primary" (click)="submitCase()">Submit Case</button>
+        <div class="col-sm-12 main-btn">
+          <button type="submit" class=" btn btn-primary" (click)="submitCase()">Submit Case</button>
         </div>
       </div>
     </form>
