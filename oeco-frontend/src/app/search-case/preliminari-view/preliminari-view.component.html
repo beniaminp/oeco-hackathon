@@ -7,7 +7,7 @@
   <h1 class="border w-100" *ngIf="!isFirstPage">
     Treatment: {{selectedDrug}}</h1>
   <a class="row pl-3 pb-2" *ngIf="!isFirstPage" (click)="goBackToFirstPage()"><i class="fas fa-arrow-left"
-                                                                                  style="cursor: pointer">Back</i></a>
+                                                                                 style="cursor: pointer">Back</i></a>
   <ng-container *ngIf="isFirstPage">
     <table class="table">
       <thead>
@@ -66,7 +66,7 @@
           No Data Reported
         </tr>
         <tr *ngFor="let complication of commonComplicationsKeys">
-          <td>{{commonComplicationsObject[complication] * 100}} %</td>
+          <td>{{(commonComplicationsObject[complication] * 100).toFixed(1)}} %</td>
           <td> {{complication}} </td>
         </tr>
         </tbody>
