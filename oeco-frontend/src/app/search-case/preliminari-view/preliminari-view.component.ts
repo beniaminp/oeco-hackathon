@@ -52,7 +52,6 @@ export class PreliminariViewComponent implements OnInit {
   ngOnInit(): void {
     this.searchResults = this.submitCaseService.foundSearchResults;
     this.submitCaseService.foundSearchResults = [];
-    const tmpExistingConditions = [];
     const uniquCondSet = new Set();
     const uniqueAges = new Set();
     this.submitCaseService.searchCaseModel.forEach(value => {
@@ -123,8 +122,6 @@ export class PreliminariViewComponent implements OnInit {
     this.cdr.detach();
     this.showChart = false;
     this.cdr.detectChanges();
-    this.commonComplicationsObject = retData.Complication_List;
-    this.commonComplicationsKeys = Object.keys(this.commonComplicationsObject);
     this.barChartLabels = [];
     for (let i = 1; i <= retData.Hospitalization.Hospital_Stays_DURATIONS.length; ++i) {
       this.barChartLabels.push(i + '');
@@ -139,5 +136,7 @@ export class PreliminariViewComponent implements OnInit {
   private initComplications(retData) {
     this.commonComplicationsObject = retData.Complication_List;
     this.commonComplicationsKeys = Object.keys(this.commonComplicationsObject);
+    console.error(this.commonComplicationsObject[this.commonComplicationsKeys[0]]);
+    console.error(this.commonComplicationsKeys);
   }
 }

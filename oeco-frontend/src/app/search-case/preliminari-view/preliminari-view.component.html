@@ -61,17 +61,13 @@
     <h2>Common Complications</h2>
     <div class="col-sm-12">
       <table class="table">
-        <thead>
-     <!--   <th scope="col">Frequency</th>
-        <th scope="col">Name</th>
-        </thead>-->
         <tbody>
         <tr *ngIf="commonComplicationsKeys == null || commonComplicationsKeys.length == 0">
           No Data Reported
         </tr>
         <tr *ngFor="let complication of commonComplicationsKeys">
-          <td>{{commonComplicationsObject[complication][1] * 100}} %</td>
-          <td> {{commonComplicationsObject[complication][0]}} </td>
+          <td>{{commonComplicationsObject[complication] * 100}} %</td>
+          <td> {{complication}} </td>
         </tr>
         </tbody>
       </table>
