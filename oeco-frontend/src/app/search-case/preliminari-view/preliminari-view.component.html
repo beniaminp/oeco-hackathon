@@ -1,9 +1,13 @@
 <h2 *ngIf="noData">No Results</h2>
 <div class="container pt-5" *ngIf="!noData">
-  <h1 class="border border-primary w-100">{{casesAge}} years, {{existingConditions | uppercase}}</h1>
-  <h1 class="border border-primary w-100" *ngIf="!isFirstPage">
+  <h1 class="border w-100">{{casesAge}} years, {{existingConditions | uppercase}}</h1>
+  <a class="row pl-3 pb-2" routerLink="/search-case"><i class="fas fa-arrow-left" style="cursor: pointer">
+    Back to Search
+  </i></a>
+  <h1 class="border w-100" *ngIf="!isFirstPage">
     Treatment: {{selectedDrug}}</h1>
-  <div class="row pl-3" *ngIf="!isFirstPage" (click)="isFirstPage = true"><i class="fas fa-arrow-left" style="cursor: pointer">Back</i></div>
+  <a class="row pl-3 pb-2" *ngIf="!isFirstPage" (click)="goBackToFirstPage()"><i class="fas fa-arrow-left"
+                                                                                  style="cursor: pointer">Back</i></a>
   <ng-container *ngIf="isFirstPage">
     <table class="table">
       <thead>
@@ -25,64 +29,58 @@
       </tr>
       </tbody>
     </table>
-
-    <div class="row">
-      <h2>Common Complications</h2>
-      <div class="col-sm-12">
-
-      </div>
-    </div>
-    <div class="row align-items-center">
-      <div class="col-sm-12">
-        <div style="display: block;">
-          <canvas baseChart
-                  [datasets]="barChartData"
-                  [labels]="barChartLabels"
-                  [options]="barChartOptions"
-                  [plugins]="barChartPlugins"
-                  [legend]="barChartLegend"
-                  [chartType]="barChartType">
-          </canvas>
-        </div>
-      </div>
-      <div class="col-sm-6">
-        <span
-          class="font-weight-bold">Average Hospitalization: {{this.retData.Hospitalization.Mean_Hospital_Stay}}</span>
-      </div>
-      <div class="col-sm-6">
-        <span class="font-weight-bold">Average ICU: {{this.retData.ICU.Mean_ICU_Stay}}</span>
-      </div>
-    </div>
   </ng-container>
-</div>
 
-<ng-container *ngIf="!isFirstPage">
-  <table class="table">
+  <ng-container *ngIf="!isFirstPage">
+    <table class="table">
 
-    <thead>
-    <tr>
-      <th scope="col">
-        Dose
-      </th>
-      <th scope="col">
-        Survival
-      </th>
-    </tr>
-    </thead>
+      <thead>
+      <tr>
+        <th scope="col">
+          Dose
+        </th>
+        <th scope="col">
+          Survival
+        </th>
+      </tr>
+      </thead>
 
-    <tbody>
-    <tr *ngFor="let treatment of searchByDrugTratments">
-      <td class="table-warning" style="cursor: pointer">
-        {{treatment}}
-      </td>
-      <td>{{tratDrguObject[treatment][0] * 100}} % out of {{tratDrguObject[treatment][1]}}</td>
-    </tr>
-    </tbody>
-  </table>
+      <tbody>
+      <tr *ngFor="let treatment of searchByDrugTratments">
+        <td class="table-warning" style="cursor: pointer">
+          {{treatment}}
+        </td>
+        <td>{{tratDrguObject[treatment][0] * 100}} % out of {{tratDrguObject[treatment][1]}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </ng-container>
 
+
+  <div class="row">
+    <h2>Common Complications</h2>
+    <div class="col-sm-12">
+      <table class="table">
+        <thead>
+        <th scope="col">Frequency</th>
+        <th scope="col">Name</th>
+        </thead>
+        <tbody>
+        <tr *ngIf="commonComplicationsKeys == null || commonComplicationsKeys.length == 0">
+          No Data Reported
+        </tr>
+        <tr *ngFor="let complication of commonComplicationsKeys">
+          <td>{{commonComplicationsObject[complication][1] * 100}} %</td>
+          <td> {{commonComplicationsObject[complication][0]}} </td>
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
   <div class="row align-items-center">
     <div class="col-sm-12">
-      <div style="display: block;">
+      <div style="display: block;" *ngIf="showChart">
         <canvas baseChart
                 [datasets]="barChartData"
                 [labels]="barChartLabels"
@@ -95,10 +93,12 @@
     </div>
     <div class="col-sm-6">
         <span
-          class="font-weight-bold">Average Hospitalization: {{this.retData.Hospitalization.Mean_Hospital_Stay}}</span>
+          class="font-weight-bold">Average Hospitalization: {{meanHospitalStay}}</span>
     </div>
     <div class="col-sm-6">
-      <span class="font-weight-bold">Average ICU: {{this.retData.ICU.Mean_ICU_Stay}}</span>
+      <span class="font-weight-bold">Average ICU: {{meanICUStay}}</span>
     </div>
   </div>
-</ng-container>
+</div>
+
+

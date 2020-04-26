@@ -1,56 +1,58 @@
 <form class="pt-5" [formGroup]="formGroup">
   <div class="form-group row">
-    <label for="age" class="col-2 col-form-label">Age</label>
-    <div class="col-10">
-      <input type="number" class="form-control" id="age" formControlName="age">
+    <label for="age" class="col-3 col-form-label">Age</label>
+    <div class="col-9">
+      <input type="number" class="form-control" id="age" formControlName="age" required>
     </div>
   </div>
   <div class="form-group row">
-    <label for="existingConditions" class="col-2 col-form-label">Existing conditions</label>
-    <div class="col-10">
+    <label for="existingConditions" class="col-3 col-form-label">Existing conditions</label>
+    <div class="col-7">
       <input id="existingConditions" type="text" class="form-control" formControlName="icd10ConditionsCtrl"
              [ngbTypeahead]="filteredicd10Conditions" [resultTemplate]="ic10Template"
              [inputFormatter]="formatter" [(ngModel)]="existingConditionsModel"/>
       <ng-template #ic10Template let-r="result" let-t="term">
         <p>{{r.icCode}} - {{r.name}}</p>
       </ng-template>
-
+    </div>
+    <div class="col-2">
       <button type="button" class="btn btn-outline-primary btn-sm" (click)="existingConditionsClicked()">
         Add
       </button>
-
-      <table class="table table-sm">
-        <thead>
-        <tr>
-          <th scope="col">IC Code</th>
-          <th scope="col">Name</th>
-          <th scope="col">Still Active</th>
-          <th scope="col">Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let element of existingConditionsList;let idx = index">
-          <td>{{element.icCode}}</td>
-          <td>{{element.name}}</td>
-          <td>
-            <select class="form-control" (change)="stillActiveClicked(element,$event)">
-              <option value="0">yes</option>
-              <option value="1">No</option>
-              <option value="2">Unknown</option>
-            </select>
-          </td>
-          <td>
-            <button class="w-20" (click)="deleteConditionsClicked(idx)">
-              <i class="fas fa-trash-alt"></i>
-            </button>
-          </td>
-        </tr>
-        </tbody>
-      </table>
+    </div>
+      <div class="col-12">
+        <table class="table table-sm">
+          <thead>
+          <tr>
+            <th scope="col">IC Code</th>
+            <th scope="col">Name</th>
+            <th scope="col">Still Active</th>
+            <th scope="col">Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let element of existingConditionsList;let idx = index">
+            <td>{{element.icCode}}</td>
+            <td>{{element.name}}</td>
+            <td>
+              <select class="form-control" (change)="stillActiveClicked(element,$event)">
+                <option value="0">yes</option>
+                <option value="1">No</option>
+                <option value="2">Unknown</option>
+              </select>
+            </td>
+            <td>
+              <button class="w-20" (click)="deleteConditionsClicked(idx)">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
     </div>
   </div>
   <div class="form-group row">
-    <div class="col-sm-10">
+    <div class="col-12 d-flex justify-content-center">
       <button type="submit" class="btn btn-primary" (click)="search()">Search</button>
     </div>
   </div>

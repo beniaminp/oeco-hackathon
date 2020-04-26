@@ -183,7 +183,6 @@
       </div>
 
 
-
       <div class="row">
         <div class="col-sm-12">
           <mat-list role="list" class="w-100">
@@ -352,9 +351,12 @@
         </div>
       </div>
 
-      <div class="row pt-5 pb-5">
-        <div class="col-sm-12">
+      <div class="row pt-5 pb-5 d-flex align-items-center">
+        <div class="col-6">
           <button type="submit" class="btn btn-primary" (click)="submitCase()">Submit Case</button>
+        </div>
+        <div class="col-6">
+          <button type="button" class="btn btn-primary" routerLink="/">Close</button>
         </div>
       </div>
     </form>

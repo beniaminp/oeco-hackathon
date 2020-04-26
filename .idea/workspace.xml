@@ -12,6 +12,9 @@
       <change beforePath="$PROJECT_DIR$/oeco-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oeco-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/search-case/preliminari-view/preliminari-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/search-case/preliminari-view/preliminari-view.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/search-case/preliminari-view/preliminari-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/search-case/preliminari-view/preliminari-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/search-case/search-case.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/search-case/search-case.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/search-case/search-case.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/search-case/search-case.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/services/submit-case.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/services/submit-case.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/models/case-model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/models/case-model.ts" afterDir="false" />
@@ -19,6 +22,7 @@
       <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/progression-details/progression-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/progression-details/progression-details.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/submit-case.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/submit-case.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/submit-case.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/submit-case.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/symptoms/symptoms.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/symptoms/symptoms.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/oeco/controllers/CaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oeco/controllers/CaseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/CaseModelDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/CaseModelDTO.java" afterDir="false" />
@@ -172,7 +176,7 @@
       <workItem from="1587551321072" duration="182000" />
       <workItem from="1587551709839" duration="10419000" />
       <workItem from="1587628671369" duration="13536000" />
-      <workItem from="1587749345004" duration="49729000" />
+      <workItem from="1587749345004" duration="53997000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1587658369760</created>
@@ -299,10 +303,10 @@
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
     <state x="2340" y="222" width="1024" height="852" key="SettingsEditor/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587762683316" />
-    <state x="2510" y="336" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1587814912310">
-      <screen x="1920" y="0" width="1920" height="1200" />
+    <state x="1120" y="336" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1587894116595">
+      <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state x="2510" y="336" width="800" height="535" key="Vcs.Push.Dialog.v2/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587814912310" />
+    <state x="1120" y="336" width="800" height="535" key="Vcs.Push.Dialog.v2/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587894116595" />
     <state width="899" height="600" key="XDebugger.FullValuePopup" timestamp="1587881930944">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
@@ -331,9 +335,9 @@
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
     <state x="2579" y="275" key="run.anything.popup/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587879559998" />
-    <state x="2578" y="269" width="672" height="678" key="search.everywhere.popup" timestamp="1587877169976">
+    <state x="2578" y="269" width="672" height="678" key="search.everywhere.popup" timestamp="1587900083295">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
-    <state x="2578" y="269" width="672" height="678" key="search.everywhere.popup/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587877169976" />
+    <state x="2578" y="269" width="672" height="678" key="search.everywhere.popup/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587900083295" />
   </component>
 </project>

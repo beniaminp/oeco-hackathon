@@ -82,6 +82,10 @@ export class SearchCaseComponent implements OnInit {
   public search() {
     const searchConditions = new SearchConditions(this.formGroup.controls.age.value, this.existingConditionsList);
     this.submitCaseService.searchConditions = searchConditions;
+    if (this.formGroup.controls.age.value == null || this.formGroup.controls.age.value == '') {
+      alert('Please complete at least AGE field.');
+      return;
+    }
     this.submitCaseService.searchCase(searchConditions).subscribe(
       (res) => {
         if (res == null) {
@@ -96,6 +100,8 @@ export class SearchCaseComponent implements OnInit {
             }
           );
         }
+      }, (err) => {
+        alert('An error occured...');
       }
     );
   }

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {SubmitCaseService} from '../../services/submit-case.service';
 import {Drugs} from '../../submit-case/models/drugs';
 import {ChartDataSets, ChartOptions, ChartType} from 'chart.js';
@@ -37,28 +37,45 @@ export class PreliminariViewComponent implements OnInit {
   public searchByDrugTratments;
   public tratDrguObject: any;
 
+  public commonComplicationsObject: any;
+  public commonComplicationsKeys: any[];
+  public showChart = true;
+
+  public meanHospitalStay = 0;
+  public meanICUStay = 0;
+
   constructor(
-    private submitCaseService: SubmitCaseService) {
+    private submitCaseService: SubmitCaseService,
+    public cdr: ChangeDetectorRef) {
   }
 
   ngOnInit(): void {
     this.searchResults = this.submitCaseService.foundSearchResults;
     this.submitCaseService.foundSearchResults = [];
     const tmpExistingConditions = [];
+    const uniquCondSet = new Set();
+    const uniqueAges = new Set();
     this.submitCaseService.searchCaseModel.forEach(value => {
-      tmpExistingConditions.push(value.existingConditions.map(value1 => value1.icCode));
+      value.existingConditions.forEach(value1 => uniquCondSet.add(value1.icCode));
+      uniqueAges.add(new Date().getFullYear() - value.yearOfBirth);
     });
-    this.casesAge = (this.submitCaseService.ages - 3) + ' - ' + (this.submitCaseService.ages + 3);
+    uniquCondSet.forEach(value => this.existingConditions += value + ' ');
+
+    if (uniqueAges.size > 1) {
+      const orderdAges = [...uniqueAges].sort((one, two) => (one < two ? -1 : 1));
+      this.casesAge = orderdAges[0] + ' - ' + orderdAges[orderdAges.length - 1];
+    } else {
+      this.casesAge = uniqueAges[0];
+    }
+
     this.retData = this.searchResults;
-    const uniqueCond = [...new Set(tmpExistingConditions)];
-    // this.existingConditions += value1.icCode + ' '
-    uniqueCond.forEach(value => this.existingConditions += value + ' ');
 
     this.treatmentObject = this.retData.Treatmant_List;
     this.treatmentsListKeys = Object.keys(this.treatmentObject);
 
-    this.barChartData[0] = {data: this.retData.Hospitalization.Hospital_Stays_DURATIONS, label: 'Hospital time'};
-    this.barChartData[1] = {data: this.retData.ICU.ICU_Stays_DURATIONS, label: 'ICU time'};
+    this.initMeans(this.retData);
+    this.initComplications(this.retData);
+    this.initCharts(this.retData);
 
 
     this.noData = this.searchResults.length === 0;
@@ -83,7 +100,44 @@ export class PreliminariViewComponent implements OnInit {
         this.selectedDrug = treatment;
         this.tratDrguObject = res1.Treatmant_List;
         this.searchByDrugTratments = Object.keys(this.tratDrguObject).filter(value => value.toLowerCase().includes(this.selectedDrug.toLowerCase()));
+        this.initCharts(res1);
+        this.initComplications(res1);
+        this.initMeans(res1);
       }
     );
+  }
+
+  public goBackToFirstPage() {
+    this.isFirstPage = true;
+    this.initCharts(this.retData);
+    this.initComplications(this.retData);
+    this.initMeans(this.retData);
+  }
+
+  private initMeans(retData) {
+    this.meanHospitalStay = retData.Hospitalization.Mean_Hospital_Stay;
+    this.meanICUStay = retData.ICU.Mean_ICU_Stay;
+  }
+
+  private initCharts(retData) {
+    this.cdr.detach();
+    this.showChart = false;
+    this.cdr.detectChanges();
+    this.commonComplicationsObject = retData.Complication_List;
+    this.commonComplicationsKeys = Object.keys(this.commonComplicationsObject);
+    this.barChartLabels = [];
+    for (let i = 1; i <= retData.Hospitalization.Hospital_Stays_DURATIONS.length; ++i) {
+      this.barChartLabels.push(i + '');
+    }
+    this.barChartData[0] = {data: retData.Hospitalization.Hospital_Stays_DURATIONS, label: 'Hospital time'};
+    this.barChartData[1] = {data: retData.ICU.ICU_Stays_DURATIONS, label: 'ICU time'};
+    this.showChart = true;
+    this.cdr.detectChanges();
+    this.cdr.reattach();
+  }
+
+  private initComplications(retData) {
+    this.commonComplicationsObject = retData.Complication_List;
+    this.commonComplicationsKeys = Object.keys(this.commonComplicationsObject);
   }
 }
