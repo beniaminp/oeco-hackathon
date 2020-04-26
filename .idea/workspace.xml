@@ -19,6 +19,7 @@
       <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/services/submit-case.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/services/submit-case.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/models/case-model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/models/case-model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/models/detail-on-progression.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/models/detail-on-progression.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/progression-details/progression-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/progression-details/progression-details.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/progression-details/progression-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/progression-details/progression-details.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/submit-case.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/submit-case.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/submit-case.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/submit-case.component.ts" afterDir="false" />
@@ -176,7 +177,7 @@
       <workItem from="1587551321072" duration="182000" />
       <workItem from="1587551709839" duration="10419000" />
       <workItem from="1587628671369" duration="13536000" />
-      <workItem from="1587749345004" duration="54742000" />
+      <workItem from="1587749345004" duration="57286000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1587658369760</created>
@@ -235,10 +236,10 @@
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
     <state x="2756" y="492" width="308" height="223" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587535761842" />
-    <state x="122" y="212" width="1725" height="511" key="#xdebugger.evaluate" timestamp="1587891286293">
+    <state x="122" y="212" width="1725" height="511" key="#xdebugger.evaluate" timestamp="1587919131611">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state x="122" y="212" width="1725" height="511" key="#xdebugger.evaluate/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587891286293" />
+    <state x="122" y="212" width="1725" height="511" key="#xdebugger.evaluate/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587919131611" />
     <state x="2458" y="176" width="904" height="854" key="CommitChangelistDialog2" timestamp="1587814910703">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
@@ -263,22 +264,22 @@
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
     <state width="1804" height="278" key="GridCell.Tab.0.right/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587891648292" />
-    <state width="1804" height="278" key="GridCell.Tab.1.bottom" timestamp="1587891648293">
+    <state width="1804" height="278" key="GridCell.Tab.1.bottom" timestamp="1587918946785">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
-    <state width="1804" height="278" key="GridCell.Tab.1.bottom/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587891648293" />
-    <state width="1804" height="278" key="GridCell.Tab.1.center" timestamp="1587891648293">
+    <state width="1804" height="278" key="GridCell.Tab.1.bottom/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587918946785" />
+    <state width="1804" height="278" key="GridCell.Tab.1.center" timestamp="1587918946785">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
-    <state width="1804" height="278" key="GridCell.Tab.1.center/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587891648293" />
-    <state width="1804" height="278" key="GridCell.Tab.1.left" timestamp="1587891648292">
+    <state width="1804" height="278" key="GridCell.Tab.1.center/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587918946785" />
+    <state width="1804" height="278" key="GridCell.Tab.1.left" timestamp="1587918946785">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
-    <state width="1804" height="278" key="GridCell.Tab.1.left/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587891648292" />
-    <state width="1804" height="278" key="GridCell.Tab.1.right" timestamp="1587891648293">
+    <state width="1804" height="278" key="GridCell.Tab.1.left/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587918946785" />
+    <state width="1804" height="278" key="GridCell.Tab.1.right" timestamp="1587918946785">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
-    <state width="1804" height="278" key="GridCell.Tab.1.right/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587891648293" />
+    <state width="1804" height="278" key="GridCell.Tab.1.right/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587918946785" />
     <state width="1804" height="278" key="GridCell.Tab.2.bottom" timestamp="1587891648294">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
@@ -307,18 +308,22 @@
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
     <state x="1120" y="336" width="800" height="535" key="Vcs.Push.Dialog.v2/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587894116595" />
-    <state width="899" height="600" key="XDebugger.FullValuePopup" timestamp="1587881930944">
+    <state width="899" height="600" key="XDebugger.FullValuePopup" timestamp="1587919131248">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
-    <state width="899" height="600" key="XDebugger.FullValuePopup/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587881930944" />
+    <state width="899" height="600" key="XDebugger.FullValuePopup/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587919131248" />
     <state x="2683" y="520" width="464" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587806392066">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
     <state x="2683" y="520" width="464" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587806392066" />
-    <state x="2097" y="170" width="1595" height="756" key="find.popup" timestamp="1587875940336">
-      <screen x="1920" y="0" width="1920" height="1200" />
+    <state x="325" y="170" width="1595" height="756" key="find.popup" timestamp="1587918830624">
+      <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state x="2097" y="170" width="1595" height="756" key="find.popup/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587875940336" />
+    <state x="325" y="170" width="1595" height="756" key="find.popup/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587918830624" />
+    <state x="1257" y="346" width="663" height="429" key="git4idea.merge.GitPullDialog" timestamp="1587918511854">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="1257" y="346" width="663" height="429" key="git4idea.merge.GitPullDialog/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587918511854" />
     <state width="600" height="424" key="javadoc.popup" timestamp="1587650057479">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
@@ -335,9 +340,20 @@
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
     <state x="2579" y="275" key="run.anything.popup/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587879559998" />
-    <state x="2578" y="269" width="672" height="678" key="search.everywhere.popup" timestamp="1587900083295">
+    <state x="2578" y="269" width="672" height="678" key="search.everywhere.popup" timestamp="1587918830543">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
-    <state x="2578" y="269" width="672" height="678" key="search.everywhere.popup/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587900083295" />
+    <state x="2578" y="269" width="672" height="678" key="search.everywhere.popup/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587918830543" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/oeco/controllers/CaseController.java</url>
+          <line>110</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
