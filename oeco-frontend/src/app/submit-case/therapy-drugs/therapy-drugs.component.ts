@@ -1,4 +1,4 @@
-import {Component, forwardRef, Input, OnInit} from '@angular/core';
+import {Component, forwardRef, OnInit} from '@angular/core';
 import {Drugs} from "../models/drugs";
 import ukDrugs from '../../../assets/data/drugs_uk.json';
 import {Observable} from "rxjs";
@@ -57,8 +57,8 @@ export class TherapyDrugsComponent implements OnInit, ControlValueAccessor {
   }
 
   public drugNameChanged(result) {
-    this.drugDoses = ukDrugs.dose[this.ukDrugs.indexOf(result)];
-    this.drugName = result;
+    this.drugDoses = ukDrugs.dose[this.ukDrugs.indexOf(result.item)];
+    this.drugName = result.item;
   }
 
   registerOnChange(fn: any): void {

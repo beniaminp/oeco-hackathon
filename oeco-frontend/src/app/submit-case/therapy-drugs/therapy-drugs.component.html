@@ -16,9 +16,9 @@
                 <label for="drugName">Name</label>
                 <input id="drugName" type="text" class="form-control" [(ngModel)]="nameDrugs"
                        [ngbTypeahead]="filterDrugNames" [resultTemplate]="drugNameTemplate"
-                       [inputFormatter]="formatter" [(ngModel)]="drugName"/>
+                       [inputFormatter]="formatter" [(ngModel)]="drugName" (selectItem)="drugNameChanged($event)"/>
                 <ng-template #drugNameTemplate let-r="result" let-t="term">
-                  <p (click)="drugNameChanged(r)">{{r}}</p>
+                  <p>{{r}}</p>
                 </ng-template>
               </div>
               <div class="form-group mx-sm-3 mb-2">

@@ -14,16 +14,14 @@
       <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/search-case/preliminari-view/preliminari-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/search-case/preliminari-view/preliminari-view.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/search-case/preliminari-view/preliminari-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/search-case/preliminari-view/preliminari-view.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/search-case/search-case.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/search-case/search-case.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/search-case/search-case.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/search-case/search-case.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/services/submit-case.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/services/submit-case.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/models/case-model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/models/case-model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/models/detail-on-progression.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/models/detail-on-progression.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/progression-details/progression-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/progression-details/progression-details.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/progression-details/progression-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/progression-details/progression-details.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/submit-case.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/submit-case.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/submit-case.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/submit-case.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/symptoms/symptoms.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/symptoms/symptoms.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/therapy-drugs/therapy-drugs.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/therapy-drugs/therapy-drugs.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/therapy-drugs/therapy-drugs.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/oeco-frontend/src/app/submit-case/therapy-drugs/therapy-drugs.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/oeco/controllers/CaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oeco/controllers/CaseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/CaseModelDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/CaseModelDTO.java" afterDir="false" />
@@ -65,6 +63,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="a99fbd61f7eb8d89611025ec31a067e001c2ce47" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
@@ -316,14 +319,14 @@
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
     <state x="2683" y="520" width="464" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587806392066" />
-    <state x="325" y="170" width="1595" height="756" key="find.popup" timestamp="1587918830624">
+    <state x="325" y="170" width="1595" height="756" key="find.popup" timestamp="1587921104911">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state x="325" y="170" width="1595" height="756" key="find.popup/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587918830624" />
-    <state x="1257" y="346" width="663" height="429" key="git4idea.merge.GitPullDialog" timestamp="1587918511854">
+    <state x="325" y="170" width="1595" height="756" key="find.popup/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587921104911" />
+    <state x="1257" y="346" width="663" height="429" key="git4idea.merge.GitPullDialog" timestamp="1587920872572">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state x="1257" y="346" width="663" height="429" key="git4idea.merge.GitPullDialog/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587918511854" />
+    <state x="1257" y="346" width="663" height="429" key="git4idea.merge.GitPullDialog/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587920872572" />
     <state width="600" height="424" key="javadoc.popup" timestamp="1587650057479">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
@@ -332,18 +335,18 @@
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
     <state x="2224" y="290" width="1372" height="627" key="new project wizard/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587536546338" />
-    <state x="2323" y="515" width="350" height="298" key="org.angular.cli.generate" timestamp="1587813337807">
-      <screen x="1920" y="0" width="1920" height="1200" />
+    <state x="1346" y="429" width="350" height="298" key="org.angular.cli.generate" timestamp="1587921070369">
+      <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state x="2323" y="515" width="350" height="298" key="org.angular.cli.generate/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587813337807" />
+    <state x="1346" y="429" width="350" height="298" key="org.angular.cli.generate/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587921070369" />
     <state x="2579" y="275" key="run.anything.popup" timestamp="1587879559998">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
     <state x="2579" y="275" key="run.anything.popup/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587879559998" />
-    <state x="2578" y="269" width="672" height="678" key="search.everywhere.popup" timestamp="1587918830543">
+    <state x="2578" y="269" width="672" height="678" key="search.everywhere.popup" timestamp="1587921055477">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
-    <state x="2578" y="269" width="672" height="678" key="search.everywhere.popup/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587918830543" />
+    <state x="2578" y="269" width="672" height="678" key="search.everywhere.popup/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587921055477" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
