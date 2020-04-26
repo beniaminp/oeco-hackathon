@@ -1,5 +1,5 @@
 <div class="modal-header">
-  <h4 class="modal-title">Add Details On Progression</h4>
+  <h3 class="progressiontitle modal-title">Progression day report</h3>
   <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss({type:'closeX'})">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -8,9 +8,10 @@
   <form [formGroup]="formGroup">
     <div class="row">
       <div class="col-sm-12">
-        <label>Date</label>
+
         <div class="form-group">
           <div class="input-group">
+            <label class="sidelabeldate">Date</label>
             <input class="form-control" placeholder="dd-mm-yyyy"
                    name="dp" ngbDatepicker #progressionDate="ngbDatepicker" formControlName="progressionDate">
             <div class="input-group-append">
@@ -43,13 +44,7 @@
       <div class="col-sm-12">
         <div class="form-group">
           <label for="existingConditions">Conditions</label>
-          <input id="existingConditions" type="text" class="form-control" formControlName="conditions"
-                 [ngbTypeahead]="filteredicd10Conditions" [resultTemplate]="ic10Template"
-                 [inputFormatter]="formatterConditions" [(ngModel)]="existingConditionsModel"/>
 
-          <button type="button" class="btn btn-outline-primary btn-sm" (click)="existingConditionsClicked()">
-            Add
-          </button>
           <ng-template #ic10Template let-r="result" let-t="term">
             <p>{{r.icCode}} - {{r.name}}</p>
           </ng-template>
@@ -74,6 +69,15 @@
             </tr>
             </tbody>
           </table>
+
+          <input id="existingConditions" type="text" class="form-control" formControlName="conditions"
+                 [ngbTypeahead]="filteredicd10Conditions" [resultTemplate]="ic10Template"
+                 [inputFormatter]="formatterConditions" [(ngModel)]="existingConditionsModel"/>
+
+          <button type="button" class="btn btn-primary btn-sm" (click)="existingConditionsClicked()">
+            Add
+          </button>
+
         </div>
       </div>
     </div>
@@ -148,7 +152,7 @@
                         <h2 class="card-title">CT</h2>
                         <div class="row">
                           <div class="col-12">
-                            <h3>Changes in the lung parenchyma and pleura</h3>
+                            <h3><b>Changes in the lung parenchyma and pleura</b></h3>
                           </div>
                           <div class="col-sm-3">
                             <input class="form-check-input" type="checkbox" value="" id="hazyIncreasedOpacities"
@@ -216,7 +220,7 @@
                         </div>
                         <div class="row pt-3">
                           <div class="col-12">
-                            <h3>Other Localization: Affected lung lobes</h3>
+                            <h3><b>Other Localization: Affected lung lobes</b></h3>
                           </div>
                           <div class="col-sm-3">
                             <input class="form-check-input" type="checkbox" value="" id="bilateral"
@@ -256,7 +260,7 @@
                         </div>
                         <div class="row pt-3">
                           <div class="col-12">
-                            <h3>Further findings</h3>
+                            <h3><b>Further findings</b></h3>
                           </div>
                           <div class="col-sm-3">
                             <input class="form-check-input" type="checkbox" value="" id="pleuralEffusion"
