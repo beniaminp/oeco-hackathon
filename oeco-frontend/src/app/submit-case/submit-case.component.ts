@@ -51,7 +51,9 @@ export class SubmitCaseComponent implements OnInit {
     unusualCase: new FormControl(''),
     hasPatientConsent: new FormControl(''),
     existingTherapyDrugs: new FormControl([]),
-    existingSymptoms: new FormControl(new SymptomsModel())
+    existingSymptoms: new FormControl(new SymptomsModel()),
+    icuAdmission: new FormControl(new SymptomsModel()),
+    icuRelease: new FormControl(new SymptomsModel()),
   });
 
   public formatter = (x: { name: string }) => x.name;
@@ -175,8 +177,9 @@ export class SubmitCaseComponent implements OnInit {
       this.formGroup.controls.hasPatientConsent.value,
       this.formGroup.controls.existingTherapyDrugs.value,
       this.formGroup.controls.existingSymptoms.value,
+      new Date(this.formGroup.controls.icuAdmission.value.year, this.formGroup.controls.icuAdmission.value.month, this.formGroup.controls.icuAdmission.value.day).getTime(),
+      new Date(this.formGroup.controls.icuRelease.value.year, this.formGroup.controls.icuRelease.value.month, this.formGroup.controls.icuRelease.value.day).getTime(),
     );
-    console.error('caseModel', caseModel);
     this.submitCaseService.submitCase(caseModel).subscribe(
       (res) => {
         console.error(res);

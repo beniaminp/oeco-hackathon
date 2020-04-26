@@ -7,14 +7,13 @@ public class DetailOnProgressionDTO implements Serializable {
     public Double date;
     public List<DrugsDTO> drugs;
     public List<String> conditions;
-    public String symptoms;
     public BloodDataDTO bloodData;
     public CtRadiologyModelDTO radCT;
     public String radMRI;
     public String radCXR;
     public Long durationOfTherapy;
     public TherapySupportDTO therapySupport;
-    public SymptomsDTO synptoms;
+    public SymptomsDTO symptoms;
 
     public Double getDate() {
         return date;
@@ -38,14 +37,6 @@ public class DetailOnProgressionDTO implements Serializable {
 
     public void setConditions(List<String> conditions) {
         this.conditions = conditions;
-    }
-
-    public String getSymptoms() {
-        return symptoms;
-    }
-
-    public void setSymptoms(String symptoms) {
-        this.symptoms = symptoms;
     }
 
     public BloodDataDTO getBloodData() {
@@ -96,12 +87,12 @@ public class DetailOnProgressionDTO implements Serializable {
         this.therapySupport = therapySupport;
     }
 
-    public SymptomsDTO getSynptoms() {
-        return synptoms;
+    public SymptomsDTO getsymptoms() {
+        return symptoms;
     }
 
-    public void setSynptoms(SymptomsDTO synptoms) {
-        this.synptoms = synptoms;
+    public void setSymptoms(SymptomsDTO symptoms) {
+        this.symptoms = symptoms;
     }
 
     @Override
@@ -110,14 +101,13 @@ public class DetailOnProgressionDTO implements Serializable {
                 "date=" + date +
                 ", drugs=" + drugs +
                 ", conditions=" + conditions +
-                ", symptoms='" + symptoms + '\'' +
                 ", bloodData=" + bloodData +
                 ", radCT=" + radCT +
                 ", radMRI='" + radMRI + '\'' +
                 ", radCXR='" + radCXR + '\'' +
                 ", durationOfTherapy=" + durationOfTherapy +
                 ", therapySupport=" + therapySupport +
-                ", synptoms=" + synptoms +
+                ", symptoms=" + symptoms +
                 '}';
     }
 }

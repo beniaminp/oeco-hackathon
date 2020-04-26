@@ -27,6 +27,8 @@ public class CaseModelDTO implements Serializable {
     public Boolean hasPatientConsent;
     public List<DrugsDTO> existingTherapyDrugs;
     public SymptomsDTO existingSymptoms;
+    public Long icuAdmission;
+    public Long icuRelease;
 
     public String getPatientCode() {
         return patientCode;
@@ -188,6 +190,22 @@ public class CaseModelDTO implements Serializable {
         this.existingSymptoms = existingSymptoms;
     }
 
+    public Long getIcuAdmission() {
+        return icuAdmission;
+    }
+
+    public void setIcuAdmission(Long icuAdmission) {
+        this.icuAdmission = icuAdmission;
+    }
+
+    public Long getIcuRelease() {
+        return icuRelease;
+    }
+
+    public void setIcuRelease(Long icuRelease) {
+        this.icuRelease = icuRelease;
+    }
+
     @Override
     public String toString() {
         return "CaseModelDTO{" +
@@ -211,6 +229,8 @@ public class CaseModelDTO implements Serializable {
                 ", hasPatientConsent=" + hasPatientConsent +
                 ", existingTherapyDrugs=" + existingTherapyDrugs +
                 ", existingSymptoms=" + existingSymptoms +
+                ", icuAdmission=" + icuAdmission +
+                ", icuRelease=" + icuRelease +
                 '}';
     }
 }

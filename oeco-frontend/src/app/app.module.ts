@@ -26,6 +26,7 @@ import { PreliminariViewComponent } from './search-case/preliminari-view/prelimi
 import { TherapyDrugsComponent } from './submit-case/therapy-drugs/therapy-drugs.component';
 import { TherapySupportComponent } from './submit-case/therapy-support/therapy-support.component';
 import { SymptomsComponent } from './submit-case/symptoms/symptoms.component';
+import {ChartsModule} from "ng2-charts";
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { SymptomsComponent } from './submit-case/symptoms/symptoms.component';
     MatCheckboxModule,
     MatTableModule,
     NgbModule,
-    NgMultiSelectDropDownModule.forRoot()
+    NgMultiSelectDropDownModule.forRoot(),
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

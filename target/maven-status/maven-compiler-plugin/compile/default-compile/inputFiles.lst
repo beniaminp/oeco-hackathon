@@ -1,0 +1,17 @@
+/home/dragos.pantiru/Downloads/hackaton/oeco/oeco-backend/src/main/java/com/oeco/controllers/dto/search/SearchConditionsDTO.java
+/home/dragos.pantiru/Downloads/hackaton/oeco/oeco-backend/src/main/java/com/oeco/controllers/dto/CtRadiologyModelDTO.java
+/home/dragos.pantiru/Downloads/hackaton/oeco/oeco-backend/src/main/java/com/oeco/controllers/dto/TherapySupportDTO.java
+/home/dragos.pantiru/Downloads/hackaton/oeco/oeco-backend/src/main/java/com/oeco/controllers/dto/SymptomsDTO.java
+/home/dragos.pantiru/Downloads/hackaton/oeco/oeco-backend/src/main/java/com/oeco/controllers/dto/ExistingConditionsDTO.java
+/home/dragos.pantiru/Downloads/hackaton/oeco/oeco-backend/src/main/java/com/oeco/controllers/dto/CaseModelDTO.java
+/home/dragos.pantiru/Downloads/hackaton/oeco/oeco-backend/src/main/java/com/oeco/controllers/repository/CaseRepository.java
+/home/dragos.pantiru/Downloads/hackaton/oeco/oeco-backend/src/main/java/com/oeco/MyConfiguration.java
+/home/dragos.pantiru/Downloads/hackaton/oeco/oeco-backend/src/main/java/com/oeco/controllers/dto/DetailOnProgressionDTO.java
+/home/dragos.pantiru/Downloads/hackaton/oeco/oeco-backend/src/main/java/com/oeco/Application.java
+/home/dragos.pantiru/Downloads/hackaton/oeco/oeco-backend/src/main/java/com/oeco/controllers/dto/BloodDataDTO.java
+/home/dragos.pantiru/Downloads/hackaton/oeco/oeco-backend/src/main/java/com/oeco/controllers/dto/DrugsDTO.java
+/home/dragos.pantiru/Downloads/hackaton/oeco/oeco-backend/src/main/java/com/oeco/controllers/CaseController.java
+/home/dragos.pantiru/Downloads/hackaton/oeco/oeco-backend/src/main/java/com/oeco/controllers/dto/ResponseDTO.java
+/home/dragos.pantiru/Downloads/hackaton/oeco/oeco-backend/src/main/java/com/oeco/controllers/dto/RequestDataWithDrugs.java
+/home/dragos.pantiru/Downloads/hackaton/oeco/oeco-backend/src/main/java/com/oeco/controllers/dto/RequestData.java
+/home/dragos.pantiru/Downloads/hackaton/oeco/oeco-backend/src/main/java/com/oeco/controllers/dto/search/SearchConditionsWithDrugsDTO.java

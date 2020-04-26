@@ -175,7 +175,6 @@ export class ProgressionDetailsComponent implements OnInit {
       new Date(this.formGroup.controls.progressionDate.value.year, this.formGroup.controls.progressionDate.value.month, this.formGroup.controls.progressionDate.value.day).getTime(),
       this.formGroup.controls.drugsList.value,
       this.existingConditionsList.map(value => value.icCode),
-      '',
       new BloodData(this.formGroup.controls.glucose.value, this.formGroup.controls.pressureSystolic.value, this.formGroup.controls.pressureDiastolic.value, this.formGroup.controls.glucoseUnits.value),
       radCT,
       this.formGroup.controls.radMRI.value,

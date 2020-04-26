@@ -13,6 +13,11 @@
             <set />
           </value>
         </entry>
+        <entry key="/fragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$APPLICATION_CONFIG_DIR$/consoles/db/7fef0f5b-a30f-423b-9543-49ca94b7768e/console.sql">
           <value>
             <set />
@@ -79,6 +84,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/oeco-frontend/src/app/home/home.component.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/oeco-frontend/src/app/search-case/models/search-conditions-with-drugs.ts">
           <value>
             <set />
           </value>
@@ -298,6 +308,26 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/MedianResponsData.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/RequestData.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/RequestDataWithDrugs.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/ResponseDTO.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/SymptomsDTO.java">
           <value>
             <set />
@@ -314,6 +344,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/search/SearchConditionsDTO.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/search/SearchConditionsWithDrugsDTO.java">
           <value>
             <set />
           </value>

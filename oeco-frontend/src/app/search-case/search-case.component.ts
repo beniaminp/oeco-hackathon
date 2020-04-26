@@ -22,6 +22,7 @@ export class SearchCaseComponent implements OnInit {
   });
 
   public icd10ConditionsUrl = 'https://clinicaltables.nlm.nih.gov/api/conditions/v3/search';
+  public icd10ConditionsUrl1 = 'https://clinicaltables.nlm.nih.gov/api/icd10cm/v3/search';
   public existingConditionsList: ExistingConditions[] = [];
   existingConditionsModel: ExistingConditions;
 
@@ -43,7 +44,8 @@ export class SearchCaseComponent implements OnInit {
     );
 
   public conditionsObs = (term) => {
-    return this.httpClient.get(this.icd10ConditionsUrl + '?terms=' + (term != null ? term.toLowerCase() : '') + '&df=term_icd9_code,primary_name').pipe(
+    return this.httpClient.get(/*this.icd10ConditionsUrl + '?terms=' + (term != null ? term.toLowerCase() : '') + '&df=term_icd9_code,primary_name'*/
+      this.icd10ConditionsUrl1 + '?sf=code,name&terms=' + (term != null ? term.toLowerCase() : '')).pipe(
       map(
         tmpResult => {
           const retResult: ExistingConditions[] = [];
@@ -79,10 +81,21 @@ export class SearchCaseComponent implements OnInit {
 
   public search() {
     const searchConditions = new SearchConditions(this.formGroup.controls.age.value, this.existingConditionsList);
+    this.submitCaseService.searchConditions = searchConditions;
     this.submitCaseService.searchCase(searchConditions).subscribe(
-      (res: CaseModel[]) => {
-        this.submitCaseService.foundSearchResults = res;
-        this.router.navigateByUrl('/preliminar-model');
+      (res) => {
+        if (res == null) {
+          alert('No data found');
+        } else {
+          this.submitCaseService.foundSearchResults = res;
+          this.submitCaseService.ages = this.formGroup.controls.age.value;
+          this.submitCaseService.searchCaseAllData(searchConditions).subscribe(
+            (res1: CaseModel[]) => {
+              this.submitCaseService.searchCaseModel = res1;
+              this.router.navigateByUrl('/preliminar-model');
+            }
+          );
+        }
       }
     );
   }

@@ -2,6 +2,7 @@ import {ExistingConditions} from "./existing-conditions";
 import {DetailOnProgression} from "./detail-on-progression";
 import {TherapySupport} from "./therapy-support";
 import {SymptomsModel} from "./symptoms-model";
+import {Drugs} from "./drugs";
 
 export class CaseModel {
   patientCode: string;
@@ -22,11 +23,13 @@ export class CaseModel {
   additionalComments: string;
   unusualCase: string;
   hasPatientConsent: boolean;
-  existingTherapyDrugs: TherapySupport;
+  existingTherapyDrugs: Drugs[];
   existingSymptoms: SymptomsModel;
+  icuAdmission: number;
+  icuRelease: number;
 
 
-  constructor(patientCode: string, yearOfBirth: number, sex: number, state: string, firstPositiveDate: number, firstTestType: string, previousInfections: number[], lastCovidPositiveTest: number, lastTestType: string, existingConditions: ExistingConditions[], hospitalAdmission: number, hospitalRelease: number, outcomeDate: number, outcomeType: number, detailsOnProgression: DetailOnProgression[], additionalComments: string, unusualCase: string, hasPatientConsent: boolean, therapySupport: TherapySupport, synptoms: SymptomsModel) {
+  constructor(patientCode: string, yearOfBirth: number, sex: number, state: string, firstPositiveDate: number, firstTestType: string, previousInfections: number[], lastCovidPositiveTest: number, lastTestType: string, existingConditions: ExistingConditions[], hospitalAdmission: number, hospitalRelease: number, outcomeDate: number, outcomeType: number, detailsOnProgression: DetailOnProgression[], additionalComments: string, unusualCase: string, hasPatientConsent: boolean, existingTherapyDrugs: Drugs[], existingSymptoms: SymptomsModel, icuAdmission: number, icuRelease: number) {
     this.patientCode = patientCode;
     this.yearOfBirth = yearOfBirth;
     this.sex = sex;
@@ -45,7 +48,9 @@ export class CaseModel {
     this.additionalComments = additionalComments;
     this.unusualCase = unusualCase;
     this.hasPatientConsent = hasPatientConsent;
-    this.existingTherapyDrugs = therapySupport;
-    this.existingSymptoms = synptoms;
+    this.existingTherapyDrugs = existingTherapyDrugs;
+    this.existingSymptoms = existingSymptoms;
+    this.icuAdmission = icuAdmission;
+    this.icuRelease = icuRelease;
   }
 }

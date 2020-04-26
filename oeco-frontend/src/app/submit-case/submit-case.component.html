@@ -149,6 +149,42 @@
       </div>
 
       <div class="row">
+        <div class="col-sm-12 w-100">
+          <label>ICU admission</label>
+          <div class="form-group">
+            <div class="input-group">
+              <input class="form-control" placeholder="dd-mm-yyyy"
+                     name="icuAdmission" ngbDatepicker #icuAdmission="ngbDatepicker" formControlName="icuAdmission">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary calendar" (click)="icuAdmission.toggle()" type="button">
+                  <i class="fas fa-calendar-alt"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 w-100">
+          <label>ICU release</label>
+          <div class="form-group">
+            <div class="input-group">
+              <input class="form-control" placeholder="dd-mm-yyyy"
+                     name="icuRelease" ngbDatepicker #icuRelease="ngbDatepicker" formControlName="icuRelease">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary calendar" (click)="icuRelease.toggle()" type="button">
+                  <i class="fas fa-calendar-alt"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="row">
         <div class="col-sm-12">
           <mat-list role="list" class="w-100">
             <div class="row">

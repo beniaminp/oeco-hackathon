@@ -8,26 +8,24 @@ export class DetailOnProgression {
   date: number;
   drugs: Drugs[];
   conditions: string[];
-  symptoms: string;
   bloodData: BloodData;
   radCT: CtRadiologyModel;
   radMRI: string;
   radCXR: string;
   durationOfTherapy: number;
   therapySupport: TherapySupport;
-  synptoms: SymptomsModel;
+  symptoms: SymptomsModel;
 
-  constructor(date: number, drugs: Drugs[], conditions: string[], symptoms: string, bloodData: BloodData, radCT: CtRadiologyModel, radMRI: string, radCXR: string, durationOfTherapy: number, therapySupport: TherapySupport, synptoms: SymptomsModel) {
+  constructor(date: number, drugs: Drugs[], conditions: string[], bloodData: BloodData, radCT: CtRadiologyModel, radMRI: string, radCXR: string, durationOfTherapy: number, therapySupport: TherapySupport, symptoms: SymptomsModel) {
     this.date = date;
     this.drugs = drugs;
     this.conditions = conditions;
-    this.symptoms = symptoms;
     this.bloodData = bloodData;
     this.radCT = radCT;
     this.radMRI = radMRI;
     this.radCXR = radCXR;
     this.durationOfTherapy = durationOfTherapy;
     this.therapySupport = therapySupport;
-    this.synptoms = synptoms;
+    this.symptoms = symptoms;
   }
 }

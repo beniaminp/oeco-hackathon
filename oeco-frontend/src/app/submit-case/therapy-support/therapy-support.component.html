@@ -1,0 +1,70 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Support</h5>
+    <div class="row">
+      <div class="col-sm-12 w-100">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <div class="form">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="oxygenAdded"
+                       [(ngModel)]="therapySupport.oxygenAdded">
+                <label class="form-check-label" for="oxygenAdded">
+                  Oxigen support - added
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="oxygenRemoved"
+                       [(ngModel)]="therapySupport.oxygenRemoved">
+                <label class="form-check-label" for="oxygenRemoved">
+                  Oxigen support - removed
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="mechanicalVentilationIntubation"
+                       [(ngModel)]="therapySupport.mechanicalVentilationIntubation">
+                <label class="form-check-label" for="mechanicalVentilationIntubation">
+                  Mechanical ventilation intubation
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="mechanicalVentilationExtubation"
+                       [(ngModel)]="therapySupport.mechanicalVentilationExtubation">
+                <label class="form-check-label" for="mechanicalVentilationExtubation">
+                  Mechanical ventilation extubation
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="ecmo" [(ngModel)]="therapySupport.ecmo">
+                <label class="form-check-label" for="ecmo">
+                  ECMO
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="dialysisYes"
+                       [(ngModel)]="therapySupport.dialysisYes">
+                <label class="form-check-label" for="dialysisYes">
+                  Dialysis - Yes
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="dialysisNo"
+                       [(ngModel)]="therapySupport.dialysisNo">
+                <label class="form-check-label" for="dialysisNo">
+                  Dialysis - No
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="dialysisPreexisting"
+                       [(ngModel)]="therapySupport.dialysisPreexisting">
+                <label class="form-check-label" for="dialysisPreexisting">
+                  Dialysis - pre-existing requirement
+                </label>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
