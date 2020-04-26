@@ -27,6 +27,7 @@ import { TherapyDrugsComponent } from './submit-case/therapy-drugs/therapy-drugs
 import { TherapySupportComponent } from './submit-case/therapy-support/therapy-support.component';
 import { SymptomsComponent } from './submit-case/symptoms/symptoms.component';
 import {ChartsModule} from "ng2-charts";
+import { BifDataComponent } from './bif-data/bif-data.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {ChartsModule} from "ng2-charts";
     PreliminariViewComponent,
     TherapyDrugsComponent,
     TherapySupportComponent,
-    SymptomsComponent
+    SymptomsComponent,
+    BifDataComponent
   ],
   imports: [
     BrowserModule,

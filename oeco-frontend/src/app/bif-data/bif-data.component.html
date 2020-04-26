@@ -1,0 +1,27 @@
+<div class="container pt-5 align-items-center">
+  <div class="row>">
+    <h2 class="pb-5">Big Data Web API</h2>
+  </div>
+  <div class="row">
+    <table class="table table-bordered table-responsive">
+      <thead>
+      <tr>
+        <th scope="col">API</th>
+        <th scope="col">Name</th>
+        <th scope="col">Return Type</th>
+        <th scope="col">Method</th>
+        <th scope="col">Exaple</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let api of links">
+        <td>{{api.url}}</td>
+        <td>{{api.name}}</td>
+        <td>{{api.returnType}}</td>
+        <td>{{api.method}}</td>
+        <td><a [href]="api.example">Example Request/Response</a></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

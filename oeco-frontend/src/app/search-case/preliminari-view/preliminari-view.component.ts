@@ -3,7 +3,7 @@ import {SubmitCaseService} from '../../services/submit-case.service';
 import {Drugs} from '../../submit-case/models/drugs';
 import {ChartDataSets, ChartOptions, ChartType} from 'chart.js';
 import {Label} from 'ng2-charts';
-import {SearchConditionsWithDrugs} from "../models/search-conditions-with-drugs";
+import {SearchConditionsWithDrugs} from '../models/search-conditions-with-drugs';
 
 @Component({
   selector: 'app-preliminari-view',
@@ -41,8 +41,8 @@ export class PreliminariViewComponent implements OnInit {
   public commonComplicationsKeys: any[];
   public showChart = true;
 
-  public meanHospitalStay = 0;
-  public meanICUStay = 0;
+  public meanHospitalStay = '0';
+  public meanICUStay = '0';
 
   constructor(
     private submitCaseService: SubmitCaseService,
@@ -114,8 +114,8 @@ export class PreliminariViewComponent implements OnInit {
   }
 
   private initMeans(retData) {
-    this.meanHospitalStay = retData.Hospitalization.Mean_Hospital_Stay;
-    this.meanICUStay = retData.ICU.Mean_ICU_Stay;
+    this.meanHospitalStay = Number(retData.Hospitalization.Mean_Hospital_Stay).toFixed(1);
+    this.meanICUStay = Number(retData.ICU.Mean_ICU_Stay).toFixed(1);
   }
 
   private initCharts(retData) {
