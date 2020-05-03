@@ -19,16 +19,62 @@ div.options {
   width: 100%;
  }
 
+ div.footerinfo{
+   background-color: #9c9faa;
+   color: white;
+   width: 100%;
+   margin:0px;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: center;
+   padding-top: 30px;
+   min-height: 400px;
+ }
+ div.footerinfo div{
+   font-family: 'Source Sans Pro', sans-serif;
+   min-height: 30px;
+   width: 300px;
+   padding:10px;
+ }
+
+ div.footerinfo div a{
+   display: block;
+   color: #faf4f4;
+   list-style: none;
+   font-family: 'Source Sans Pro', sans-serif;
+   font-size: 14pt;
+   margin-top: 15px;
+   margin-left: 0px;
+ }
+ div.footerinfo div a:hover{
+   cursor: pointer;
+   text-decoration: underline;
+   text-decoration-color: #98ccc2;
+   text-decoration-thickness: 3px;
+ }
+
+ div.footerinfo div h3{
+   margin-top:30px;
+   font-family: 'Source Sans Pro', sans-serif;
+   font-size: 17pt;
+   font-weight: 600;
+ }
+  div.footerinfo div:nth-child(3) h3{
+    background-image: url("src/assets/images/logo_bright.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 200px;
+    background-origin: border-box;
+    display: block;
+    height:90px;
+    padding-bottom:80px;
+    background-position: left 0px bottom 0px;
+  }
+
 div.note {
   padding-left: 150px;
-  background-image: url("src/assets/images/logo.png");
-  background-repeat: no-repeat;
-  background-position: left;
-  background-size: contain;
-  background-origin: border-box;
-  margin-left: 15px;
-  height:40px;
-  background-size: 90px;
+
 }
 
 div.options a {
@@ -88,6 +134,8 @@ div.options a:nth-child(4) {
   color:#7f8c8d;
   display: block;
   width:300px;
+  height:auto;
+  margin-bottom: 0px;
   padding-left:40px;
   background-color: inherit;
   border:0px;
@@ -95,7 +143,7 @@ div.options a:nth-child(4) {
   -moz-box-shadow: none;
   box-shadow:none;
 }
-div.options a:hover{
+div.options a:nth-child(1):hover, div.options a:nth-child(2):hover, div.options a:nth-child(3):hover{
   -webkit-box-shadow: 6px 6px 4px 0px cornflowerblue;
   -moz-box-shadow: 6px 6px 4px 0px cornflowerblue;
   box-shadow: 6px 6px 4px 0px cornflowerblue;

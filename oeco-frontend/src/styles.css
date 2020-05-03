@@ -125,3 +125,22 @@ input[type="text"],input[type="number"]{
 input.form-control{
   border-radius: 30px;
 }
+div.logoleft{
+  display:block;
+  position:absolute;
+  top:20px;
+  left:0px;
+  float:left;
+  width:120px;
+  background-image: url("src/assets/images/logo.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+  background-origin: border-box;
+  margin-left: 15px;
+  height:40px;
+  background-size: 120px;
+}
+div.logoleft:hover{
+  cursor: pointer;
+}
