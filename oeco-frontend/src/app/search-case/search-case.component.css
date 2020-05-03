@@ -26,27 +26,48 @@ button.btn-primary{
   width:200px;
 }
 button.casesearch{
+  width:310px;
   font-family: 'Source Sans Pro', sans-serif;
-  font-weight: normal;
   display: block;
-  padding: 15px;
-  padding-left: 75px;
+  padding: 25px;
+  padding-left: 85px;
   font-size: 20pt;
-  border-radius: 10px;
+  border-radius: 60px;
   margin: 30px;
   margin-bottom: 40px;
   text-decoration: none;
   color:black;
-  height: 55px;
+  min-height: 65px;
   min-width: 300px;
-  background-image: url(src/assets/images/search.png);
+  background-color: #faf4f4;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-box-shadow: 6px 6px 4px 0px rgba(156,159,170,1);
+  -moz-box-shadow: 6px 6px 4px 0px rgba(156,159,170,1);
+  box-shadow: 6px 6px 4px 0px rgba(156,159,170,1);
+  font-weight: 600;
+  background-image: url(src/assets/images/search_case.png);
   background-repeat: no-repeat;
-  background-size: 40px;
-  background-position: left 25px bottom 12px;
+  background-size: 35px;
+  background-position: left 30px bottom 8px;
   background-origin: border-box;
-  background-color: #007bff;
-  color:white; /* #FF9354;*/
   display: block;
-  border:0px;
-  padding-bottom: 15px;
+  border:2px solid #7f8c8d;
+
+}
+button.casesearch:hover{
+  -webkit-box-shadow: 6px 6px 4px 0px cornflowerblue;
+  -moz-box-shadow: 6px 6px 4px 0px cornflowerblue;
+  box-shadow: 6px 6px 4px 0px cornflowerblue;
+}
+.pt-5{
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+label{
+  color:black
+}
+.btn{
+  min-width: 200px;
 }

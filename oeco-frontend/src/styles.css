@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-  background-color: rgb(240, 240, 240);
+  background-color: #faf4f4;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -10,6 +10,9 @@ html, body {
 
 label{
     font-size: 13pt;
+    color: white;
+    font-weight: 600;
+
 }
 label.sidelabel{
   display: inline-block;
@@ -27,6 +30,10 @@ label.sidelabeldate{
 
 div.row{
   margin-top: 10px;
+}
+
+div.inputform{
+  background-color:#9c9faa;
 }
 
 #patientCode{
@@ -49,6 +56,9 @@ div.col-sm-2{
 h2{
   padding-top: 20px;
   border-bottom: 3px solid rgb(220,220,220);
+  color:white;
+  font-size: 22pt;
+  font-weight: 600;
 }
 label.testlabel{
   display: inline-block;
@@ -87,10 +97,31 @@ button.w-20{
   border:2px solid cornflowerblue;
 }
 h3.progressiontitle{
-  font-size: 16pt;
-  font-weight: bold;
+  font-size: 18pt;
+  font-weight: 600;
 }
 h5.card-title{
   font-size: 14pt;
   font-weight: bold;
+}
+div.container{
+  width: 100%;
+  max-width: none;
+  padding:0px;
+}
+.applicationwindow{
+  width:100%;
+  display:block;
+}
+div.col-sm-12{
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input[type="text"],input[type="number"]{
+  border-radius: 30px;
+}
+input.form-control{
+  border-radius: 30px;
 }

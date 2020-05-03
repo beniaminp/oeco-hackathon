@@ -2,67 +2,82 @@ div.header {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  background-image: url("src/assets/images/logo_OECO.png");
+  background-image: url("src/assets/images/oeco_logo.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   width: 700px;
   height: 300px;
   max-width: 100%;
+  margin-bottom: 50px;
+  margin-top:100px;
 }
 
 div.options {
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
+  padding-top:30px;
+  background-color: #98ccc2;
+  width: 100%;
 }
 
 div.note {
-
+  padding-left: 150px;
+  background-image: url("src/assets/images/logo.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+  background-origin: border-box;
+  margin-left: 15px;
+  height:40px;
+  background-size: 90px;
 }
 
 div.options a {
+  width:310px;
   font-family: 'Source Sans Pro', sans-serif;
   display: block;
-  padding: 15px;
-  padding-left: 100px;
+  padding: 25px;
+  padding-left: 85px;
   font-size: 20pt;
-  border-radius: 10px;
+  border-radius: 60px;
   margin: 30px;
   margin-bottom: 40px;
   text-decoration: none;
   color:black;
-  min-height: 55px;
+  min-height: 65px;
   min-width: 300px;
+  background-color: #faf4f4;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-box-shadow: 6px 6px 4px 0px rgba(156,159,170,1);
+  -moz-box-shadow: 6px 6px 4px 0px rgba(156,159,170,1);
+  box-shadow: 6px 6px 4px 0px rgba(156,159,170,1);
+  font-weight: 600;
 }
 
 div.options a:nth-child(1) {
-  background-image: url(src/assets/images/upload.png);
+  background-image: url(src/assets/images/upload_case.png);
   background-repeat: no-repeat;
-  background-size: 40px;
-  background-position: left 30px bottom 15px;
+  background-size: 35px;
+  background-position: left 30px bottom 10px;
   background-origin: border-box;
-  background-color: #4FB33B;
   display: block;
 }
 
 div.options a:nth-child(2) {
-  background-image: url(src/assets/images/search.png);
+  background-image: url(src/assets/images/search_case.png);
   background-repeat: no-repeat;
-  background-size: 40px;
-  background-position: left 30px bottom 15px;
+  background-size: 35px;
+  background-position: left 30px bottom 8px;
   background-origin: border-box;
-  background-color: #FF9354;
   display: block;
 }
 
 div.options a:nth-child(3) {
-  background-image: url(src/assets/images/api.png);
+  background-image: url(src/assets/images/api_access.png);
   background-repeat: no-repeat;
   background-size: 40px;
-  background-position: left 30px bottom 20px;
+  background-position: left 30px bottom 15px;
   background-origin: border-box;
-  background-color: #7776FF;
   display: block;
 }
 
@@ -72,8 +87,18 @@ div.options a:nth-child(4) {
   font-size:12pt;
   color:#7f8c8d;
   display: block;
-  width:auto;
+  width:300px;
   padding-left:40px;
+  background-color: inherit;
+  border:0px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow:none;
+}
+div.options a:hover{
+  -webkit-box-shadow: 6px 6px 4px 0px cornflowerblue;
+  -moz-box-shadow: 6px 6px 4px 0px cornflowerblue;
+  box-shadow: 6px 6px 4px 0px cornflowerblue;
 }
 div.options a:nth-child(4):hover {
 color:cornflowerblue;

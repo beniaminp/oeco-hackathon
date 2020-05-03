@@ -1,0 +1,17 @@
+label{
+  color:black;
+}
+div.modal-footer{
+  background-color:#98ccc2;
+}
+.progressionb{
+ min-width: 150px;
+ background-color: #faf4f4;
+ font-weight: 600;
+}
+.progressionb:hover{
+ color:black;
+}
+label.form-check-label{
+  color:black;
+}

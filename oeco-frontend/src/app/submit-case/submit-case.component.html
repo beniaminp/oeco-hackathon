@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col-sm-12">
-    <h1 class="h3 mb-3 font-weight-normal">COVID Case study submission form</h1>
+    <h1 class="h3 mb-3 submissionheader">COVID Case study submission form</h1>
   </div>
 </div>
-<div class="row">
+<div class="inputform row">
   <div class="col-sm-12">
     <form [formGroup]="formGroup">
 
@@ -95,6 +95,7 @@
               </div>
               <label for="firstTestType" class="testlabel">Select test type</label>
               <select class="form-control" id="firstTestType" formControlName="firstTestType">
+                <option value="" disabled selected hidden>Please Choose...</option>
                 <option value="0">PCR</option>
                 <option value="1">Serology</option>
                 <option value="2">Clinical picture</option>
@@ -121,6 +122,7 @@
               </div>
               <label for="lastTestType" class="testlabel">Select test type</label>
               <select class="form-control" id="lastTestType" formControlName="lastTestType">
+                <option value="" disabled selected hidden>Please Choose...</option>
                 <option value="0">PCR</option>
                 <option value="1">Serology</option>
                 <option value="2">Clinical picture</option>
@@ -384,11 +386,12 @@
         </div>
       </div>
 
-      <div class="row pt-5 pb-5">
-        <div class="col-sm-12 main-btn">
-          <button type="submit" class="sumbitbutton" (click)="submitCase()">Submit Case</button>
-        </div>
-      </div>
+
     </form>
+  </div>
+</div>
+<div class="row pt-5 pb-5 bottomrow">
+  <div class="col-sm-12 main-btn bottomrow">
+    <button type="submit" class="sumbitbutton" (click)="submitCase()">Submit new case</button>
   </div>
 </div>
