@@ -54,10 +54,10 @@ div.col-sm-2{
   margin-right: 50px;
 }
 h2{
-  padding-top: 20px;
+  padding-top: 50px;
   border-bottom: 3px solid rgb(220,220,220);
   color:white;
-  font-size: 22pt;
+  font-size: 18pt;
   font-weight: 600;
 }
 label.testlabel{
@@ -117,6 +117,8 @@ div.col-sm-12{
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
+  color:white;
+  font-weight: 600;
 }
 
 input[type="text"],input[type="number"]{
@@ -129,7 +131,7 @@ div.logoleft{
   display:block;
   position:absolute;
   top:20px;
-  left:0px;
+  left:30px;
   float:left;
   width:120px;
   background-image: url("src/assets/images/logo.png");
@@ -137,10 +139,19 @@ div.logoleft{
   background-position: left;
   background-size: contain;
   background-origin: border-box;
-  margin-left: 15px;
   height:40px;
   background-size: 120px;
 }
 div.logoleft:hover{
   cursor: pointer;
+}
+label.textboxlabel{
+  margin-top: 20px;
+}
+h1.submissionheader{
+  font-family: 'Source Sans Pro', sans-serif;
+  color:black;
+  font-weight: 600;
+  padding-top:10px;
+  font-size: 18pt;
 }

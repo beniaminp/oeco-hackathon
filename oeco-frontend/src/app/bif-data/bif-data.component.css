@@ -4,17 +4,18 @@
   margin-right: auto;
   padding:5px;
 }
-h2.pb-5{
-  color:black;
-   display: block;
-  padding-left: 100px;
-  minheight: 40px;
-  font-size: 18pt;
-  font-weight: 600;
+h1.submissionheader{
   background-image: url(src/assets/images/api_access.png);
   background-repeat: no-repeat;
-  background-size: 50px;
-  background-position: left 30px top 10px;
-  background-origin: border-box;
-
+  background-size: 35px;
+  background-position: left 25px bottom 2px;
+  min-height:50px ;
+  display: block;
+  padding-top:10pt;
+  padding-left:80px;
+  font-weight: 600;
+  margin-bottom:5px;
+}
+div.container{
+  max-width: 1000px;
 }
