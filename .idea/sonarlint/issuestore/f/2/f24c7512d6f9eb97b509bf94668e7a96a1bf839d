@@ -1,0 +1,19 @@
+
+[
+java:S1155*">Use isEmpty() to check whether the collection is empty or not.(‡ÖàŒ8ì°Ø‹›.
+N
+java:S1602I",Remove useless curly braces around statement(¹ßàæüÿÿÿÿ8³Ûù¨›.
+Ž
+java:S1130X"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(œ¾Šùÿÿÿÿ8¯×Ð­›.
+`
+java:S1155^">Use isEmpty() to check whether the collection is empty or not.(šØÚ±úÿÿÿÿ8¯×Ð­›.
+‰
+java:S1130$"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(úíª¼8³Ûù¨›.
+[
+java:S1155H">Use isEmpty() to check whether the collection is empty or not.(‡ÖàŒ8¢æ…¨›.
+N
+java:S1602+",Remove useless curly braces around statement(¹ßàæüÿÿÿÿ8³Ûù¨›.
+‰
+java:S1130B"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ƒýúü8³Ûù¨›.
+H
+java:S1602_",Remove useless curly braces around statement(¼®€R8³Ûù¨›.
