@@ -233,10 +233,10 @@
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
     <state x="122" y="212" width="1725" height="511" key="#xdebugger.evaluate/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587919131611" />
-    <state x="2458" y="176" width="904" height="854" key="CommitChangelistDialog2" timestamp="1587814910703">
+    <state x="2458" y="176" width="904" height="854" key="CommitChangelistDialog2" timestamp="1588746114181">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
-    <state x="2458" y="176" width="904" height="854" key="CommitChangelistDialog2/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587814910703" />
+    <state x="2458" y="176" width="904" height="854" key="CommitChangelistDialog2/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1588746114181" />
     <state x="2698" y="358" width="924" height="781" key="FileChooserDialogImpl" timestamp="1587762680436">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
@@ -329,10 +329,10 @@
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
     <state x="2340" y="222" width="1024" height="852" key="SettingsEditor/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587762683316" />
-    <state x="1120" y="336" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1588746092318">
+    <state x="1120" y="336" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1588746170542">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state x="1120" y="336" width="800" height="535" key="Vcs.Push.Dialog.v2/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1588746092318" />
+    <state x="1120" y="336" width="800" height="535" key="Vcs.Push.Dialog.v2/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1588746170542" />
     <state width="899" height="600" key="XDebugger.FullValuePopup" timestamp="1587919131248">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
@@ -376,5 +376,9 @@
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
     <state x="2578" y="269" width="672" height="678" key="search.everywhere.popup/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1587929591688" />
+    <state x="2640" y="514" width="540" height="179" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1588746202215">
+      <screen x="1920" y="0" width="1920" height="1200" />
+    </state>
+    <state x="2640" y="514" width="540" height="179" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/70.27.1850.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1588746202215" />
   </component>
 </project>
