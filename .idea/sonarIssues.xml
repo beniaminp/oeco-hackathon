@@ -73,6 +73,31 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/oeco-frontend/src/app/auth/auth.module.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/oeco-frontend/src/app/auth/models/user.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/oeco-frontend/src/app/auth/sign-up/sign-up.component.css">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/oeco-frontend/src/app/auth/sign-up/sign-up.component.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/oeco-frontend/src/app/auth/sign-up/sign-up.component.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/oeco-frontend/src/app/bif-data/bif-data.component.html">
           <value>
             <set />
@@ -124,6 +149,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/oeco-frontend/src/app/search-case/search-case.component.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/oeco-frontend/src/app/services/auth.service.ts">
           <value>
             <set />
           </value>
@@ -288,6 +318,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/oeco/controllers/UserController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/BloodDataDTO.java">
           <value>
             <set />
@@ -353,6 +388,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/auth/UserDTO.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/oeco/controllers/dto/search/SearchConditionsDTO.java">
           <value>
             <set />
@@ -364,6 +404,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/oeco/controllers/repository/CaseRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/oeco/controllers/repository/UserRepository.java">
           <value>
             <set />
           </value>
